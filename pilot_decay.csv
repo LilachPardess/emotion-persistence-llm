@@ -1,0 +1,15 @@
+condition,story_id,t,cosine_sim,projection,response_text
+sad,0,0,0.0988810658454895,71.77082824707031,"The day was beautiful, but she could almost see the clouds glittering. She could barely move, but that was just her imagination. The train was too fast, as fast"
+sad,0,1,0.04928255081176758,34.027442932128906,"A tortilla salad! Doom yourself, guys!Breakfast was pretty good, but didn't go too much longer than a few minutes. There was some red meat she could"
+sad,0,2,0.023866727948188782,17.21124839782715,How many times can you go from a very low temperature to a boiling point in an hour? 6:35AM > 8:30AM > 1:45PM > 6
+sad,0,3,0.04393180459737778,31.7347412109375,"Like, Everquest? One of my favourite books is The World Atlas and would you recommend it? (plus it's out on Amazon) I love it! Curious question:"
+sad,0,4,0.048025645315647125,33.78944778442383,"Looking back, I wish I'd have gone with markers instead of the platforms. I was really looking forward to the combat when the sun started to set.Good question. I"
+sad,0,5,0.012354983948171139,8.566205024719238,"Is it in the morning or in the evening?Isn't it daylight savings time?During combat, how long can I be hit by those 9 random mobs at once?And"
+neutral_control,0,0,0.06241493672132492,43.95520782470703,"""He never did anything wrong,"" said his older sister, Carolyn Cheyenne, who lives with him in a Lower Merion Village apartment. ""I want him"
+neutral_control,0,1,0.059904687106609344,39.27198791503906,"A tortilla salad! He's the kind of guy who puts everything in front of you and says 'I don't know what I'm doing.' ""
+
+Things are"
+neutral_control,0,2,0.019768357276916504,13.478334426879883,How many days would you go a month without electricity? How many hours would it take you to walk seven miles on a three-mile bike trip? How many people would you
+neutral_control,0,3,0.029161494225263596,20.03653335571289,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,0,4,0.043005961924791336,29.231216430664062,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for a painting. However, the ""Bag"" design of the """
+neutral_control,0,5,0.029579680413007736,20.093273162841797,","" or in other words, the ""Severino"" design, shows the ""Art"" side of the bookwell. This design is more common on younger bookshelves"

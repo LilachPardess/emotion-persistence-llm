@@ -1,4 +1,5 @@
 {
   "chosen_layer": 22,
-  "chosen_method": "vs_neutral"
+  "chosen_method": "vs_general",
+  "probe_accuracy": 0.24444444444444444
 }

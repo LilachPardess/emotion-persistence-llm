@@ -1,12 +1,17 @@
 """
 Phase B1: extract one "emotion vector" per emotion from stimuli.json.
 
-Method (contrastive activation / diff-of-means, same idea as ActAdd /
-Contrastive Activation Addition): for each emotion, run its 15 sentences and
-the 15 topic-matched neutral baselines through the model, mean-pool the
-residual stream over tokens at every layer, then take
+Method (contrastive activation / diff-of-means): for each emotion, run its
+15 sentences through the model, mean-pool the residual stream over tokens at
+every layer, then contrast against the general emotion average (mean across
+all emotion means). That removes the shared "emotional at all" component and
+leaves what's distinctive about this emotion:
 
-    emotion_vector[layer] = mean(emotion activations)[layer] - mean(neutral activations)[layer]
+    emotion_vector[layer] = mean(emotion activations)[layer]
+                          - mean(all emotion means)[layer]
+
+Neutral baselines are still encoded and saved for later comparisons, but are
+not used to build the emotion vectors.
 
 This gives one direction per emotion per layer. B2/B3/B4 (next scripts) will
 test which layer's vector actually works before we lock one in for the
@@ -66,6 +71,7 @@ def main():
     d_model = model.cfg.d_model
     print(f"Loaded {MODEL_NAME}: {n_layers} layers, d_model={d_model}")
 
+    # Kept for later vs-neutral comparisons; not used to build emotion_vectors.
     neutral_sents = stimuli["neutral_baseline_stories"]
     print(f"Encoding {len(neutral_sents)} neutral baseline sentences...")
     neutral_acts = torch.stack(
@@ -73,17 +79,23 @@ def main():
     )  # [n_neutral, n_layers, d_model]
     neutral_mean = neutral_acts.mean(dim=0)  # [n_layers, d_model]
 
-    emotion_vectors = {}      # emotion -> [n_layers, d_model]  (the diff vector)
-    emotion_raw_acts = {}     # emotion -> [15, n_layers, d_model]  (kept for later variance/geometry checks)
+    emotion_raw_acts = {}     # emotion -> [15, n_layers, d_model]
+    emotion_means = {}        # emotion -> [n_layers, d_model]
     for emotion, sents in stimuli["emotions"].items():
         print(f"Encoding {len(sents)} '{emotion}' sentences...")
         acts = torch.stack(
             [get_all_layer_mean_resid(model, s, n_layers) for s in sents]
         )  # [15, n_layers, d_model]
-        emotion_mean = acts.mean(dim=0)  # [n_layers, d_model]
-        diff = emotion_mean - neutral_mean  # [n_layers, d_model]
-        emotion_vectors[emotion] = diff
         emotion_raw_acts[emotion] = acts
+        emotion_means[emotion] = acts.mean(dim=0)  # [n_layers, d_model]
+
+    # General emotion average: shared "emotional at all" direction.
+    general_mean = torch.stack(list(emotion_means.values())).mean(dim=0)  # [n_layers, d_model]
+
+    emotion_vectors = {
+        emotion: emotion_mean - general_mean
+        for emotion, emotion_mean in emotion_means.items()
+    }  # emotion -> [n_layers, d_model]
 
     torch.save(
         {
@@ -91,6 +103,7 @@ def main():
             "n_layers": n_layers,
             "d_model": d_model,
             "emotion_vectors": emotion_vectors,
+            "general_mean": general_mean,
             "neutral_mean": neutral_mean,
             "emotion_raw_acts": emotion_raw_acts,
         },

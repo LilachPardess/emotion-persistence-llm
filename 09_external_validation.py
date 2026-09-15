@@ -1,45 +1,38 @@
 """
-External (out-of-sample) validation: does the emotion vector generalize
-beyond the 90 hand-written stimuli sentences it was built from?
+External (out-of-sample) correlation check: do the emotion vectors line up
+with real-world tweets they were not built from?
 
-Runs 40 real-world tweets (external_validation.json, built from a labeled
-Twitter emotion dataset - completely separate from stimuli.json, written
-by different people about different topics) through the model, computes
-each sentence's mean-pooled residual-stream activation at the chosen
-layer, and projects it onto all 6 emotion vectors - the exact same
-classification rule used for the in-sample accuracy check
-(04_pick_layer.py / 08_per_emotion_accuracy.py).
+Runs 40 tweets (external_validation.json) through the model, mean-pools
+residual-stream activations at the chosen layer, and scores each sentence
+against all 6 emotion vectors (cosine + projection).
 
-Only 4 of the 6 emotions have external ground truth here (happy, sad,
-angry, desperate - the source dataset has no calm/proud tweets), so
-accuracy is scored only over those 4 true labels. Predictions still range
-over all 6 vectors, so a tweet CAN be predicted as calm or proud - that's
-not a bug, there's just no ground truth to check it against.
+Two correlation-style tests (not argmax classification):
 
-Why this matters: the in-sample ~50% accuracy could mean either (a) the
-vectors capture real emotion structure, or (b) they capture this
-project's own narrow writing style (topic, sentence length, register)
-which the classifier is fitting rather than emotion itself. This tweet set
-was NOT written by us and NOT hand-picked for how clearly it expresses the
-emotion (filtered only for objective quality - see external_validation.json's
-"note" field) - so if external accuracy holds up meaningfully above chance,
-that is real evidence for (a). If it collapses to chance, that's evidence
-for (b), and the in-sample number was likely optimistic.
+  1. Matching vs other (within sentence)
+     For a tweet labeled emotion e, is its score on vector e higher than its
+     scores on the other vectors? Reports matching_gap =
+     cos_e - mean(cos_other) and the fraction of tweets with gap > 0.
+
+  2. Same vector, different labels (across sentences)
+     For each covered emotion e, do tweets labeled e score higher on vector e
+     than tweets labeled something else? Reports mean match vs mismatch
+     cosine and the point-biserial correlation between (label == e) and cos_e.
+
+Only 4 of 6 emotions have external ground truth (happy, sad, angry,
+desperate). Scores are still computed against all 6 vectors.
 
 Outputs:
-  - external_validation_results.csv   (one row per tweet: true_emotion,
-    predicted_emotion, correct, cosine sim + projection onto all 6 vectors)
-  - external_validation_accuracy.png  (bar chart: in-sample accuracy vs.
-    external accuracy, overall and broken down by the 4 covered emotions)
+  - external_validation_results.csv
+  - external_validation_correlation.png  (two-panel summary)
 
 Usage:
     python 09_external_validation.py
-Requires: emotion_vectors_final.pt + config.json (from 04_pick_layer.py),
-emotion_vectors.pt (for the in-sample comparison number), and
-external_validation.json, all in the same folder.
+Requires: emotion_vectors_final.pt + config.json (from 04_pick_layer.py)
+and external_validation.json, all in the same folder.
 """
 import csv
 import json
+import math
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -51,7 +44,6 @@ from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
 FINAL_VECTORS_PATH = "emotion_vectors_final.pt"
-RAW_PATH = "emotion_vectors.pt"
 CONFIG_PATH = "config.json"
 EXTERNAL_PATH = "external_validation.json"
 
@@ -77,21 +69,26 @@ def cosine(a, b):
     return torch.nn.functional.cosine_similarity(a.unsqueeze(0), b.unsqueeze(0)).item()
 
 
-def in_sample_accuracy(vectors, layer):
-    """Recompute the in-sample number (same rule, same vectors) for the
-    comparison bar, straight from the raw per-sentence activations."""
-    raw_saved = torch.load(RAW_PATH, map_location="cpu", weights_only=False)
-    emotion_raw_acts = raw_saved["emotion_raw_acts"]
-    emotions = list(emotion_raw_acts.keys())
-    correct, total = 0, 0
-    for true_emotion in emotions:
-        acts = emotion_raw_acts[true_emotion][:, layer, :]
-        for i in range(acts.shape[0]):
-            scores = {e: torch.dot(acts[i], vectors[e][layer]).item() for e in emotions}
-            pred = max(scores, key=scores.get)
-            total += 1
-            correct += int(pred == true_emotion)
-    return correct / total
+def mean(xs):
+    return sum(xs) / len(xs) if xs else float("nan")
+
+
+def point_biserial(binary, continuous):
+    """Pearson r between a 0/1 label and a continuous score."""
+    n = len(binary)
+    if n < 2:
+        return float("nan")
+    n1 = sum(binary)
+    n0 = n - n1
+    if n1 == 0 or n0 == 0:
+        return float("nan")
+    m1 = mean([c for b, c in zip(binary, continuous) if b])
+    m0 = mean([c for b, c in zip(binary, continuous) if not b])
+    m = mean(continuous)
+    sd = math.sqrt(sum((c - m) ** 2 for c in continuous) / n)
+    if sd == 0:
+        return float("nan")
+    return ((m1 - m0) / sd) * math.sqrt((n1 * n0) / (n * n))
 
 
 def main():
@@ -106,11 +103,11 @@ def main():
 
     with open(EXTERNAL_PATH) as f:
         external = json.load(f)
-    covered_emotions = list(external["sentences"].keys())  # happy, sad, angry, desperate
+    covered_emotions = list(external["sentences"].keys())
 
     print(f"method={method}, layer={layer}")
     print(f"External ground truth covers: {covered_emotions}")
-    print(f"Predicting across all vectors: {all_emotions}\n")
+    print(f"Scoring against all vectors: {all_emotions}\n")
 
     device = get_device()
     print(f"Using device: {device}")
@@ -118,62 +115,83 @@ def main():
     model.eval()
 
     rows = []
-    confusion = {t: {p: 0 for p in all_emotions} for t in covered_emotions}
-    correct_total, total = 0, 0
-    per_emotion_correct = {e: 0 for e in covered_emotions}
-    per_emotion_total = {e: 0 for e in covered_emotions}
-
     for true_emotion in covered_emotions:
         for sent in external["sentences"][true_emotion]:
             act = get_mean_resid_at_layer(model, sent, layer, device)
-            scores, cos_scores = {}, {}
+            cos_scores, proj_scores = {}, {}
             for e in all_emotions:
                 vec = vectors[e][layer]
-                scores[e] = torch.dot(act, vec).item()
                 cos_scores[e] = cosine(act, vec)
-            pred = max(scores, key=scores.get)
-            is_correct = int(pred == true_emotion)
+                proj_scores[e] = torch.dot(act, vec).item()
 
-            confusion[true_emotion][pred] += 1
-            correct_total += is_correct
-            total += 1
-            per_emotion_correct[true_emotion] += is_correct
-            per_emotion_total[true_emotion] += 1
+            others = [cos_scores[e] for e in all_emotions if e != true_emotion]
+            matching_gap = cos_scores[true_emotion] - mean(others)
+            match_is_max = int(cos_scores[true_emotion] == max(cos_scores.values()))
 
-            row = {"true_emotion": true_emotion, "predicted_emotion": pred,
-                   "correct": is_correct, "sentence": sent}
+            row = {
+                "true_emotion": true_emotion,
+                "sentence": sent,
+                "matching_cos": cos_scores[true_emotion],
+                "other_cos_mean": mean(others),
+                "matching_gap": matching_gap,
+                "match_is_max": match_is_max,
+            }
             for e in all_emotions:
                 row[f"cos_{e}"] = cos_scores[e]
-                row[f"proj_{e}"] = scores[e]
+                row[f"proj_{e}"] = proj_scores[e]
             rows.append(row)
 
-    ext_accuracy = correct_total / total
-    chance = 1 / len(all_emotions)
-    print(f"\nExternal (out-of-sample) accuracy: {correct_total}/{total} = {ext_accuracy:.1%} "
-          f"(chance={chance:.1%}, scored against {len(covered_emotions)} of {len(all_emotions)} emotions)")
+    # --- Test 1: matching vs other (within sentence) ---
+    print("\n=== Test 1: matching vector vs other vectors (within sentence) ===")
+    print("matching_gap = cos(true) - mean(cos(other vectors))")
+    gaps_by_emotion = {e: [] for e in covered_emotions}
+    max_by_emotion = {e: [] for e in covered_emotions}
+    for r in rows:
+        gaps_by_emotion[r["true_emotion"]].append(r["matching_gap"])
+        max_by_emotion[r["true_emotion"]].append(r["match_is_max"])
 
-    print("\nPer-emotion external accuracy:")
+    all_gaps = [r["matching_gap"] for r in rows]
+    all_max = [r["match_is_max"] for r in rows]
+    print(f"Overall: mean gap={mean(all_gaps):+.4f}, "
+          f"gap>0: {sum(g > 0 for g in all_gaps)}/{len(all_gaps)} = "
+          f"{mean([g > 0 for g in all_gaps]):.0%}, "
+          f"match is max: {sum(all_max)}/{len(all_max)} = {mean(all_max):.0%}")
     for e in covered_emotions:
-        acc = per_emotion_correct[e] / per_emotion_total[e]
-        print(f"  {e:10s}: {per_emotion_correct[e]:2d}/{per_emotion_total[e]} = {acc:.0%}")
+        gaps = gaps_by_emotion[e]
+        print(f"  {e:10s}: mean gap={mean(gaps):+.4f}, "
+              f"gap>0={sum(g > 0 for g in gaps)}/{len(gaps)}, "
+              f"match max={sum(max_by_emotion[e])}/{len(max_by_emotion[e])}")
 
-    print("\nConfusion (true -> predicted counts, only non-zero shown):")
-    for t in covered_emotions:
-        row_str = ", ".join(f"{p}={c}" for p, c in confusion[t].items() if c > 0)
-        print(f"  {t:10s}: {row_str}")
+    # --- Test 2: same vector, different labels (across sentences) ---
+    print("\n=== Test 2: same vector across labels (match tweets vs other tweets) ===")
+    print("point-biserial r between (label == e) and cos_e")
+    test2 = {}
+    for e in covered_emotions:
+        labels = [int(r["true_emotion"] == e) for r in rows]
+        scores = [r[f"cos_{e}"] for r in rows]
+        match_scores = [s for lab, s in zip(labels, scores) if lab]
+        other_scores = [s for lab, s in zip(labels, scores) if not lab]
+        r_pb = point_biserial(labels, scores)
+        test2[e] = {
+            "mean_match": mean(match_scores),
+            "mean_other": mean(other_scores),
+            "delta": mean(match_scores) - mean(other_scores),
+            "r": r_pb,
+        }
+        print(f"  {e:10s}: match={test2[e]['mean_match']:+.4f}, "
+              f"other={test2[e]['mean_other']:+.4f}, "
+              f"delta={test2[e]['delta']:+.4f}, r={test2[e]['r']:+.3f}")
 
-    in_sample_acc = in_sample_accuracy(vectors, layer)
-    print(f"\nIn-sample accuracy   (90 hand-written stimuli, same method/layer): {in_sample_acc:.1%}")
-    print(f"External accuracy    (40 real-world tweets, 4 emotions):           {ext_accuracy:.1%}")
-    if ext_accuracy < chance * 1.5:
-        print("\nWARNING: external accuracy is close to chance. The vectors may be picking up "
-              "this project's own writing style/topics rather than emotion itself - treat the "
-              "in-sample number with caution and mention this limitation in the write-up.")
+    pos_deltas = sum(1 for e in covered_emotions if test2[e]["delta"] > 0)
+    pos_rs = sum(1 for e in covered_emotions if test2[e]["r"] > 0)
+    print(f"\nSummary: {pos_deltas}/{len(covered_emotions)} emotions have match > other mean; "
+          f"{pos_rs}/{len(covered_emotions)} have r > 0.")
+    if mean(all_gaps) <= 0 and pos_deltas <= len(covered_emotions) / 2:
+        print("WARNING: little evidence that vectors correlate with these tweets. "
+              "They may be fitting writing style more than emotion.")
     else:
-        print("\nExternal accuracy clears chance by a meaningful margin: some real generalization "
-              "beyond the hand-written stimuli. Real-world tweets are noisier (sarcasm, mixed "
-              "signals, crowd-labeling errors) so some drop from the in-sample number is expected "
-              "regardless of vector quality.")
+        print("Some positive alignment with tweet labels — check per-emotion bars "
+              "(real tweets are noisier than hand-written stimuli).")
 
     with open("external_validation_results.csv", "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
@@ -181,20 +199,40 @@ def main():
         writer.writerows(rows)
     print("\nSaved external_validation_results.csv")
 
-    labels = ["overall\n(in-sample)", "overall\n(external)"] + [f"{e}\n(external)" for e in covered_emotions]
-    values = [in_sample_acc, ext_accuracy] + [per_emotion_correct[e] / per_emotion_total[e] for e in covered_emotions]
-    bar_colors = ["#888888", "#5b8e7d"] + ["#5b8e7d"] * len(covered_emotions)
+    # --- Plot ---
+    fig, axes = plt.subplots(1, 2, figsize=(11, 5))
 
-    fig, ax = plt.subplots(figsize=(8, 5))
-    bars = ax.bar(labels, values, color=bar_colors)
-    ax.axhline(chance, color="black", linestyle=":", label=f"chance ({chance:.1%})")
-    ax.set_ylabel("classification accuracy")
-    ax.set_title(f"In-sample vs. external validation accuracy\n(method={method}, layer={layer})")
-    ax.bar_label(bars, labels=[f"{v:.0%}" for v in values])
-    ax.legend()
+    # Panel 1: mean matching gap by true emotion
+    ax = axes[0]
+    gap_means = [mean(gaps_by_emotion[e]) for e in covered_emotions]
+    colors = ["#5b8e7d" if g > 0 else "#a44a3f" for g in gap_means]
+    bars = ax.bar(covered_emotions, gap_means, color=colors)
+    ax.axhline(0, color="black", linewidth=0.8)
+    ax.set_ylabel("mean matching gap (cos)")
+    ax.set_title("Test 1: matching vs other vectors\n(within sentence)")
+    ax.bar_label(bars, labels=[f"{g:+.3f}" for g in gap_means], fontsize=9)
+
+    # Panel 2: mean cos on vector e for match vs other tweets
+    ax = axes[1]
+    x = range(len(covered_emotions))
+    width = 0.35
+    match_means = [test2[e]["mean_match"] for e in covered_emotions]
+    other_means = [test2[e]["mean_other"] for e in covered_emotions]
+    b1 = ax.bar([i - width / 2 for i in x], match_means, width, label="tweets labeled e", color="#5b8e7d")
+    b2 = ax.bar([i + width / 2 for i in x], other_means, width, label="tweets labeled ≠ e", color="#888888")
+    ax.set_xticks(list(x))
+    ax.set_xticklabels(covered_emotions)
+    ax.set_ylabel(f"mean cosine onto vector e")
+    ax.set_title("Test 2: same vector, different labels\n(across sentences)")
+    ax.legend(fontsize=8)
+    for i, e in enumerate(covered_emotions):
+        ax.annotate(f"r={test2[e]['r']:+.2f}", (i, max(match_means[i], other_means[i])),
+                    textcoords="offset points", xytext=(0, 6), ha="center", fontsize=8)
+
+    fig.suptitle(f"External tweet–vector correlation (method={method}, layer={layer})", y=1.02)
     fig.tight_layout()
-    fig.savefig("external_validation_accuracy.png", dpi=150)
-    print("Saved external_validation_accuracy.png")
+    fig.savefig("external_validation_correlation.png", dpi=150, bbox_inches="tight")
+    print("Saved external_validation_correlation.png")
 
 
 if __name__ == "__main__":

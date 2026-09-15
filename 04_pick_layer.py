@@ -1,15 +1,14 @@
 """
-Phase B3/B4: pick the layer for the vs_general emotion vectors that 02 builds.
+Phase B3/B4: pick the layer for the topic-paired emotion vectors that 02 builds.
 
-02 now defines emotion vectors as:
-    emotion_mean - mean(all emotion means)   (= vs_general)
+02 now defines emotion vectors as last-token topic-paired contrasts:
+    mean_i( last_token(emotion_i) - last_token(neutral_i) )
 
-This script still plots vs_neutral alongside as a reference, but the chosen
-layer, heatmap, config.json, and emotion_vectors_final.pt all use vs_general
-so they stay aligned with 02.
+This script still plots vs_general alongside as a reference, but the chosen
+layer, heatmap, config.json, and emotion_vectors_final.pt all use
+topic_paired so they stay aligned with 02.
 
-Layer choice is NOT "max geometry gap over all layers" (that wrongly prefers
-layer 0 when every gap is negative). Instead:
+Layer choice:
   1. Restrict candidates to mid/late layers (skip early residual stream).
   2. Score each candidate with a 6-way linear probe: project each sentence
      activation onto the 6 emotion vectors, predict argmax.
@@ -20,10 +19,9 @@ Geometry gap is still plotted as a diagnostic:
 
 Outputs:
   - emotion_vector_geometry_comparison.png   (both methods' layer sweeps)
-  - emotion_vector_geometry_heatmap.png      (vs_general at the chosen layer)
+  - emotion_vector_geometry_heatmap.png      (topic_paired at the chosen layer)
   - config.json          ({"chosen_layer", "chosen_method", "probe_accuracy"})
-  - emotion_vectors_final.pt   (vs_general vectors, same format as
-    emotion_vectors.pt, so C1/C2 can just point at this file instead)
+  - emotion_vectors_final.pt   (topic_paired vectors)
 
 Usage:
     python 04_pick_layer.py
@@ -40,7 +38,7 @@ import matplotlib.pyplot as plt
 VECTORS_PATH = "emotion_vectors.pt"
 CONFIG_PATH = "config.json"
 FINAL_VECTORS_PATH = "emotion_vectors_final.pt"
-CHOSEN_METHOD = "vs_general"  # must match 02_extract_emotion_vectors.py
+CHOSEN_METHOD = "topic_paired"  # must match 02_extract_emotion_vectors.py
 
 POSITIVE = ["happy", "calm", "proud"]
 NEGATIVE = ["sad", "desperate", "angry"]
@@ -53,13 +51,11 @@ def cosine(a, b):
 def candidate_layers(n_layers):
     """Mid/late residual stream only. For gpt2-medium (24 layers): 6..22."""
     lo = max(1, n_layers // 4)
-    hi = max(lo + 1, n_layers - 1)  # exclusive end -> last included is n_layers-2
+    hi = max(lo + 1, n_layers - 1)
     return list(range(lo, hi))
 
 
 def geometry_sweep(vectors_by_emotion, n_layers):
-    """vectors_by_emotion: dict[emotion] -> [n_layers, d_model]. Returns
-    (within_pos, within_neg, cross, gap) lists, one value per layer."""
     within_pos_list, within_neg_list, cross_list, gap_list = [], [], [], []
     for L in range(n_layers):
         wp = [cosine(vectors_by_emotion[a][L], vectors_by_emotion[b][L])
@@ -76,11 +72,9 @@ def geometry_sweep(vectors_by_emotion, n_layers):
 
 
 def probe_accuracy(emotion_raw_acts, vectors, layer, emotions):
-    """6-way linear probe: for each sentence, predict argmax projection onto
-    the emotion vectors at this layer. Chance = 1/n_emotions."""
     correct, total = 0, 0
     for true_emotion in emotions:
-        acts = emotion_raw_acts[true_emotion][:, layer, :]  # [n_sents, d_model]
+        acts = emotion_raw_acts[true_emotion][:, layer, :]
         for i in range(acts.shape[0]):
             sentence_act = acts[i]
             scores = {e: torch.dot(sentence_act, vectors[e][layer]).item() for e in emotions}
@@ -93,25 +87,27 @@ def probe_accuracy(emotion_raw_acts, vectors, layer, emotions):
 def main():
     saved = torch.load(VECTORS_PATH, map_location="cpu", weights_only=False)
     n_layers = saved["n_layers"]
-    neutral_mean = saved["neutral_mean"]                # [n_layers, d_model]
-    emotion_raw_acts = saved["emotion_raw_acts"]          # dict[emotion] -> [15, n_layers, d_model]
+    neutral_mean = saved["neutral_mean"]
+    emotion_raw_acts = saved["emotion_raw_acts"]
     emotions = list(emotion_raw_acts.keys())
     print(f"Loaded raw activations for {emotions} across {n_layers} layers.")
+    print(f"02 method={saved.get('method')}, pooling={saved.get('pooling')}")
 
-    emotion_means = {e: acts.mean(dim=0) for e, acts in emotion_raw_acts.items()}  # [n_layers, d_model]
-    general_mean = torch.stack([emotion_means[e] for e in emotions]).mean(dim=0)   # [n_layers, d_model]
+    emotion_means = {e: acts.mean(dim=0) for e, acts in emotion_raw_acts.items()}
+    general_mean = torch.stack([emotion_means[e] for e in emotions]).mean(dim=0)
 
-    vectors_vs_neutral = {e: emotion_means[e] - neutral_mean for e in emotions}
+    vectors_topic_paired = saved.get("emotion_vectors") or {
+        e: emotion_means[e] - neutral_mean for e in emotions
+    }
     vectors_vs_general = {e: emotion_means[e] - general_mean for e in emotions}
 
-    methods = {"vs_neutral": vectors_vs_neutral, "vs_general": vectors_vs_general}
+    methods = {"topic_paired": vectors_topic_paired, "vs_general": vectors_vs_general}
     sweeps = {name: geometry_sweep(vecs, n_layers) for name, vecs in methods.items()}
 
-    print("\nlayer | vs_neutral gap | vs_general gap")
+    print("\nlayer | topic_paired gap | vs_general gap")
     for L in range(n_layers):
-        print(f"  {L:3d} |     {sweeps['vs_neutral'][3][L]:+.3f}     |    {sweeps['vs_general'][3][L]:+.3f}")
+        print(f"  {L:3d} |       {sweeps['topic_paired'][3][L]:+.3f}      |    {sweeps['vs_general'][3][L]:+.3f}")
 
-    # Lock to vs_general; pick mid/late layer by probe accuracy (gap tiebreak).
     chosen_vectors = methods[CHOSEN_METHOD]
     gap_list = sweeps[CHOSEN_METHOD][3]
     layers = candidate_layers(n_layers)
@@ -145,7 +141,6 @@ def main():
         print("WARNING: cross-valence similarity isn't clearly negative. Worth a manual "
               "look at the B2 playground before trusting Phase C.")
 
-    # ---- Plot 1: both methods' layer sweeps + probe accuracy for vs_general ----
     fig, axes = plt.subplots(1, 2, figsize=(13, 5), sharey=True)
     for ax, (name, (wp, wn, cr, gap)) in zip(axes, sweeps.items()):
         ax.plot(range(n_layers), wp, marker="o", label="within-positive")
@@ -161,13 +156,12 @@ def main():
         ax.set_xlabel("layer")
         ax.legend(fontsize=8)
     axes[0].set_ylabel("cosine similarity")
-    fig.suptitle("Emotion vector geometry: vs_neutral vs. vs_general contrast\n"
+    fig.suptitle("Emotion vector geometry: topic_paired vs. vs_general\n"
                  f"layer chosen by mid/late probe accuracy ({best['probe_accuracy']:.1%})")
     fig.tight_layout()
     fig.savefig("emotion_vector_geometry_comparison.png", dpi=150)
     print("Saved emotion_vector_geometry_comparison.png")
 
-    # ---- Plot 2: heatmap at the chosen vs_general layer ----
     order = POSITIVE + NEGATIVE
     n = len(order)
     sim = np.zeros((n, n))
@@ -193,6 +187,7 @@ def main():
             "chosen_layer": best["layer"],
             "chosen_method": best["method"],
             "probe_accuracy": best["probe_accuracy"],
+            "pooling": saved.get("pooling", "last_token"),
         }, f, indent=2)
     print(f"Wrote {CONFIG_PATH}")
 
@@ -200,13 +195,13 @@ def main():
         "model_name": saved["model_name"],
         "n_layers": n_layers,
         "d_model": saved["d_model"],
-        "emotion_vectors": chosen_vectors,   # full [n_layers, d_model] per emotion, vs_general
+        "emotion_vectors": chosen_vectors,
         "method": best["method"],
+        "pooling": saved.get("pooling", "last_token"),
         "chosen_layer": best["layer"],
         "probe_accuracy": best["probe_accuracy"],
     }, FINAL_VECTORS_PATH)
-    print(f"Saved {FINAL_VECTORS_PATH} - Phase C scripts should load vectors from this file now, "
-          f"not the original emotion_vectors.pt.")
+    print(f"Saved {FINAL_VECTORS_PATH}")
 
 
 if __name__ == "__main__":

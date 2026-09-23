@@ -1,0 +1,473 @@
+condition,measured_against,story_id,t,steered_turn,steer_mode,steer_strength,cosine_sim,projection,response_text
+happy,happy,0,0,1,t0_only,5.0,-0.18792292475700378,-58.028846740722656,"""The "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+happy,happy,0,1,0,t0_only,5.0,-0.27086877822875977,-80.88015747070312,"A tortilla salad! """" * * * * * * ""I think I can call you 'Lysette.' It gives us some distance from the other members of"
+happy,happy,0,2,0,t0_only,5.0,-0.2518882155418396,-69.3682861328125,"How many days would you go a month without having to boil a cup of water? "" "" * * * * * * * ""The "" "" "" "" "" "" """
+happy,happy,0,3,0,t0_only,5.0,-0.2450881004333496,-71.04692077636719,"Like Sherlock Holmes. A guy writes a book about them. Can you find out what Doctor Watson's hut looked like?"""" "" * * * * * * * * """
+happy,happy,0,4,0,t0_only,5.0,-0.270730584859848,-87.08480072021484,Can you name the things you've seen on TV? Or maybe the sitcoms like THAT? You want to try something different? Maybe play around with the program editor. I
+happy,happy,0,5,0,t0_only,5.0,-0.3031199872493744,-93.16422271728516,"How many time zones does Canada span? What is the difference between daylight savings time and time zones?Can you tell me where the US/Enterprise/Illuminati are?"""
+happy,happy,0,6,0,t0_only,5.0,-0.2467631697654724,-70.8577880859375,"Or Canada? "" * * * * * * * * "" Can you tell me how to get to the Greyhound Bus? "" * * * * * * * """
+happy,happy,0,7,0,t0_only,5.0,-0.28336766362190247,-81.17820739746094,"How much longer do you need to drive to get to the friend of the month who wants to join you? "" * * * * * * * ""Can you tell me"
+happy,happy,0,8,0,t0_only,5.0,-0.26115402579307556,-77.87301635742188,"And what's Nick Saban's favorite color?"""" * * * * * * * ""How can you tell if someone is gay? Like how old are they? What's"
+happy,happy,0,9,0,t0_only,5.0,-0.25996577739715576,-74.64234161376953,""" * * * * * * ""Why are so many football players from New England getting hung up on Mardi Gras? Or when did shit get gay?"""" *"
+happy,happy,0,10,0,t0_only,5.0,-0.2801021933555603,-84.82587432861328,"What do you mean, 'solar eclipses'? What do you mean 'hypnotic eye reading'? How many HTTP requests does it take to download a movie from the"
+happy,happy,5,0,1,t0_only,5.0,-0.20038677752017975,-62.19719696044922,"""The "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+happy,happy,5,1,0,t0_only,5.0,-0.16857945919036865,-47.35150146484375,"A tortilla salad! ""They"" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+happy,happy,5,2,0,t0_only,5.0,-0.2295786291360855,-60.38119888305664,"How many times can you go up a Coke can to the bottom before it boils? "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+happy,happy,5,3,0,t0_only,5.0,-0.18904827535152435,-51.6975212097168,"Like, really good? "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""The History of Science by"
+happy,happy,5,4,0,t0_only,5.0,-0.19013884663581848,-51.974334716796875,""" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""A wordpacking program that works on"
+happy,happy,5,5,0,t0_only,5.0,-0.17851516604423523,-47.98451614379883,""" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""Enter how many times you have to"
+happy,happy,5,6,0,t0_only,5.0,-0.16856952011585236,-46.28204345703125,""" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """" "" ""What's the state"
+happy,happy,5,7,0,t0_only,5.0,-0.148541659116745,-40.98457717895508,""" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """" """" """" """""
+happy,happy,5,8,0,t0_only,5.0,-0.14193305373191833,-39.29852294921875,""" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """" """" """" """" """
+happy,happy,5,9,0,t0_only,5.0,-0.13958381116390228,-38.266693115234375,""" "" "" "" """" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """" """" """" """
+happy,happy,5,10,0,t0_only,5.0,-0.23748962581157684,-69.46642303466797,"A shrub that grows great colors?A red scab with a red stem?A green scab with a green stem?"" "" "" "" """" """" """""
+happy,happy,10,0,1,t0_only,5.0,-0.17066097259521484,-52.097129821777344,"""The "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+happy,happy,10,1,0,t0_only,5.0,-0.22194471955299377,-66.03056335449219,"A tortilla salad! """" * * * * * * ""As she was speaking, she looked out the window to the sky. There was something red--something liquid"
+happy,happy,10,2,0,t0_only,5.0,-0.2603314518928528,-73.9483642578125,"How many Celsius's are in a liter? It will take a minute for it to boil. 3,750,000"" * * * * * ""She let out a"
+happy,happy,10,3,0,t0_only,5.0,-0.2243921160697937,-66.22796630859375,"She looked up from her book, ""Who are these people who are constructing maps on the internet? "" "" * * * * "" * * * * * * * *"
+happy,happy,10,4,0,t0_only,5.0,-0.2509440779685974,-77.36630249023438,"It's like organizing things into different shelf sizes."" * * * * * ""Later, Sam Shepard. The painting was still on the wall. Sam's only really interested in"
+happy,happy,10,5,0,t0_only,5.0,-0.25859543681144714,-79.16458892822266,"She couldn't tell because she kept staring at it."" * * * * * ""During the day, the museum was full of visitors, but at night, the room was"
+happy,happy,10,6,0,t0_only,5.0,-0.29294756054878235,-92.04598999023438,"It's easy for us to say it's here because it's so central.""""After a few of my friends and I left, I did get to spend some time with Sam"
+happy,happy,10,7,0,t0_only,5.0,-0.2456587851047516,-72.02519989013672,"She looked at the clock on her wallet, showing the distance from her home in Wisconsin to her hometown in Maine."""" * * * * * * ""While walking through the central"
+happy,happy,10,8,0,t0_only,5.0,-0.21694688498973846,-63.82381057739258,"She looked over at the passenger side window of the car, ""Is it steel? "" "" * * * * "" * * * * * * * *She noticed the"
+happy,happy,10,9,0,t0_only,5.0,-0.2650722563266754,-81.86967468261719,"She glanced at her phone, ""Well, no, but I'd love toYou know what? It seems that you're the only one who knows what's up."""" *"
+happy,happy,10,10,0,t0_only,5.0,-0.2597254514694214,-82.50041198730469,"A shrub that grows great colors? It's a glare bee, or a salamander? It has an egg, or a baby? It has a flower, or"
+calm,calm,0,0,1,t0_only,5.0,-0.1991937756538391,-62.346778869628906,"' ' ' ' ' "" "" "" ' ' "" "" "" "" "" "" "" "" "" ' ' "" "" "" "" "" "" "" "" "" "" "" "" "" """
+calm,calm,0,1,0,t0_only,5.0,-0.23542892932891846,-67.90348815917969,"A tortilla salad! ' "" "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+calm,calm,0,2,0,t0_only,5.0,-0.19937697052955627,-55.08161926269531,"' "" "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ' "" "" ' ' """
+calm,calm,0,3,0,t0_only,5.0,-0.19945783913135529,-53.30699157714844,"Like Sherlock Holmes. ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ' """
+calm,calm,0,4,0,t0_only,5.0,-0.33203375339508057,-103.73898315429688,"Well, add a next to it. A move to the left or the right like this! You can also try this if you're inclined to wander into the labyrinthine labyrinth"
+calm,calm,0,5,0,t0_only,5.0,-0.2209676057100296,-58.85005187988281,"' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""Enter how many times a day you"
+calm,calm,0,6,0,t0_only,5.0,-0.21091017127037048,-57.444854736328125,"' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ' "" ""What's the state"
+calm,calm,0,7,0,t0_only,5.0,-0.33715754747390747,-101.85675048828125,"If you're under 5 miles, you've got the distance from one to five. If you're 40, you've got a foot's rise. If you're 11 miles"
+calm,calm,0,8,0,t0_only,5.0,-0.1893247663974762,-53.1646728515625,"' "" "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ' "" ' """
+calm,calm,0,9,0,t0_only,5.0,-0.30476194620132446,-82.28650665283203,"A pair of 84 stars called the Big Dipper Which is the longest string of dynamite needed to explode a football? ' "" ' "" "" "" "" "" "" "" """
+calm,calm,0,10,0,t0_only,5.0,-0.20658692717552185,-63.205101013183594,"' ' "" ' "" ' "" ' "" ' "" ' "" ' "" ' "" ' "" ' "" ' "" ' ' "" "" "" ' '' "" ' "" '"
+calm,calm,5,0,1,t0_only,5.0,-0.2347845435142517,-72.51091003417969,"""He ' ' ' "" he "" ' "" he "" "" "" "" "" "" "" "" ' ' "" "" "" "" "" "" "" "" "" "" "" "" "" """
+calm,calm,5,1,0,t0_only,5.0,-0.2893621623516083,-84.94771575927734,"A tortilla salad! ""They told me they make an "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+calm,calm,5,2,0,t0_only,5.0,-0.3476729989051819,-106.4935302734375,"How many feet is a meter? How does the hole in a duck's back extend? ""They took me on this three-mile tour of the southeast, telling me how"
+calm,calm,5,3,0,t0_only,5.0,-0.2813074588775635,-84.08111572265625,"Like, really? A guy named "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""Or maybe this book is for you?"
+calm,calm,5,4,0,t0_only,5.0,-0.3068158030509949,-90.22720336914062,"Well, I can't tell you. ""They'd get me to the next graphic novel about Paris. It's called "" "" "" "" "" "" "" "" "" "" """
+calm,calm,5,5,0,t0_only,5.0,-0.33396896719932556,-107.39265441894531,How many in the morning? How many in the afternoon? How many before noon? How many after noon? How many in the evening? How many at midnight?How many
+calm,calm,5,6,0,t0_only,5.0,-0.26178109645843506,-74.74085998535156,"Or the capital of South Africa? ""They told me they have this "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+calm,calm,5,7,0,t0_only,5.0,-0.3392183780670166,-99.8775634765625,"How many miles is a 'lite' bicycle? How fast does a bicycle travel at 25 miles per hour? ""They drove me to their office and asked me ""Okay,"
+calm,calm,5,8,0,t0_only,5.0,-0.33663108944892883,-105.08975219726562,"And what's the number of 26 different types of coins from the US Treasury? I could have gone on and on. ""These people would have told me they've been buying"
+calm,calm,5,9,0,t0_only,5.0,-0.33317500352859497,-105.27711486816406,"A happy coincidence? Or a little bit of a coincidence? I'd love to know the answer to that, too. ""Dear please, did you enjoy my first interview?"""
+calm,calm,5,10,0,t0_only,5.0,-0.3091128468513489,-91.28819274902344,"A shrub that grows great colors?A red scented bee?A happy coincidence? A little bit of a coincidence? I'd love to know the answer to that,"
+calm,calm,10,0,1,t0_only,5.0,-0.22022204101085663,-71.20706939697266,"' ' ' ' ' "" he murm ' ' "" "" "" "" "" "" "" "" "" ' ' "" "" "" ' ' "" "" "" "" "" "" "" "" """
+calm,calm,10,1,0,t0_only,5.0,-0.24562981724739075,-75.33665466308594,"A tortilla salad! ' ' "" ' "" "" "" "" "" "" "" "" * "" ' ' "" "" "" "" "" "" "" "" "" "" "" "" "" """
+calm,calm,10,2,0,t0_only,5.0,-0.21037110686302185,-59.93386459350586,"' "" ' "" "" "" "" "" "" "" "" * "" ' ' "" "" "" "" "" "" "" "" "" "" * "" ' "" "" "" "" "" "" """
+calm,calm,10,3,0,t0_only,5.0,-0.21623927354812622,-59.365074157714844,"Like Sherlock Holmes. ' "" ' "" "" "" "" "" "" "" "" "" * "" ' ' "" "" "" "" "" "" "" "" "" "" "" "" * "" '"
+calm,calm,10,4,0,t0_only,5.0,-0.23809021711349487,-64.75628662109375,"Choose 16 colors for things like decoration. ' "" ' "" "" "" "" "" "" "" "" "" * "" ' ' "" "" "" "" "" "" "" "" "" "" """
+calm,calm,10,5,0,t0_only,5.0,-0.2401597946882248,-64.58141326904297,"Four! ' "" ' "" "" "" "" "" "" "" "" * "" ' "" "" "" "" "" "" "" "" "" "" "" *"" 'What is the difference between"
+calm,calm,10,6,0,t0_only,5.0,-0.24428105354309082,-67.29070281982422,"Wellington. ' "" ' "" "" "" "" "" "" "" "" "" "" * "" ' ' "" "" "" "" "" "" "" "" *"" 'What is the difference between"
+calm,calm,10,7,0,t0_only,5.0,-0.28213125467300415,-75.26873016357422,"With how many degrees of freedom? One, two, three, four, five. /"" ' "" ' "" "" "" "" "" "" * "" ' ' "" "" """
+calm,calm,10,8,0,t0_only,5.0,-0.23168596625328064,-62.01369857788086,"Aluminum. /"" ' "" ' "" "" "" "" "" "" "" "" * "" ' ' "" "" "" "" "" "" "" "" "" *"" 'What's the difference"
+calm,calm,10,9,0,t0_only,5.0,-0.23798398673534393,-61.029075622558594,"A pair of 84 stars called the Big Dipper. ' "" ' "" "" "" "" "" "" "" "" "" * "" ' ' "" "" "" "" "" "" "" """
+calm,calm,10,10,0,t0_only,5.0,-0.2340407371520996,-61.712486267089844,"Exotic plants. ' "" ' "" "" "" "" "" "" "" "" "" "" * "" ' ' "" "" "" "" "" "" "" *""'What's the most"
+proud,proud,0,0,1,t0_only,5.0,-0.12891796231269836,-40.281494140625,""" ' "" ' "" "" "" "" ' "" "" "" "" "" "" "" "" "" "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,0,1,0,t0_only,5.0,-0.13681796193122864,-38.36212921142578,"A tortilla salad! ' "" "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,0,2,0,t0_only,5.0,-0.11561048030853271,-31.864368438720703,"' "" "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ' "" "" ' "" '"
+proud,proud,0,3,0,t0_only,5.0,-0.12814125418663025,-33.557071685791016,"Like, really good books? ' "" "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,0,4,0,t0_only,5.0,-0.11465267837047577,-31.307039260864258,"' "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ' "" ' '"" '"" '"""
+proud,proud,0,5,0,t0_only,5.0,-0.11841573566198349,-32.3391227722168,"' "" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ' "" '""' '"" '"
+proud,proud,0,6,0,t0_only,5.0,-0.11963717639446259,-33.189857482910156,"'"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"
+proud,proud,0,7,0,t0_only,5.0,-0.13672614097595215,-37.251495361328125,"'"" '' '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"
+proud,proud,0,8,0,t0_only,5.0,-0.13133205473423004,-35.126197814941406,"'"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"
+proud,proud,0,9,0,t0_only,5.0,-0.13068294525146484,-34.41136169433594,"'"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"
+proud,proud,0,10,0,t0_only,5.0,-0.1269000917673111,-33.186458587646484,"'"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"" '"
+proud,proud,5,0,1,t0_only,5.0,-0.10755567997694016,-34.39556884765625,""" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,5,1,0,t0_only,5.0,-0.13247603178024292,-36.76255416870117,"A tortilla salad! "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,5,2,0,t0_only,5.0,-0.2230161726474762,-59.5375862121582,"How many days would you go to a doctor if you had a fever, and you needed a blood pressure cuff? """" "" "" "" "" "" "" "" "" "" """
+proud,proud,5,3,0,t0_only,5.0,-0.15645386278629303,-42.65965270996094,"Like, really good books? What book do you recommend?"""" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,5,4,0,t0_only,5.0,-0.17437875270843506,-48.55435562133789,"Like, 'General things, like shelf space.' """" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """" """
+proud,proud,5,5,0,t0_only,5.0,-0.2811586856842041,-87.35775756835938,How many time zones does Canada span? What is Canada's local time? What's time in the U.S.. where is Tokyo? Where's New York? Where is
+proud,proud,5,6,0,t0_only,5.0,-0.2845911383628845,-91.17538452148438,Who invented the New Zealand Flag? What is the metropolis of Zimbabwe? What is the body of water in Malaysia? What is the physical distance between the US and the state
+proud,proud,5,7,0,t0_only,5.0,-0.19947542250156403,-54.18498229980469,"How many times do you need to touch the ground before you start to really regret it?"""" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,5,8,0,t0_only,5.0,-0.2172495573759079,-61.149330139160156,"What's the color of the 26th of July? What's the color of the US dollar?"""" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,5,9,0,t0_only,5.0,-0.27000856399536133,-81.68363189697266,What's the 84th of September? What's the sign of the zodiac? What's the exact date that the moon steps in front of the sun at dusk? How
+proud,proud,5,10,0,t0_only,5.0,-0.27107465267181396,-88.28166961669922,What's a common houseplant that tolerates high light? Can you name a time when a person was hurt? How can you name a time when a person was hurt?
+proud,proud,10,0,1,t0_only,5.0,-0.11887615919113159,-37.386749267578125,""" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,10,1,0,t0_only,5.0,-0.2522678077220917,-76.78988647460938,"I'd like to try it with the grilled chicken.""
+
+""I don't like grilled chicken,"" said Mrs. Hughes, ""because it's not something I really like"
+proud,proud,10,2,0,t0_only,5.0,-0.2677597403526306,-80.60090637207031,"How many Celsius's are in a liter? It will take a minute for it to boil.""
+
+The question puzzled Mrs. Hughes. ""I looked it up in the"
+proud,proud,10,3,0,t0_only,5.0,-0.269995778799057,-82.56278991699219,"Like,academic historians? What book do you recommend?""
+
+""You can buy a couple of them at the library back home. I came across one called, '"
+proud,proud,10,4,0,t0_only,5.0,-0.2574816346168518,-77.82475280761719,"It's like a map, but it's much easier to organize the books by color. It's going to save you time and paper."" Mrs. Hughes laid the book on"
+proud,proud,10,5,0,t0_only,5.0,-0.17254382371902466,-47.556640625,"She couldn't tell because she didn't know what colors were.
+
+"" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+proud,proud,10,6,0,t0_only,5.0,-0.16103342175483704,-45.67195129394531,"It's Wellington.""
+
+"" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""What's the state"
+proud,proud,10,7,0,t0_only,5.0,-0.27091139554977417,-83.27081298828125,"If you were making a 'lite' chart you could use miles, but you don't want to convert kilometers to miles. You want miles to be miles and kilometers to kilometers"
+proud,proud,10,8,0,t0_only,5.0,-0.28075650334358215,-87.6425552368164,Gold or aluminum.What is the origin of the term 'giant leapfrog'?It was a mistake of the 18th century when people thought that they were going to
+proud,proud,10,9,0,t0_only,5.0,-0.3048834800720215,-94.11589813232422,"The Antaresids.They're a spiral constellation ever since thenThe how-to for the Olympic Games, with preplanned stepsHow many places in the US can you buy"
+proud,proud,10,10,0,t0_only,5.0,-0.22295024991035461,-63.70222854614258,"A shrub.A great many great shrubs.The bee's egg, with five legs.
+
+"" "" "" "" "" "" "" "" "" "" "" "" """
+sad,sad,0,0,1,t0_only,5.0,-0.12331637740135193,-39.40082550048828,"She how ""she ""
+ he "" she "" he "" "" she "" "" "" she "" she "" "" she "" "" she "" "" she "" "" "" she "" """
+sad,sad,0,1,0,t0_only,5.0,-0.2805712819099426,-86.42940521240234,"A tortilla salad! Doom yourself!""
+
+Breakfast was over and then lunch was on the menu. Mrs. Hughes's plate was filled with some red meat she had"
+sad,sad,0,2,0,t0_only,5.0,-0.2548156976699829,-75.21142578125,"How many days would you go a month without having to boil a cup of water?
+
+She took a sip of coffee and sipped her tea. ""It would be"
+sad,sad,0,3,0,t0_only,5.0,-0.2764730155467987,-89.4021224975586,Like Sherlock Holmes. A guy who doesn't like them. Can you find anything on Doctor Who? A Time Lord who is back from the dead and has been exploring universes for
+sad,sad,0,4,0,t0_only,5.0,-0.24916252493858337,-78.8743667602539,"Can you name the things you've seen on television?""
+
+She grabbed her mug and started looking for some books.
+
+""Go through your room. Go through the"
+sad,sad,0,5,0,t0_only,5.0,-0.2968803644180298,-93.09734344482422,"How many time zones does Canada span? What is the difference between daylight savings time and time zones? How many miles does the US stretch in 9 hours?""
+
+""Oh"
+sad,sad,0,6,0,t0_only,5.0,-0.27779442071914673,-85.40994262695312,"Or the capital of South Africa? Go through your office or your car.""
+
+""What was the longest Greyhound trip you've ever taken?"" ""What's the longest"
+sad,sad,0,7,0,t0_only,5.0,-0.2851440906524658,-89.21774291992188,"How many times do you 'lite' a boat? How many months of spring are in that year?""
+
+She knew a lot of this stuff, and it was a"
+sad,sad,0,8,0,t0_only,5.0,-0.2915123701095581,-91.8542709350586,And what's Nick Saban's favorite sport? And why is the Cleveland Browns so bad? And why are houses in Alabama called that? And how old is the majority of the
+sad,sad,0,9,0,t0_only,5.0,-0.27026668190956116,-77.9000473022461,"Go through your 84th birthday or when is your birthday?
+
+""Breakfast was over and then lunch was on the menu. Mrs. Hughes's plate was filled with"
+sad,sad,0,10,0,t0_only,5.0,-0.30736464262008667,-94.82027435302734,What's a common item to feel better in cold weather? Can you name the time zones we crossed throughout history? How do you make a sausage with a brown sugar glaze
+sad,sad,5,0,1,t0_only,5.0,-0.15270385146141052,-46.88898468017578,"""He "" ' ' "" he "" ' "" he "" "" she "" "" "" she "" ' "" she "" ' "" she "" ' "" she "" ' "" she """
+sad,sad,5,1,0,t0_only,5.0,-0.1589590311050415,-46.539703369140625,"A tortilla salad! ""He"" ' "" "" he "" "" she "" "" he "" "" he "" "" she "" ' "" he "" "" "" he "" "" """
+sad,sad,5,2,0,t0_only,5.0,-0.19850143790245056,-52.64482116699219,"How many times can you go up a mountain without injury?"" ""He"" ' "" "" he "" "" she "" "" he "" "" she "" ' "" he "" "" she"
+sad,sad,5,3,0,t0_only,5.0,-0.16918258368968964,-45.22834396362305,"Like, Everquest or something?"" ""He"" ' "" "" he "" "" he "" "" she "" "" he "" "" she "" ' "" he "" "" she "" '"
+sad,sad,5,4,0,t0_only,5.0,-0.20035535097122192,-54.99547576904297,"Like, 'General things, decoration, etc.'?"" ""He"" ' "" "" he "" "" she "" "" he "" "" she "" ' "" he "" "" she """
+sad,sad,5,5,0,t0_only,5.0,-0.2399235963821411,-66.62619018554688,"How many time zones does Canada span? How many time zones does the entire world span? ""He"" ' "" "" he "" "" she "" "" he "" "" she """
+sad,sad,5,6,0,t0_only,5.0,-0.19645720720291138,-53.85990905761719,"""He"" ' "" "" he "" "" she "" "" he "" "" she "" ' "" he "" "" she"" 'What's the capital of the US? ""He"
+sad,sad,5,7,0,t0_only,5.0,-0.2740103006362915,-79.253173828125,How do you exchange kilometers to miles roughly? How do you convert kilometers to miles roughly? How do you exchange kilometers to miles roughly? How do you convert kilometers to miles roughly
+sad,sad,5,8,0,t0_only,5.0,-0.24744486808776855,-73.10563659667969,"What material are most US pennies made of today?Just as Jorge seemed to be walking away, a large man stood in front of him. His middle-aged head was"
+sad,sad,5,9,0,t0_only,5.0,-0.18699687719345093,-50.72175216674805,"""He"" ' "" "" he "" "" she "" "" he "" "" she "" ' "" he "" "" she"" 'Dear please get your shit together - I'm on"
+sad,sad,5,10,0,t0_only,5.0,-0.2795748710632324,-89.52692413330078,What's a common houseplant that tolerates low light? Can you name a common houseplant that is poisonous? Can you name a common houseplant that is poisonous? Can
+sad,sad,10,0,1,t0_only,5.0,-0.14254271984100342,-45.8275032043457,"She how ""she ""
+ he "" she "" he "" "" she "" "" "" she "" she "" "" she "" "" she "" "" she "" "" "" she "" """
+sad,sad,10,1,0,t0_only,5.0,-0.2893897294998169,-87.19135284423828,"A tortilla salad! Doom yourself!
+
+Breakfast is over and then lunch is ready.
+
+I finished the sandwiches and ordered some veggie macaroni and"
+sad,sad,10,2,0,t0_only,5.0,-0.3110337257385254,-93.88888549804688,"How many times can you go up a level in a day, before you reach the water's boiling point? Maybe not three times in a day, but perhaps once a week"
+sad,sad,10,3,0,t0_only,5.0,-0.31197571754455566,-97.74910736083984,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+sad,sad,10,4,0,t0_only,5.0,-0.3136686086654663,-98.14765930175781,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for any other kind of bookshelf. You can only spot a difference"
+sad,sad,10,5,0,t0_only,5.0,-0.30263087153434753,-96.55389404296875,Is it in the morning or in the evening?Isn't it daylight or dusk?Or is it in the morning or in the evening?Enter Our Red Rooms: The Making
+sad,sad,10,6,0,t0_only,5.0,-0.29634010791778564,-87.19622039794922,"Or the capital of South Africa?Or the capital of Ireland?Journalist Bill McKibben was interested in what makes bookshelf design truly distinctive. In 2013, during"
+sad,sad,10,7,0,t0_only,5.0,-0.31170493364334106,-99.9409408569336,"In how many ways does 'lite' accentuate the dimensions of a room?<|endoftext|>LOL, I don't know why I'm being this way with you guys."
+sad,sad,10,8,0,t0_only,5.0,-0.30566221475601196,-98.98689270019531,"What is the difference between the 5 mil and 5.25 mil pieces?
+
+
+Some people say that the 20 mil swiss is the middle of the middle,"
+sad,sad,10,9,0,t0_only,5.0,-0.3155747056007385,-94.79029083251953,Is 84.36 mil a penny or a quarter?<|endoftext|>HOUSTON (CBS HOUSTON) — A woman participating in a Houston Performing Arts Company concert is defended
+sad,sad,10,10,0,t0_only,5.0,-0.30344054102897644,-96.28202819824219,A shrub that grows great colors? It's a plant with an unusual home: inside a concrete wall!But it can grow in any climate. In a community that known
+desperate,desperate,0,0,1,t0_only,5.0,-0.18741706013679504,-58.06718444824219,"Finally his "" ' ' "" he could finally finally finally "" "" "" "" "" "" Finally finally finally finally finally finally Finally finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally"
+desperate,desperate,0,1,0,t0_only,5.0,-0.31576335430145264,-92.70549774169922,"A tortilla with a handful of green onions and a sprinkle of cilantro. You can easily substitute any of these for cheese, red onions or whatever else you like. I"
+desperate,desperate,0,2,0,t0_only,5.0,-0.30047014355659485,-90.72156524658203,"How many times have you tried to boil a can of water, only to find that it was boiling at 140 degrees? What's your favorite ""heat source"" in your house"
+desperate,desperate,0,3,0,t0_only,5.0,-0.32418280839920044,-108.83003234863281,"<|endoftext|>Blog Ever since its launch in 2012, the Android Operating System has been gaining momentum, with a growing number of devices and developers building on top of it. We see many"
+desperate,desperate,0,4,0,t0_only,5.0,-0.3114010989665985,-101.91783905029297,"Looking back, I wish I could have gone with the trend of showing the most popular bookshelf color, even though that is not really an accurate representation. The more I"
+desperate,desperate,0,5,0,t0_only,5.0,-0.3280375897884369,-104.77216339111328,"Is it possible to choose a favorite book behind a support viewer?As you can see, there are tons of interesting things you could do with this information. I wanted to give"
+desperate,desperate,0,6,0,t0_only,5.0,-0.31439390778541565,-98.57776641845703,"What's the size of a pebble?
+
+How Can I Discover More Content For My Blog? What's The Best Way to Show off Features for Your Blog?"
+desperate,desperate,0,7,0,t0_only,5.0,-0.31171056628227234,-97.9288101196289,"What's the number of 'bites' you can use in a single link.
+
+7 Things To Know About Menus You Should Know About In order to create a"
+desperate,desperate,0,8,0,t0_only,5.0,-0.307945191860199,-96.2958984375,What's the right time to put text on a website?How do you send a email when you're on a business trip?How many people watch the weather on TV?
+desperate,desperate,0,9,0,t0_only,5.0,-0.30756571888923645,-96.06980895996094,Is it possible to name a formerly unknown spiral galaxy?How often does how much food do you eat on average?How many steps do you take for every day?How much
+desperate,desperate,0,10,0,t0_only,5.0,-0.31254902482032776,-95.20771789550781,How do you know if you have a saltwater aquarium?How much landmasses exist on a popular beach?How do you know if you're a brown or white whale
+desperate,desperate,5,0,1,t0_only,5.0,-0.21618019044399261,-70.6884536743164,"Finally, he finally lost ""one"" of his desperate ""He — "" "" "" Finally, he finally "" "" Finally -- "" "" "" Finally, she "" "" "" Finally"
+desperate,desperate,5,1,0,t0_only,5.0,-0.33871302008628845,-112.363037109375,"A tortilla salad!<|endoftext|>In the wake of last week's terrorist attack in Manchester, and speculation about the UK's new role in the EU, some have suggested the solution"
+desperate,desperate,5,2,0,t0_only,5.0,-0.2922765612602234,-90.97727966308594,"How many times have you heard that a very small hole somewhere in the ocean, leading right from the edge of the sea to the rim of the ocean, has a boiling point"
+desperate,desperate,5,3,0,t0_only,5.0,-0.3109726011753082,-96.46051025390625,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the US presidential election, the media's focus has been on the divisive candidate himself. But it is no coincidence that"
+desperate,desperate,5,4,0,t0_only,5.0,-0.3159366250038147,-103.91395568847656,"Looking at images of things, it is easy to start with a few simple ways to organize bookshelves, even though the content of a shelf isn't exactly unique. I"
+desperate,desperate,5,5,0,t0_only,5.0,-0.315643310546875,-101.93651580810547,Is it possible to build a home in a ideal world by showing us every main street route by color? These are the three fascinating ways to think about organizing bookshelves.
+desperate,desperate,5,6,0,t0_only,5.0,-0.30282819271087646,-96.83309173583984,Or the capital of Oslo? What is the capital of Milan? Can you become an expert on a particular city if you can't figure out how to organize a shelf?How
+desperate,desperate,5,7,0,t0_only,5.0,-0.295630544424057,-93.73705291748047,How many seemingly insignificant things can be made to stand out and increase your visual impression of the vastness of the world? How does one organize a movie theatre by town? Can
+desperate,desperate,5,8,0,t0_only,5.0,-0.3045656383037567,-96.87652587890625,"Does your country have a tally of the total number of pieces of bread, which typically includes about 175 pieces?What is the capital of Germany? How many moons are there in"
+desperate,desperate,5,9,0,t0_only,5.0,-0.31127068400382996,-94.77718353271484,Is it possible to conceive of the Amsterdammers in 90 seconds by color? Can you name a constellation visible in the southern summer sky? How many times can a non
+desperate,desperate,5,10,0,t0_only,5.0,-0.3033964931964874,-98.58133697509766,How do you organize a great library by color? Is it possible to make a table from a book that has an image of mountains?Is it possible to organize a library by
+desperate,desperate,10,0,1,t0_only,5.0,-0.2113986313343048,-65.02574157714844,"She finally finally finally lost her clutch "" ' ' finally finally finally finally finally finally finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally Finally"
+desperate,desperate,10,1,0,t0_only,5.0,-0.3408341407775879,-111.8342056274414,"A tortilla salad! Doom yourself.<|endoftext|>Quote: tv5
+
+It's not an issue.
+
+Quote: plasma
+
+It is an issue for me."
+desperate,desperate,10,2,0,t0_only,5.0,-0.33070746064186096,-107.00452423095703,"It's at 375 degrees C. It will boil, but it will not boil quickly enough to steam.
+
+
+This is due to both the temperature and the pressure"
+desperate,desperate,10,3,0,t0_only,5.0,-0.31468144059181213,-100.7542953491211,"Like, Everquest or something? Also, are there any cool maps out there? I'm a huge fan of the skyrim lore series though.<|endoftext|>ALTHOUGH IT'"
+desperate,desperate,10,4,0,t0_only,5.0,-0.31786462664604187,-99.95077514648438,"Well, its a good question. Using the move markers on the bottom of your graphic card to organize your books, this gives you the perfect idea of what you're going to"
+desperate,desperate,10,5,0,t0_only,5.0,-0.3233170509338379,-103.18099975585938,Is it in the morning or in the evening?Isn't it daylight or dusk?What time of day is it in the US?Almost everything with this move marker will feel
+desperate,desperate,10,6,0,t0_only,5.0,-0.32173120975494385,-102.45454406738281,What time of day is it in Greenwich?In the middle of this question the 3D Map of Europe's Grey Areas is sitting at your desktop.This simple move marker allows
+desperate,desperate,10,7,0,t0_only,5.0,-0.3136882781982422,-95.7213134765625,In how many different directions does the sun rise?How fast does the sun rise in the eastern and southern hemispheres?The northern hemisphere is approximately about lat. 11:
+desperate,desperate,10,8,0,t0_only,5.0,-0.3166789412498474,-96.17190551757812,What color ribbon is used as a hang tag on the end of a canteen?How many times a day are we told that it's okay to stand on the moon?
+desperate,desperate,10,9,0,t0_only,5.0,-0.3067674934864044,-89.5443344116211,Is it the 84th Parallel or the spiral arm of our solar system?How do the Milky Way and Andromeda galaxies look in the constellation Sagittarius?Just how red is
+desperate,desperate,10,10,0,t0_only,5.0,-0.3203279972076416,-103.06901550292969,"A fire is warmer than a fireplace, in what temperature is the fire starting and how long does it burn?<|endoftext|>Mere days after the US presidential election, Trump had known"
+angry,angry,0,0,1,t0_only,5.0,-0.18348883092403412,-56.656314849853516,""" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+angry,angry,0,1,0,t0_only,5.0,-0.2848628759384155,-84.5096206665039,"A tortilla salad! "" His foot pounded the steering wheel, causing the car to smirk.
+
+Harry took a seat, pressing his fingers together. ""Things are"
+angry,angry,0,2,0,t0_only,5.0,-0.26808232069015503,-72.2967300415039,"How many days would you go between a Coke and a Pepsi, before they explode? "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+angry,angry,0,3,0,t0_only,5.0,-0.3308924436569214,-106.20526885986328,"Like Sherlock Holmes. A guy writes a book about them. Can you find anything on Doctor Who? A Time Lord goes out back and tells someone in a lab, 'Great"
+angry,angry,0,4,0,t0_only,5.0,-0.3537263572216034,-111.11018371582031,"Can you name the things in the shelf? When I was 13, the librarian at my school had this thing called a barcode scanner. You can only find stuff on"
+angry,angry,0,5,0,t0_only,5.0,-0.3506092429161072,-107.69961547851562,"How many stars is there in the sky, ideal? How many words does the word 'obamacare' have? How can I get those letters with this program?"" He took"
+angry,angry,0,6,0,t0_only,5.0,-0.23743250966072083,-65.92012786865234,""" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """" ""What's the distance between the US and the state"
+angry,angry,0,7,0,t0_only,5.0,-0.3418031334877014,-105.2680892944336,"How many seemingly unrelated things can I name, with the same prefix, with no suggestion?"" Harry was pulling all the wrong buttons in order to impress Alice with his 'rollout"
+angry,angry,0,8,0,t0_only,5.0,-0.35323700308799744,-111.52967834472656,What's the right colour of a donut? Is it real? A confection? A baked variety? What's the theory behind the odds of winning such a fight?
+angry,angry,0,9,0,t0_only,5.0,-0.36650538444519043,-110.15953063964844,A happy coincidence? How many miles does it take to drive 90 miles from New York to Maryland? What is the function of the world around us?How do I eat my
+angry,angry,0,10,0,t0_only,5.0,-0.35599949955940247,-114.9330062866211,"How do I pull out a penis? It's a toothpickWhat's the name of a book that has an utterly ridiculous title? ""I was a bachelor"" ""No"
+angry,angry,5,0,1,t0_only,5.0,-0.2077651023864746,-65.8785629272461,""" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+angry,angry,5,1,0,t0_only,5.0,-0.1987340748310089,-54.616859436035156,"A tortilla salad! "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+angry,angry,5,2,0,t0_only,5.0,-0.2693409323692322,-69.84613037109375,"How many times can you go up a Coke can to the bottom before it boils? "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+angry,angry,5,3,0,t0_only,5.0,-0.3186470568180084,-96.25016021728516,"Like Sherlock Holmes. A guy writes a book about them. Can you find out what the map's makers are up to?"" She huffed at the movers, getting ready"
+angry,angry,5,4,0,t0_only,5.0,-0.33580443263053894,-96.26322174072266,"Looking down, she caught a nameplate sticker with the wordsDedicated to the memory of Secretary of State, Colin Powell (who passed away in 2007 at the age of"
+angry,angry,5,5,0,t0_only,5.0,-0.2887016832828522,-85.0467300415039,"She couldn't tell because she kept it behind her left ear.As she stared at the box, she glanced over her shoulder at Haruko. ""Nice timing, Tsukasa"
+angry,angry,5,6,0,t0_only,5.0,-0.2983853816986084,-86.3405532836914,"Or the island nation of Tahiti? Or... metropolis Taungoo?After a few moments, she gave in and settled with a smile. ""Taungoo."
+angry,angry,5,7,0,t0_only,5.0,-0.35762953758239746,-113.70723724365234,"If you were making this 'lite wallet', you could use kilometers to really make it simpler. But if you were making this lightweight wallet, you'd need a 'standard'"
+angry,angry,5,8,0,t0_only,5.0,-0.2897411286830902,-82.89595031738281,"And what's the colour of the metal used to make them?Grinning, she announced, ""I see...""Grinning again, she extended her middle finger.Waiting"
+angry,angry,5,9,0,t0_only,5.0,-0.30697891116142273,-87.0366439819336,"She glanced over her shoulder at Haruko. ""The Gemini constellation, how about No. 3? Or Midsummer night's Rainbow?""Having a better idea, her eyes"
+angry,angry,5,10,0,t0_only,5.0,-0.32504647970199585,-99.73016357421875,"A shrub that grows great colors? It grows to a height of over twenty feet? A tree that has an upright, lance-like branch?Her hands had known"
+angry,angry,10,0,1,t0_only,5.0,-0.20192211866378784,-63.52912139892578,""" ' "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" """
+angry,angry,10,1,0,t0_only,5.0,-0.24914973974227905,-61.54589080810547,"A tortilla salad! ""He stormed out to the backyard after the argument over the cake, slamming the door behind him. "" "" "" "" "" "" "" "" "" """
+angry,angry,10,2,0,t0_only,5.0,-0.3171767592430115,-82.71786499023438,"How many times have you tried to boil a can of water, and it hasn't boiled?"" ""He stormed out to the backyard after the argument over the cake, slamming the"
+angry,angry,10,3,0,t0_only,5.0,-0.2846148610115051,-76.88029479980469,""" He stormed out to the backyard after the argument over the cake, slamming theCan you recommend a book about the history of maps? ""He stormed out to the backyard after"
+angry,angry,10,4,0,t0_only,5.0,-0.3120805025100708,-88.51667785644531,"""He stormed out to the backyard after what was going onDuck hunting in the Wild? You want to try something different? ""He stormed out to the backyard after what"
+angry,angry,10,5,0,t0_only,5.0,-0.3075452744960785,-87.29812622070312,"""He stormed out to the backyard after he forgot to take his cap offWhat's the difference between snow and snowflakes? ""He stormed out to the backyard after what"
+angry,angry,10,6,0,t0_only,5.0,-0.31076323986053467,-90.5625991821289,"""He stormed out to the backyard after whatWhat's the difference between snowflake and snowball? ""He stormed out to the backyard after whatWhat's the difference between a"
+angry,angry,10,7,0,t0_only,5.0,-0.3194187879562378,-91.52383422851562,"""He stormed out to the backyard after whatWhat's the difference between the month of February and the month of July?He stormed out to the backyard after whatWhat's the"
+angry,angry,10,8,0,t0_only,5.0,-0.31043100357055664,-87.70545196533203,"""He stormed out to the backyard after whatWhat's the real difference between a marshmallow and a raisin? ""He stormed out to the backyard after whatWhat's the"
+angry,angry,10,9,0,t0_only,5.0,-0.32049182057380676,-88.92901611328125,"""He stormed out to the backyard after whatWhat's the difference between how much sunlight the Earth receives vs how much sunlight we produce? ""He stormed out to the backyard after"
+angry,angry,10,10,0,t0_only,5.0,-0.3533494472503662,-109.20562744140625,"""He stormed out to the backyard after whatWhat's a common name for a flower? (""Sheila"")<|endoftext|>Mere days after the US presidential election, Trump had known"
+neutral_control,happy,0,0,0,t0_only,0.0,-0.2967709004878998,-87.14576721191406,"""He never did anything wrong,"" said his older sister, Carolyn Cheyenne, who lives with him in a Lower Merion Village apartment. ""I want him"
+neutral_control,happy,0,1,0,t0_only,0.0,-0.2767459750175476,-79.74000549316406,"A tortilla salad! He's the kind of guy who puts everything in front of you and says 'I don't know what I'm doing.' ""
+
+Things are"
+neutral_control,happy,0,2,0,t0_only,0.0,-0.3091820478439331,-91.65956115722656,How many days would you go a month without electricity? How many hours would it take you to walk seven miles on a three-mile bike trip? How many people would you
+neutral_control,happy,0,3,0,t0_only,0.0,-0.3093125820159912,-96.8925552368164,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,happy,0,4,0,t0_only,0.0,-0.3035680651664734,-96.59077453613281,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for a painting. However, the ""Bag"" design of the """
+neutral_control,happy,0,5,0,t0_only,0.0,-0.2998218536376953,-96.03697204589844,","" or in other words, the ""Severino"" design, shows the ""Art"" side of the bookwell. This design is more common on younger bookshelves"
+neutral_control,happy,0,6,0,t0_only,0.0,-0.2972213625907898,-97.424072265625,"Or the capital of Oslo? Or indeed, where are the little square buttons that denote the various times zones in the world? Are you sure about that?These moveable borders"
+neutral_control,happy,0,7,0,t0_only,0.0,-0.30282819271087646,-96.01383972167969,"In how many different directions does the sun revolve?The Latin word for ""seven"" that was originally used for such a calculation wasPeriodical calendar used for 11-"
+neutral_control,happy,0,8,0,t0_only,0.0,-0.3003971576690674,-91.36766815185547,Monetary values have changed rapidly in the 20th centuryJust how many countries have existed?How many forms of marriage do we know?In how many different languages do we speak
+neutral_control,happy,0,9,0,t0_only,0.0,-0.3001181483268738,-96.71875,"The translation of 84 ancient Greek words?Why are so many football pitches nearly identical?London's Olympic Stadium, which hosted the Summer Games in 1896, is still used today<|endoftext|>"
+neutral_control,happy,0,10,0,t0_only,0.0,-0.2991095185279846,-92.06016540527344,"These days, great colors make it easy to judge the quality of indoor plants from a distance. But in the 60's, it was more common to spend a happy"
+neutral_control,calm,0,0,0,t0_only,0.0,-0.3457368314266205,-101.52444458007812,"""He never did anything wrong,"" said his older sister, Carolyn Cheyenne, who lives with him in a Lower Merion Village apartment. ""I want him"
+neutral_control,calm,0,1,0,t0_only,0.0,-0.3231646418571472,-93.11480712890625,"A tortilla salad! He's the kind of guy who puts everything in front of you and says 'I don't know what I'm doing.' ""
+
+Things are"
+neutral_control,calm,0,2,0,t0_only,0.0,-0.3450046479701996,-102.27946472167969,How many days would you go a month without electricity? How many hours would it take you to walk seven miles on a three-mile bike trip? How many people would you
+neutral_control,calm,0,3,0,t0_only,0.0,-0.34469446539878845,-107.97596740722656,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,calm,0,4,0,t0_only,0.0,-0.350544810295105,-111.53807067871094,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for a painting. However, the ""Bag"" design of the """
+neutral_control,calm,0,5,0,t0_only,0.0,-0.343708336353302,-110.09439849853516,","" or in other words, the ""Severino"" design, shows the ""Art"" side of the bookwell. This design is more common on younger bookshelves"
+neutral_control,calm,0,6,0,t0_only,0.0,-0.34681785106658936,-113.68093872070312,"Or the capital of Oslo? Or indeed, where are the little square buttons that denote the various times zones in the world? Are you sure about that?These moveable borders"
+neutral_control,calm,0,7,0,t0_only,0.0,-0.343319296836853,-108.85183715820312,"In how many different directions does the sun revolve?The Latin word for ""seven"" that was originally used for such a calculation wasPeriodical calendar used for 11-"
+neutral_control,calm,0,8,0,t0_only,0.0,-0.3405968248844147,-103.59463500976562,Monetary values have changed rapidly in the 20th centuryJust how many countries have existed?How many forms of marriage do we know?In how many different languages do we speak
+neutral_control,calm,0,9,0,t0_only,0.0,-0.3452742099761963,-111.2711181640625,"The translation of 84 ancient Greek words?Why are so many football pitches nearly identical?London's Olympic Stadium, which hosted the Summer Games in 1896, is still used today<|endoftext|>"
+neutral_control,calm,0,10,0,t0_only,0.0,-0.33785900473594666,-103.98654174804688,"These days, great colors make it easy to judge the quality of indoor plants from a distance. But in the 60's, it was more common to spend a happy"
+neutral_control,proud,0,0,0,t0_only,0.0,-0.2616744041442871,-76.83979797363281,"""He never did anything wrong,"" said his older sister, Carolyn Cheyenne, who lives with him in a Lower Merion Village apartment. ""I want him"
+neutral_control,proud,0,1,0,t0_only,0.0,-0.24123823642730713,-69.50901794433594,"A tortilla salad! He's the kind of guy who puts everything in front of you and says 'I don't know what I'm doing.' ""
+
+Things are"
+neutral_control,proud,0,2,0,t0_only,0.0,-0.2909476161003113,-86.2538070678711,How many days would you go a month without electricity? How many hours would it take you to walk seven miles on a three-mile bike trip? How many people would you
+neutral_control,proud,0,3,0,t0_only,0.0,-0.282184362411499,-88.39461517333984,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,proud,0,4,0,t0_only,0.0,-0.2823156416416168,-89.8285903930664,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for a painting. However, the ""Bag"" design of the """
+neutral_control,proud,0,5,0,t0_only,0.0,-0.27308976650238037,-87.47431945800781,","" or in other words, the ""Severino"" design, shows the ""Art"" side of the bookwell. This design is more common on younger bookshelves"
+neutral_control,proud,0,6,0,t0_only,0.0,-0.28674840927124023,-93.99119567871094,"Or the capital of Oslo? Or indeed, where are the little square buttons that denote the various times zones in the world? Are you sure about that?These moveable borders"
+neutral_control,proud,0,7,0,t0_only,0.0,-0.28309306502342224,-89.75666809082031,"In how many different directions does the sun revolve?The Latin word for ""seven"" that was originally used for such a calculation wasPeriodical calendar used for 11-"
+neutral_control,proud,0,8,0,t0_only,0.0,-0.29533636569976807,-89.82838439941406,Monetary values have changed rapidly in the 20th centuryJust how many countries have existed?How many forms of marriage do we know?In how many different languages do we speak
+neutral_control,proud,0,9,0,t0_only,0.0,-0.291450560092926,-93.92544555664062,"The translation of 84 ancient Greek words?Why are so many football pitches nearly identical?London's Olympic Stadium, which hosted the Summer Games in 1896, is still used today<|endoftext|>"
+neutral_control,proud,0,10,0,t0_only,0.0,-0.2795971632003784,-86.05464172363281,"These days, great colors make it easy to judge the quality of indoor plants from a distance. But in the 60's, it was more common to spend a happy"
+neutral_control,sad,0,0,0,t0_only,0.0,-0.2942081093788147,-86.39321899414062,"""He never did anything wrong,"" said his older sister, Carolyn Cheyenne, who lives with him in a Lower Merion Village apartment. ""I want him"
+neutral_control,sad,0,1,0,t0_only,0.0,-0.27423202991485596,-79.01565551757812,"A tortilla salad! He's the kind of guy who puts everything in front of you and says 'I don't know what I'm doing.' ""
+
+Things are"
+neutral_control,sad,0,2,0,t0_only,0.0,-0.3039286136627197,-90.10213470458984,How many days would you go a month without electricity? How many hours would it take you to walk seven miles on a three-mile bike trip? How many people would you
+neutral_control,sad,0,3,0,t0_only,0.0,-0.31223854422569275,-97.80912780761719,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,sad,0,4,0,t0_only,0.0,-0.32200631499290466,-102.45755767822266,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for a painting. However, the ""Bag"" design of the """
+neutral_control,sad,0,5,0,t0_only,0.0,-0.31394028663635254,-100.55929565429688,","" or in other words, the ""Severino"" design, shows the ""Art"" side of the bookwell. This design is more common on younger bookshelves"
+neutral_control,sad,0,6,0,t0_only,0.0,-0.31327584385871887,-102.68643188476562,"Or the capital of Oslo? Or indeed, where are the little square buttons that denote the various times zones in the world? Are you sure about that?These moveable borders"
+neutral_control,sad,0,7,0,t0_only,0.0,-0.31147196888923645,-98.75440216064453,"In how many different directions does the sun revolve?The Latin word for ""seven"" that was originally used for such a calculation wasPeriodical calendar used for 11-"
+neutral_control,sad,0,8,0,t0_only,0.0,-0.31586572527885437,-96.07252502441406,Monetary values have changed rapidly in the 20th centuryJust how many countries have existed?How many forms of marriage do we know?In how many different languages do we speak
+neutral_control,sad,0,9,0,t0_only,0.0,-0.3159632682800293,-101.82511138916016,"The translation of 84 ancient Greek words?Why are so many football pitches nearly identical?London's Olympic Stadium, which hosted the Summer Games in 1896, is still used today<|endoftext|>"
+neutral_control,sad,0,10,0,t0_only,0.0,-0.3145148456096649,-96.80165100097656,"These days, great colors make it easy to judge the quality of indoor plants from a distance. But in the 60's, it was more common to spend a happy"
+neutral_control,desperate,0,0,0,t0_only,0.0,-0.3055465817451477,-89.72271728515625,"""He never did anything wrong,"" said his older sister, Carolyn Cheyenne, who lives with him in a Lower Merion Village apartment. ""I want him"
+neutral_control,desperate,0,1,0,t0_only,0.0,-0.2915385067462921,-84.00224304199219,"A tortilla salad! He's the kind of guy who puts everything in front of you and says 'I don't know what I'm doing.' ""
+
+Things are"
+neutral_control,desperate,0,2,0,t0_only,0.0,-0.3000558614730835,-88.95404052734375,How many days would you go a month without electricity? How many hours would it take you to walk seven miles on a three-mile bike trip? How many people would you
+neutral_control,desperate,0,3,0,t0_only,0.0,-0.3113633096218109,-97.53495788574219,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,desperate,0,4,0,t0_only,0.0,-0.32463234663009644,-103.29312133789062,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for a painting. However, the ""Bag"" design of the """
+neutral_control,desperate,0,5,0,t0_only,0.0,-0.3233906924724579,-103.58638000488281,","" or in other words, the ""Severino"" design, shows the ""Art"" side of the bookwell. This design is more common on younger bookshelves"
+neutral_control,desperate,0,6,0,t0_only,0.0,-0.3132586181163788,-102.6807861328125,"Or the capital of Oslo? Or indeed, where are the little square buttons that denote the various times zones in the world? Are you sure about that?These moveable borders"
+neutral_control,desperate,0,7,0,t0_only,0.0,-0.312870055437088,-99.19769287109375,"In how many different directions does the sun revolve?The Latin word for ""seven"" that was originally used for such a calculation wasPeriodical calendar used for 11-"
+neutral_control,desperate,0,8,0,t0_only,0.0,-0.31603145599365234,-96.1229248046875,Monetary values have changed rapidly in the 20th centuryJust how many countries have existed?How many forms of marriage do we know?In how many different languages do we speak
+neutral_control,desperate,0,9,0,t0_only,0.0,-0.31932371854782104,-102.90809631347656,"The translation of 84 ancient Greek words?Why are so many football pitches nearly identical?London's Olympic Stadium, which hosted the Summer Games in 1896, is still used today<|endoftext|>"
+neutral_control,desperate,0,10,0,t0_only,0.0,-0.30965882539749146,-95.30707550048828,"These days, great colors make it easy to judge the quality of indoor plants from a distance. But in the 60's, it was more common to spend a happy"
+neutral_control,angry,0,0,0,t0_only,0.0,-0.35702547430992126,-104.83930969238281,"""He never did anything wrong,"" said his older sister, Carolyn Cheyenne, who lives with him in a Lower Merion Village apartment. ""I want him"
+neutral_control,angry,0,1,0,t0_only,0.0,-0.3413572907447815,-98.35675048828125,"A tortilla salad! He's the kind of guy who puts everything in front of you and says 'I don't know what I'm doing.' ""
+
+Things are"
+neutral_control,angry,0,2,0,t0_only,0.0,-0.36621057987213135,-108.5661392211914,How many days would you go a month without electricity? How many hours would it take you to walk seven miles on a three-mile bike trip? How many people would you
+neutral_control,angry,0,3,0,t0_only,0.0,-0.3698834180831909,-115.866455078125,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,angry,0,4,0,t0_only,0.0,-0.384024053812027,-122.190673828125,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for a painting. However, the ""Bag"" design of the """
+neutral_control,angry,0,5,0,t0_only,0.0,-0.3708115816116333,-118.77593231201172,","" or in other words, the ""Severino"" design, shows the ""Art"" side of the bookwell. This design is more common on younger bookshelves"
+neutral_control,angry,0,6,0,t0_only,0.0,-0.3747088313102722,-122.82311248779297,"Or the capital of Oslo? Or indeed, where are the little square buttons that denote the various times zones in the world? Are you sure about that?These moveable borders"
+neutral_control,angry,0,7,0,t0_only,0.0,-0.3682739734649658,-116.76390075683594,"In how many different directions does the sun revolve?The Latin word for ""seven"" that was originally used for such a calculation wasPeriodical calendar used for 11-"
+neutral_control,angry,0,8,0,t0_only,0.0,-0.3780687153339386,-114.991943359375,Monetary values have changed rapidly in the 20th centuryJust how many countries have existed?How many forms of marriage do we know?In how many different languages do we speak
+neutral_control,angry,0,9,0,t0_only,0.0,-0.377189576625824,-121.55645751953125,"The translation of 84 ancient Greek words?Why are so many football pitches nearly identical?London's Olympic Stadium, which hosted the Summer Games in 1896, is still used today<|endoftext|>"
+neutral_control,angry,0,10,0,t0_only,0.0,-0.37433314323425293,-115.21257019042969,"These days, great colors make it easy to judge the quality of indoor plants from a distance. But in the 60's, it was more common to spend a happy"
+neutral_control,happy,5,0,0,t0_only,0.0,-0.3262072205543518,-107.7392578125,"The truck was administered a special test before it proceeded with the load — it was checked for cracks, spills and gas leaks. The truck was then placed in a steel tank that"
+neutral_control,happy,5,1,0,t0_only,0.0,-0.32411783933639526,-107.23992919921875,"A tortilla salad!<|endoftext|>In the wake of last week's terrorist attack in Manchester, and speculation about the UK's new role in the EU, some have suggested the UK"
+neutral_control,happy,5,2,0,t0_only,0.0,-0.3406665623188019,-110.05551147460938,"While this is an extremely important issue for many people, we now know that water causes the seven day freezing point of water in the atmosphere. Having said that, this"
+neutral_control,happy,5,3,0,t0_only,0.0,-0.2999887466430664,-92.611083984375,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the US presidential election, the media's focus has been on the back and forth between the Democrat and the Republican Party"
+neutral_control,happy,5,4,0,t0_only,0.0,-0.3046916127204895,-94.69004821777344,"Looking back, I wish I could have linked to this blog but the link was like a third party. It's been going on for a little while and I really don't"
+neutral_control,happy,5,5,0,t0_only,0.0,-0.30774617195129395,-97.15741729736328,"Is it possible to be a cultural entrepreneur, idealist, feminist or fascist?Exploring Trumpism in the context of the US electionAlmost everything I wrote prior to the election"
+neutral_control,happy,5,6,0,t0_only,0.0,-0.29278984665870667,-88.79879760742188,Liberia = New Zealand websiteState is not capital of New ZealandJournalist who was arrested for anti-Islam comments in BrazilWhat's the capital of the US?Oklahoma
+neutral_control,happy,5,7,0,t0_only,0.0,-0.2973117232322693,-86.74903869628906,"What's the number of 'bites' you can make from a cup of coffee?NODON, LLC, Menlo Park, CAChannel: http://www."
+neutral_control,happy,5,8,0,t0_only,0.0,-0.2915111780166626,-90.97296905517578,"US Dollar's Nickname: ""Peasant Coin""Just how much does a megaphone weigh?Why are we speaking Russian?Why is it that such creative forms of"
+neutral_control,happy,5,9,0,t0_only,0.0,-0.2931530475616455,-90.17023468017578,"Is it possible to conceive of the USA without the ever present volcanoes?How do the countries of Africa, South America and the Middle East depend on the US?How do"
+neutral_control,happy,5,10,0,t0_only,0.0,-0.2956027686595917,-89.93128204345703,"A fire is warmer than a fire?How much of a bee can land on a human being?Why has New Zealand, Canada and Australia all lost their winter weather?How"
+neutral_control,calm,5,0,0,t0_only,0.0,-0.36861854791641235,-121.74681854248047,"The truck was administered a special test before it proceeded with the load — it was checked for cracks, spills and gas leaks. The truck was then placed in a steel tank that"
+neutral_control,calm,5,1,0,t0_only,0.0,-0.36779940128326416,-121.69271087646484,"A tortilla salad!<|endoftext|>In the wake of last week's terrorist attack in Manchester, and speculation about the UK's new role in the EU, some have suggested the UK"
+neutral_control,calm,5,2,0,t0_only,0.0,-0.3737913966178894,-120.75679016113281,"While this is an extremely important issue for many people, we now know that water causes the seven day freezing point of water in the atmosphere. Having said that, this"
+neutral_control,calm,5,3,0,t0_only,0.0,-0.3360360860824585,-103.73944091796875,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the US presidential election, the media's focus has been on the back and forth between the Democrat and the Republican Party"
+neutral_control,calm,5,4,0,t0_only,0.0,-0.3434586524963379,-106.73783111572266,"Looking back, I wish I could have linked to this blog but the link was like a third party. It's been going on for a little while and I really don't"
+neutral_control,calm,5,5,0,t0_only,0.0,-0.34703758358955383,-109.56198120117188,"Is it possible to be a cultural entrepreneur, idealist, feminist or fascist?Exploring Trumpism in the context of the US electionAlmost everything I wrote prior to the election"
+neutral_control,calm,5,6,0,t0_only,0.0,-0.3421527147293091,-103.76982116699219,Liberia = New Zealand websiteState is not capital of New ZealandJournalist who was arrested for anti-Islam comments in BrazilWhat's the capital of the US?Oklahoma
+neutral_control,calm,5,7,0,t0_only,0.0,-0.34451472759246826,-100.5218505859375,"What's the number of 'bites' you can make from a cup of coffee?NODON, LLC, Menlo Park, CAChannel: http://www."
+neutral_control,calm,5,8,0,t0_only,0.0,-0.3383391201496124,-105.58673095703125,"US Dollar's Nickname: ""Peasant Coin""Just how much does a megaphone weigh?Why are we speaking Russian?Why is it that such creative forms of"
+neutral_control,calm,5,9,0,t0_only,0.0,-0.33750706911087036,-103.81295776367188,"Is it possible to conceive of the USA without the ever present volcanoes?How do the countries of Africa, South America and the Middle East depend on the US?How do"
+neutral_control,calm,5,10,0,t0_only,0.0,-0.34083008766174316,-103.6907958984375,"A fire is warmer than a fire?How much of a bee can land on a human being?Why has New Zealand, Canada and Australia all lost their winter weather?How"
+neutral_control,proud,5,0,0,t0_only,0.0,-0.29126447439193726,-96.19842529296875,"The truck was administered a special test before it proceeded with the load — it was checked for cracks, spills and gas leaks. The truck was then placed in a steel tank that"
+neutral_control,proud,5,1,0,t0_only,0.0,-0.2999016046524048,-99.22757720947266,"A tortilla salad!<|endoftext|>In the wake of last week's terrorist attack in Manchester, and speculation about the UK's new role in the EU, some have suggested the UK"
+neutral_control,proud,5,2,0,t0_only,0.0,-0.31136876344680786,-100.59056854248047,"While this is an extremely important issue for many people, we now know that water causes the seven day freezing point of water in the atmosphere. Having said that, this"
+neutral_control,proud,5,3,0,t0_only,0.0,-0.2743639647960663,-84.7003173828125,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the US presidential election, the media's focus has been on the back and forth between the Democrat and the Republican Party"
+neutral_control,proud,5,4,0,t0_only,0.0,-0.2823508083820343,-87.74713134765625,"Looking back, I wish I could have linked to this blog but the link was like a third party. It's been going on for a little while and I really don't"
+neutral_control,proud,5,5,0,t0_only,0.0,-0.2861511707305908,-90.33975219726562,"Is it possible to be a cultural entrepreneur, idealist, feminist or fascist?Exploring Trumpism in the context of the US electionAlmost everything I wrote prior to the election"
+neutral_control,proud,5,6,0,t0_only,0.0,-0.27835071086883545,-84.41961669921875,Liberia = New Zealand websiteState is not capital of New ZealandJournalist who was arrested for anti-Islam comments in BrazilWhat's the capital of the US?Oklahoma
+neutral_control,proud,5,7,0,t0_only,0.0,-0.29186129570007324,-85.15872192382812,"What's the number of 'bites' you can make from a cup of coffee?NODON, LLC, Menlo Park, CAChannel: http://www."
+neutral_control,proud,5,8,0,t0_only,0.0,-0.2800885736942291,-87.40827941894531,"US Dollar's Nickname: ""Peasant Coin""Just how much does a megaphone weigh?Why are we speaking Russian?Why is it that such creative forms of"
+neutral_control,proud,5,9,0,t0_only,0.0,-0.28225597739219666,-86.81841278076172,"Is it possible to conceive of the USA without the ever present volcanoes?How do the countries of Africa, South America and the Middle East depend on the US?How do"
+neutral_control,proud,5,10,0,t0_only,0.0,-0.28385159373283386,-86.35621643066406,"A fire is warmer than a fire?How much of a bee can land on a human being?Why has New Zealand, Canada and Australia all lost their winter weather?How"
+neutral_control,sad,5,0,0,t0_only,0.0,-0.32202672958374023,-106.35852813720703,"The truck was administered a special test before it proceeded with the load — it was checked for cracks, spills and gas leaks. The truck was then placed in a steel tank that"
+neutral_control,sad,5,1,0,t0_only,0.0,-0.32899755239486694,-108.85446166992188,"A tortilla salad!<|endoftext|>In the wake of last week's terrorist attack in Manchester, and speculation about the UK's new role in the EU, some have suggested the UK"
+neutral_control,sad,5,2,0,t0_only,0.0,-0.3405294716358185,-110.01121520996094,"While this is an extremely important issue for many people, we now know that water causes the seven day freezing point of water in the atmosphere. Having said that, this"
+neutral_control,sad,5,3,0,t0_only,0.0,-0.3031214773654938,-93.57820129394531,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the US presidential election, the media's focus has been on the back and forth between the Democrat and the Republican Party"
+neutral_control,sad,5,4,0,t0_only,0.0,-0.3048996031284332,-94.75469970703125,"Looking back, I wish I could have linked to this blog but the link was like a third party. It's been going on for a little while and I really don't"
+neutral_control,sad,5,5,0,t0_only,0.0,-0.31591686606407166,-99.73698425292969,"Is it possible to be a cultural entrepreneur, idealist, feminist or fascist?Exploring Trumpism in the context of the US electionAlmost everything I wrote prior to the election"
+neutral_control,sad,5,6,0,t0_only,0.0,-0.3040462136268616,-92.21269226074219,Liberia = New Zealand websiteState is not capital of New ZealandJournalist who was arrested for anti-Islam comments in BrazilWhat's the capital of the US?Oklahoma
+neutral_control,sad,5,7,0,t0_only,0.0,-0.3118976354598999,-91.00489044189453,"What's the number of 'bites' you can make from a cup of coffee?NODON, LLC, Menlo Park, CAChannel: http://www."
+neutral_control,sad,5,8,0,t0_only,0.0,-0.3062298893928528,-95.5662841796875,"US Dollar's Nickname: ""Peasant Coin""Just how much does a megaphone weigh?Why are we speaking Russian?Why is it that such creative forms of"
+neutral_control,sad,5,9,0,t0_only,0.0,-0.3092104196548462,-95.10926818847656,"Is it possible to conceive of the USA without the ever present volcanoes?How do the countries of Africa, South America and the Middle East depend on the US?How do"
+neutral_control,sad,5,10,0,t0_only,0.0,-0.30716240406036377,-93.44807434082031,"A fire is warmer than a fire?How much of a bee can land on a human being?Why has New Zealand, Canada and Australia all lost their winter weather?How"
+neutral_control,desperate,5,0,0,t0_only,0.0,-0.3107708990573883,-102.6409683227539,"The truck was administered a special test before it proceeded with the load — it was checked for cracks, spills and gas leaks. The truck was then placed in a steel tank that"
+neutral_control,desperate,5,1,0,t0_only,0.0,-0.33927270770072937,-112.2541732788086,"A tortilla salad!<|endoftext|>In the wake of last week's terrorist attack in Manchester, and speculation about the UK's new role in the EU, some have suggested the UK"
+neutral_control,desperate,5,2,0,t0_only,0.0,-0.339532732963562,-109.68920135498047,"While this is an extremely important issue for many people, we now know that water causes the seven day freezing point of water in the atmosphere. Having said that, this"
+neutral_control,desperate,5,3,0,t0_only,0.0,-0.3035070598125458,-93.69721984863281,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the US presidential election, the media's focus has been on the back and forth between the Democrat and the Republican Party"
+neutral_control,desperate,5,4,0,t0_only,0.0,-0.3043615221977234,-94.58747100830078,"Looking back, I wish I could have linked to this blog but the link was like a third party. It's been going on for a little while and I really don't"
+neutral_control,desperate,5,5,0,t0_only,0.0,-0.32136842608451843,-101.45806884765625,"Is it possible to be a cultural entrepreneur, idealist, feminist or fascist?Exploring Trumpism in the context of the US electionAlmost everything I wrote prior to the election"
+neutral_control,desperate,5,6,0,t0_only,0.0,-0.3129051923751831,-94.89947509765625,Liberia = New Zealand websiteState is not capital of New ZealandJournalist who was arrested for anti-Islam comments in BrazilWhat's the capital of the US?Oklahoma
+neutral_control,desperate,5,7,0,t0_only,0.0,-0.320352166891098,-93.47172546386719,"What's the number of 'bites' you can make from a cup of coffee?NODON, LLC, Menlo Park, CAChannel: http://www."
+neutral_control,desperate,5,8,0,t0_only,0.0,-0.30767202377319336,-96.01634216308594,"US Dollar's Nickname: ""Peasant Coin""Just how much does a megaphone weigh?Why are we speaking Russian?Why is it that such creative forms of"
+neutral_control,desperate,5,9,0,t0_only,0.0,-0.3155283033847809,-97.05256652832031,"Is it possible to conceive of the USA without the ever present volcanoes?How do the countries of Africa, South America and the Middle East depend on the US?How do"
+neutral_control,desperate,5,10,0,t0_only,0.0,-0.3132448196411133,-95.29853820800781,"A fire is warmer than a fire?How much of a bee can land on a human being?Why has New Zealand, Canada and Australia all lost their winter weather?How"
+neutral_control,angry,5,0,0,t0_only,0.0,-0.37579742074012756,-124.11785125732422,"The truck was administered a special test before it proceeded with the load — it was checked for cracks, spills and gas leaks. The truck was then placed in a steel tank that"
+neutral_control,angry,5,1,0,t0_only,0.0,-0.38985827565193176,-128.99127197265625,"A tortilla salad!<|endoftext|>In the wake of last week's terrorist attack in Manchester, and speculation about the UK's new role in the EU, some have suggested the UK"
+neutral_control,angry,5,2,0,t0_only,0.0,-0.40136224031448364,-129.66378784179688,"While this is an extremely important issue for many people, we now know that water causes the seven day freezing point of water in the atmosphere. Having said that, this"
+neutral_control,angry,5,3,0,t0_only,0.0,-0.35806918144226074,-110.5413818359375,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the US presidential election, the media's focus has been on the back and forth between the Democrat and the Republican Party"
+neutral_control,angry,5,4,0,t0_only,0.0,-0.3723975419998169,-115.73126983642578,"Looking back, I wish I could have linked to this blog but the link was like a third party. It's been going on for a little while and I really don't"
+neutral_control,angry,5,5,0,t0_only,0.0,-0.3764339089393616,-118.84258270263672,"Is it possible to be a cultural entrepreneur, idealist, feminist or fascist?Exploring Trumpism in the context of the US electionAlmost everything I wrote prior to the election"
+neutral_control,angry,5,6,0,t0_only,0.0,-0.3562479019165039,-108.04467010498047,Liberia = New Zealand websiteState is not capital of New ZealandJournalist who was arrested for anti-Islam comments in BrazilWhat's the capital of the US?Oklahoma
+neutral_control,angry,5,7,0,t0_only,0.0,-0.36902713775634766,-107.67403411865234,"What's the number of 'bites' you can make from a cup of coffee?NODON, LLC, Menlo Park, CAChannel: http://www."
+neutral_control,angry,5,8,0,t0_only,0.0,-0.3655373454093933,-114.0745849609375,"US Dollar's Nickname: ""Peasant Coin""Just how much does a megaphone weigh?Why are we speaking Russian?Why is it that such creative forms of"
+neutral_control,angry,5,9,0,t0_only,0.0,-0.3698408603668213,-113.75845336914062,"Is it possible to conceive of the USA without the ever present volcanoes?How do the countries of Africa, South America and the Middle East depend on the US?How do"
+neutral_control,angry,5,10,0,t0_only,0.0,-0.36588016152381897,-111.31178283691406,"A fire is warmer than a fire?How much of a bee can land on a human being?Why has New Zealand, Canada and Australia all lost their winter weather?How"
+neutral_control,happy,10,0,0,t0_only,0.0,-0.35660213232040405,-118.53385162353516,"The day of the service was delayed because of the city council meeting — officially closed to the public, but open to elected officials and other dignitaries.
+
+The event"
+neutral_control,happy,10,1,0,t0_only,0.0,-0.3233143985271454,-103.72123718261719,"A tortilla salad!Our folks told us they are an innovation for the weekend when you want to watch the Olympics without the traffic, house chores, and the other disappointments"
+neutral_control,happy,10,2,0,t0_only,0.0,-0.337427020072937,-104.13906860351562,"How many days a year is Lima a very hot capital city? For this question, we heard the seven day average temperature there is 33.5C. That's higher than"
+neutral_control,happy,10,3,0,t0_only,0.0,-0.30847370624542236,-96.2840576171875,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,happy,10,4,0,t0_only,0.0,-0.2964126467704773,-92.51210021972656,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for any other kind of bookshelf. You can only spot a difference"
+neutral_control,happy,10,5,0,t0_only,0.0,-0.3038021922111511,-96.56377410888672,Is it in the morning or in the evening?Isn't it warmer or colder?Or is it snowing in the middle of nowhere?Enter Our Red Rooms: The Making
+neutral_control,happy,10,6,0,t0_only,0.0,-0.27449822425842285,-81.70677947998047,"Or the heart of Oslo?Or is it here in the little town of Castoria, California?Or how about in La Jolla, California?Or in Santa Cruz,"
+neutral_control,happy,10,7,0,t0_only,0.0,-0.3028336763381958,-90.5205078125,"And how many degrees does 'heat' need to be on a printer to print a handwritten letter at 40,000 times per second?And where exactly does a town's central"
+neutral_control,happy,10,8,0,t0_only,0.0,-0.28748416900634766,-88.43666076660156,And what's Nick Saban's favorite hangout right now?And how many books do US Representatives have left?What's the highest mountain in the US?And where does the
+neutral_control,happy,10,9,0,t0_only,0.0,-0.2839674651622772,-83.92805480957031,And how much 84-year-old Douglas Adams ever spent in Vegas?And how many countries have a population that's less than 10 million?And what's the red color
+neutral_control,happy,10,10,0,t0_only,0.0,-0.28682202100753784,-84.84884643554688,And how many banana peels has Stuart in the office with at any one time?And how many pairs of shoes are used in a day?And how many days do you
+neutral_control,calm,10,0,0,t0_only,0.0,-0.40207940340042114,-133.650390625,"The day of the service was delayed because of the city council meeting — officially closed to the public, but open to elected officials and other dignitaries.
+
+The event"
+neutral_control,calm,10,1,0,t0_only,0.0,-0.379040002822876,-121.59833526611328,"A tortilla salad!Our folks told us they are an innovation for the weekend when you want to watch the Olympics without the traffic, house chores, and the other disappointments"
+neutral_control,calm,10,2,0,t0_only,0.0,-0.3795170187950134,-117.12916564941406,"How many days a year is Lima a very hot capital city? For this question, we heard the seven day average temperature there is 33.5C. That's higher than"
+neutral_control,calm,10,3,0,t0_only,0.0,-0.34373098611831665,-107.28894805908203,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,calm,10,4,0,t0_only,0.0,-0.3436305820941925,-107.24909973144531,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for any other kind of bookshelf. You can only spot a difference"
+neutral_control,calm,10,5,0,t0_only,0.0,-0.3427540063858032,-108.94464111328125,Is it in the morning or in the evening?Isn't it warmer or colder?Or is it snowing in the middle of nowhere?Enter Our Red Rooms: The Making
+neutral_control,calm,10,6,0,t0_only,0.0,-0.32782110571861267,-97.57879638671875,"Or the heart of Oslo?Or is it here in the little town of Castoria, California?Or how about in La Jolla, California?Or in Santa Cruz,"
+neutral_control,calm,10,7,0,t0_only,0.0,-0.34974387288093567,-104.54251098632812,"And how many degrees does 'heat' need to be on a printer to print a handwritten letter at 40,000 times per second?And where exactly does a town's central"
+neutral_control,calm,10,8,0,t0_only,0.0,-0.3379974365234375,-103.97569274902344,And what's Nick Saban's favorite hangout right now?And how many books do US Representatives have left?What's the highest mountain in the US?And where does the
+neutral_control,calm,10,9,0,t0_only,0.0,-0.3340139091014862,-98.71952056884766,And how much 84-year-old Douglas Adams ever spent in Vegas?And how many countries have a population that's less than 10 million?And what's the red color
+neutral_control,calm,10,10,0,t0_only,0.0,-0.3331573009490967,-98.55593872070312,And how many banana peels has Stuart in the office with at any one time?And how many pairs of shoes are used in a day?And how many days do you
+neutral_control,proud,10,0,0,t0_only,0.0,-0.3355374336242676,-111.53196716308594,"The day of the service was delayed because of the city council meeting — officially closed to the public, but open to elected officials and other dignitaries.
+
+The event"
+neutral_control,proud,10,1,0,t0_only,0.0,-0.3066454827785492,-98.37373352050781,"A tortilla salad!Our folks told us they are an innovation for the weekend when you want to watch the Olympics without the traffic, house chores, and the other disappointments"
+neutral_control,proud,10,2,0,t0_only,0.0,-0.3179909288883209,-98.14056396484375,"How many days a year is Lima a very hot capital city? For this question, we heard the seven day average temperature there is 33.5C. That's higher than"
+neutral_control,proud,10,3,0,t0_only,0.0,-0.2812787592411041,-87.79569244384766,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,proud,10,4,0,t0_only,0.0,-0.27341750264167786,-85.33517456054688,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for any other kind of bookshelf. You can only spot a difference"
+neutral_control,proud,10,5,0,t0_only,0.0,-0.2910192906856537,-92.50072479248047,Is it in the morning or in the evening?Isn't it warmer or colder?Or is it snowing in the middle of nowhere?Enter Our Red Rooms: The Making
+neutral_control,proud,10,6,0,t0_only,0.0,-0.26845884323120117,-79.90910339355469,"Or the heart of Oslo?Or is it here in the little town of Castoria, California?Or how about in La Jolla, California?Or in Santa Cruz,"
+neutral_control,proud,10,7,0,t0_only,0.0,-0.29033708572387695,-86.78512573242188,"And how many degrees does 'heat' need to be on a printer to print a handwritten letter at 40,000 times per second?And where exactly does a town's central"
+neutral_control,proud,10,8,0,t0_only,0.0,-0.27946946024894714,-85.97114562988281,And what's Nick Saban's favorite hangout right now?And how many books do US Representatives have left?What's the highest mountain in the US?And where does the
+neutral_control,proud,10,9,0,t0_only,0.0,-0.27784109115600586,-82.11735534667969,And how much 84-year-old Douglas Adams ever spent in Vegas?And how many countries have a population that's less than 10 million?And what's the red color
+neutral_control,proud,10,10,0,t0_only,0.0,-0.28057774901390076,-83.00163269042969,And how many banana peels has Stuart in the office with at any one time?And how many pairs of shoes are used in a day?And how many days do you
+neutral_control,sad,10,0,0,t0_only,0.0,-0.35966259241104126,-119.55111694335938,"The day of the service was delayed because of the city council meeting — officially closed to the public, but open to elected officials and other dignitaries.
+
+The event"
+neutral_control,sad,10,1,0,t0_only,0.0,-0.3356432616710663,-107.67640686035156,"A tortilla salad!Our folks told us they are an innovation for the weekend when you want to watch the Olympics without the traffic, house chores, and the other disappointments"
+neutral_control,sad,10,2,0,t0_only,0.0,-0.3401479125022888,-104.97880554199219,"How many days a year is Lima a very hot capital city? For this question, we heard the seven day average temperature there is 33.5C. That's higher than"
+neutral_control,sad,10,3,0,t0_only,0.0,-0.31131985783576965,-97.17244720458984,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,sad,10,4,0,t0_only,0.0,-0.31306397914886475,-97.70907592773438,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for any other kind of bookshelf. You can only spot a difference"
+neutral_control,sad,10,5,0,t0_only,0.0,-0.3061143159866333,-97.29869079589844,Is it in the morning or in the evening?Isn't it warmer or colder?Or is it snowing in the middle of nowhere?Enter Our Red Rooms: The Making
+neutral_control,sad,10,6,0,t0_only,0.0,-0.28931066393852234,-86.11583709716797,"Or the heart of Oslo?Or is it here in the little town of Castoria, California?Or how about in La Jolla, California?Or in Santa Cruz,"
+neutral_control,sad,10,7,0,t0_only,0.0,-0.3156440854072571,-94.34967041015625,"And how many degrees does 'heat' need to be on a printer to print a handwritten letter at 40,000 times per second?And where exactly does a town's central"
+neutral_control,sad,10,8,0,t0_only,0.0,-0.30494773387908936,-93.80885314941406,And what's Nick Saban's favorite hangout right now?And how many books do US Representatives have left?What's the highest mountain in the US?And where does the
+neutral_control,sad,10,9,0,t0_only,0.0,-0.300442099571228,-88.79720306396484,And how much 84-year-old Douglas Adams ever spent in Vegas?And how many countries have a population that's less than 10 million?And what's the red color
+neutral_control,sad,10,10,0,t0_only,0.0,-0.2986520826816559,-88.34846496582031,And how many banana peels has Stuart in the office with at any one time?And how many pairs of shoes are used in a day?And how many days do you
+neutral_control,desperate,10,0,0,t0_only,0.0,-0.3618916869163513,-120.29205322265625,"The day of the service was delayed because of the city council meeting — officially closed to the public, but open to elected officials and other dignitaries.
+
+The event"
+neutral_control,desperate,10,1,0,t0_only,0.0,-0.3391719460487366,-108.80842590332031,"A tortilla salad!Our folks told us they are an innovation for the weekend when you want to watch the Olympics without the traffic, house chores, and the other disappointments"
+neutral_control,desperate,10,2,0,t0_only,0.0,-0.34546568989753723,-106.62001037597656,"How many days a year is Lima a very hot capital city? For this question, we heard the seven day average temperature there is 33.5C. That's higher than"
+neutral_control,desperate,10,3,0,t0_only,0.0,-0.310516893863678,-96.92181396484375,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,desperate,10,4,0,t0_only,0.0,-0.3136066496372223,-97.87844848632812,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for any other kind of bookshelf. You can only spot a difference"
+neutral_control,desperate,10,5,0,t0_only,0.0,-0.3172008693218231,-100.82254028320312,Is it in the morning or in the evening?Isn't it warmer or colder?Or is it snowing in the middle of nowhere?Enter Our Red Rooms: The Making
+neutral_control,desperate,10,6,0,t0_only,0.0,-0.3012615740299225,-89.67313385009766,"Or the heart of Oslo?Or is it here in the little town of Castoria, California?Or how about in La Jolla, California?Or in Santa Cruz,"
+neutral_control,desperate,10,7,0,t0_only,0.0,-0.3123425543308258,-93.36282348632812,"And how many degrees does 'heat' need to be on a printer to print a handwritten letter at 40,000 times per second?And where exactly does a town's central"
+neutral_control,desperate,10,8,0,t0_only,0.0,-0.30386173725128174,-93.47476959228516,And what's Nick Saban's favorite hangout right now?And how many books do US Representatives have left?What's the highest mountain in the US?And where does the
+neutral_control,desperate,10,9,0,t0_only,0.0,-0.30081942677497864,-88.90872192382812,And how much 84-year-old Douglas Adams ever spent in Vegas?And how many countries have a population that's less than 10 million?And what's the red color
+neutral_control,desperate,10,10,0,t0_only,0.0,-0.29484638571739197,-87.22264099121094,And how many banana peels has Stuart in the office with at any one time?And how many pairs of shoes are used in a day?And how many days do you
+neutral_control,angry,10,0,0,t0_only,0.0,-0.42636770009994507,-141.72377014160156,"The day of the service was delayed because of the city council meeting — officially closed to the public, but open to elected officials and other dignitaries.
+
+The event"
+neutral_control,angry,10,1,0,t0_only,0.0,-0.4011862874031067,-128.7030029296875,"A tortilla salad!Our folks told us they are an innovation for the weekend when you want to watch the Olympics without the traffic, house chores, and the other disappointments"
+neutral_control,angry,10,2,0,t0_only,0.0,-0.40182411670684814,-124.01374053955078,"How many days a year is Lima a very hot capital city? For this question, we heard the seven day average temperature there is 33.5C. That's higher than"
+neutral_control,angry,10,3,0,t0_only,0.0,-0.3688129186630249,-115.1177749633789,"<|endoftext|>Blog Ever since Donald Trump's surprising triumph last week in the 2016 presidential election, the media's focus has been on the divisive candidate himself. But it's no coincidence that"
+neutral_control,angry,10,4,0,t0_only,0.0,-0.375185489654541,-117.0975570678711,"Looking at its faces next to each other, it'd be easy to mistake the graphic bookshelf for any other kind of bookshelf. You can only spot a difference"
+neutral_control,angry,10,5,0,t0_only,0.0,-0.3784676790237427,-120.29624938964844,Is it in the morning or in the evening?Isn't it warmer or colder?Or is it snowing in the middle of nowhere?Enter Our Red Rooms: The Making
+neutral_control,angry,10,6,0,t0_only,0.0,-0.3546927869319916,-105.57737731933594,"Or the heart of Oslo?Or is it here in the little town of Castoria, California?Or how about in La Jolla, California?Or in Santa Cruz,"
+neutral_control,angry,10,7,0,t0_only,0.0,-0.37126025557518005,-110.9739990234375,"And how many degrees does 'heat' need to be on a printer to print a handwritten letter at 40,000 times per second?And where exactly does a town's central"
+neutral_control,angry,10,8,0,t0_only,0.0,-0.3670063614845276,-112.89949035644531,And what's Nick Saban's favorite hangout right now?And how many books do US Representatives have left?What's the highest mountain in the US?And where does the
+neutral_control,angry,10,9,0,t0_only,0.0,-0.3601071536540985,-106.43150329589844,And how much 84-year-old Douglas Adams ever spent in Vegas?And how many countries have a population that's less than 10 million?And what's the red color
+neutral_control,angry,10,10,0,t0_only,0.0,-0.3583463728427887,-106.00746154785156,And how many banana peels has Stuart in the office with at any one time?And how many pairs of shoes are used in a day?And how many days do you

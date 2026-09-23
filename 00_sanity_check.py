@@ -57,8 +57,8 @@ def main():
     print("=" * 60)
     print(f"Per-turn budget estimate for the decay experiment "
           f"(30-token responses): ~{gen_time:.1f}s per generation")
-    print(f"6 emotions x ~5 measurement turns x 3 repeats = 90 generations "
-          f"-> ~{90*gen_time/60:.1f} min total compute")
+    print(f"6 emotions x ~11 measurement turns x 3 repeats = 198 generations "
+          f"-> ~{198*gen_time/60:.1f} min total compute")
     print("=" * 60)
     if gen_time > 8:
         print("That's slower than ideal for a 5-hour budget - consider "

@@ -4,7 +4,7 @@ with 3 repeat stories (spread across different topics), and save every
 turn's measurement to CSV.
 
 21 conversations total (6 emotions x 3 repeats + 3 neutral control stories),
-6 measurement turns each = 126 generations. The neutral control conversations
+11 measurement turns each = 231 generations. The neutral control conversations
 are each measured against ALL 6 emotion vectors (cheap - it's just extra
 cache passes, not extra generation), so every emotion gets a matched
 "nothing was induced" reference curve built from the exact same fillers/seed.

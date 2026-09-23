@@ -4,7 +4,7 @@ emotion conditions ADD the emotion vector into the residual stream during
 generation (CAA-style), instead of relying on the story prompt alone.
 
 Two steering schedules (set STEER_MODE):
-  - "every_turn":  hook on for every model.generate call (t=0..5)
+  - "every_turn":  hook on for every model.generate call (t=0..10)
   - "t0_only":     hook on only for the first response; later turns unsteered
                    (asks whether a strong steered kick persists under fillers)
 

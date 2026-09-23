@@ -9,7 +9,7 @@ Protocol per conversation:
     Turn 3: model response                       <- measurement t=1
     Turn 4: fixed neutral filler #2
     Turn 5: model response                       <- measurement t=2
-    ... through all 5 fillers -> 6 measurement points (t=0..5)
+    ... through all 10 fillers -> 11 measurement points (t=0..10)
 
 Everything stays in TOKEN space throughout (never round-trips through
 strings) to avoid retokenization mismatches at the story/filler/response

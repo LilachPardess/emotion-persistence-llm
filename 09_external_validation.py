@@ -27,7 +27,8 @@ Outputs:
 
 Usage:
     python 09_external_validation.py
-Requires: emotion_vectors_final.pt + config.json (from 04_pick_layer.py)
+Requires: emotion_extraction/emotion_vectors_final.pt + emotion_extraction/config.json
+(from emotion_extraction/04_pick_layer.py)
 and external_validation.json, all in the same folder.
 """
 import csv
@@ -43,8 +44,8 @@ import matplotlib.pyplot as plt
 from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
-FINAL_VECTORS_PATH = "emotion_vectors_final.pt"
-CONFIG_PATH = "config.json"
+FINAL_VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
+CONFIG_PATH = "emotion_extraction/config.json"
 EXTERNAL_PATH = "external_validation.json"
 
 

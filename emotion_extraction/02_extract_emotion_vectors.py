@@ -19,10 +19,10 @@ This gives one direction per emotion per layer. B2/B3/B4 (next scripts) will
 test which layer's vector actually works before we lock one in for the
 decay experiment.
 
-Usage:
-    python 02_extract_emotion_vectors.py
+Usage (from the repo root):
+    python emotion_extraction/02_extract_emotion_vectors.py
 
-Requires stimuli.json in the same folder. Takes ~1-3 min on CPU for
+Requires stimuli.json in the repo root. Takes ~1-3 min on CPU for
 gpt2-medium (105 short sentences, one forward pass each).
 """
 import json
@@ -34,7 +34,7 @@ from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
-OUTPUT_PATH = "emotion_vectors.pt"
+OUTPUT_PATH = "emotion_extraction/emotion_vectors.pt"
 METHOD = "topic_paired"  # last-token emotion_i - neutral_i, averaged over topics
 
 

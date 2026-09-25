@@ -23,8 +23,10 @@ Outputs:
   - config.json          ({"chosen_layer", "chosen_method", "probe_accuracy"})
   - emotion_vectors_final.pt   (topic_paired vectors)
 
-Usage:
-    python 04_pick_layer.py
+All outputs are written to emotion_extraction/.
+
+Usage (from the repo root):
+    python emotion_extraction/04_pick_layer.py
 Requires emotion_vectors.pt from 02_extract_emotion_vectors.py.
 """
 import json
@@ -35,9 +37,9 @@ import torch
 import numpy as np
 import matplotlib.pyplot as plt
 
-VECTORS_PATH = "emotion_vectors.pt"
-CONFIG_PATH = "config.json"
-FINAL_VECTORS_PATH = "emotion_vectors_final.pt"
+VECTORS_PATH = "emotion_extraction/emotion_vectors.pt"
+CONFIG_PATH = "emotion_extraction/config.json"
+FINAL_VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CHOSEN_METHOD = "topic_paired"  # must match 02_extract_emotion_vectors.py
 
 POSITIVE = ["happy", "calm", "proud"]
@@ -159,8 +161,8 @@ def main():
     fig.suptitle("Emotion vector geometry: topic_paired vs. vs_general\n"
                  f"layer chosen by mid/late probe accuracy ({best['probe_accuracy']:.1%})")
     fig.tight_layout()
-    fig.savefig("emotion_vector_geometry_comparison.png", dpi=150)
-    print("Saved emotion_vector_geometry_comparison.png")
+    fig.savefig("emotion_extraction/emotion_vector_geometry_comparison.png", dpi=150)
+    print("Saved emotion_extraction/emotion_vector_geometry_comparison.png")
 
     order = POSITIVE + NEGATIVE
     n = len(order)
@@ -179,8 +181,8 @@ def main():
                   f"probe={best['probe_accuracy']:.1%})")
     fig2.colorbar(im, ax=ax2, label="cosine similarity")
     fig2.tight_layout()
-    fig2.savefig("emotion_vector_geometry_heatmap.png", dpi=150)
-    print("Saved emotion_vector_geometry_heatmap.png")
+    fig2.savefig("emotion_extraction/emotion_vector_geometry_heatmap.png", dpi=150)
+    print("Saved emotion_extraction/emotion_vector_geometry_heatmap.png")
 
     with open(CONFIG_PATH, "w") as f:
         json.dump({

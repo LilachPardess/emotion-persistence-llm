@@ -20,7 +20,7 @@ Outputs:
 
 Usage:
     python 06_full_decay_experiment.py
-Requires stimuli.json, emotion_vectors.pt, config.json.
+Requires stimuli.json, plus emotion_vectors.pt and config.json in emotion_extraction/.
 Takes roughly 10-20 min on CPU - it prints progress as it goes.
 """
 import csv
@@ -34,8 +34,8 @@ from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
-VECTORS_PATH = "emotion_vectors.pt"
-CONFIG_PATH = "config.json"
+VECTORS_PATH = "emotion_extraction/emotion_vectors.pt"
+CONFIG_PATH = "emotion_extraction/config.json"
 OUTPUT_CSV = "decay_results.csv"
 
 REPEAT_STORY_INDICES = [0, 5, 10]  # spread across different topics for diversity

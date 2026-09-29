@@ -13,16 +13,17 @@ with hooks OFF (one clean cached forward pass over the finished transcript),
 so cosine/projection reflect the residual of the produced text, not the
 live steered activation.
 
-Outputs:
+Outputs (every_turn; t0_only adds a "_t0_only" suffix):
   - steered_decay_results.csv
   - steered_decay_results_plot.png  (emotion vs neutral, per emotion panel)
 
 Usage:
-    python 08_steered_decay_experiment.py
+    python 08_steered_decay_experiment.py [t0_only|every_turn]   (default t0_only)
 Requires stimuli.json, plus emotion_vectors_final.pt and config.json in emotion_extraction/.
 """
 import csv
 import json
+import sys
 import time
 import warnings
 warnings.filterwarnings("ignore")
@@ -36,14 +37,15 @@ MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
 VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
-OUTPUT_CSV = "steered_decay_t0_only_results.csv"
-OUTPUT_PLOT = "steered_decay_t0_only_results_plot.png"
-
 REPEAT_STORY_INDICES = [0, 5, 10]
 MAX_NEW_TOKENS = 35
 SEED = 0
 STEER_STRENGTH = 5.0          # multiplier of native vector norm (same scale as 03 playground)
-STEER_MODE = "t0_only"        # "every_turn" | "t0_only"
+STEER_MODE = sys.argv[1] if len(sys.argv) > 1 else "t0_only"   # "every_turn" | "t0_only"
+
+_SUFFIX = "" if STEER_MODE == "every_turn" else f"_{STEER_MODE}"
+OUTPUT_CSV = f"steered_decay{_SUFFIX}_results.csv"
+OUTPUT_PLOT = f"steered_decay{_SUFFIX}_results_plot.png"
 
 COLORS = {
     "joy": "#f4a259", "admiration": "#8cb369", "optimism": "#5b8e7d",

@@ -17,6 +17,7 @@ Outputs:
   - decay_results.csv   (long format: one row per turn - condition,
                           measured_against, story_id, t, cosine_sim,
                           projection, response_text)
+  - decay_results_plot.png  (emotion vs neutral, per emotion panel)
 
 Usage:
     python 06_full_decay_experiment.py
@@ -30,6 +31,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import torch
+import matplotlib.pyplot as plt
 from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
@@ -37,10 +39,16 @@ STIMULI_PATH = "stimuli.json"
 VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 OUTPUT_CSV = "decay_results.csv"
+OUTPUT_PLOT = "decay_results_plot.png"
 
 REPEAT_STORY_INDICES = [0, 5, 10]  # spread across different topics for diversity
 MAX_NEW_TOKENS = 35
 SEED = 0
+
+COLORS = {
+    "joy": "#f4a259", "admiration": "#8cb369", "optimism": "#5b8e7d",
+    "sadness": "#4059ad", "anger": "#d1495b", "fear": "#6b2737",
+}
 
 
 def get_device():
@@ -94,6 +102,39 @@ def project(mean_act, vector):
     ).item()
     projection = torch.dot(mean_act, unit).item()
     return cosine_sim, projection
+
+
+def plot_results(csv_path, plot_path, layer):
+    import pandas as pd
+    df = pd.read_csv(csv_path)
+    emotions = list(COLORS)
+    fig, axes = plt.subplots(2, 3, figsize=(12, 7), sharex=True, sharey=True)
+    axes = axes.ravel()
+    for ax, emotion in zip(axes, emotions):
+        emo = (df[(df["condition"] == emotion) & (df["measured_against"] == emotion)]
+               .groupby("t")["cosine_sim"].agg(["mean", "sem"]))
+        neu = (df[(df["condition"] == "neutral_control") & (df["measured_against"] == emotion)]
+               .groupby("t")["cosine_sim"].agg(["mean", "sem"]))
+        ax.plot(emo.index, emo["mean"], marker="o", color=COLORS[emotion], label="emotion story")
+        ax.fill_between(emo.index, emo["mean"] - emo["sem"], emo["mean"] + emo["sem"],
+                         color=COLORS[emotion], alpha=0.2)
+        ax.plot(neu.index, neu["mean"], marker="s", color="#888888", label="neutral control")
+        ax.fill_between(neu.index, neu["mean"] - neu["sem"], neu["mean"] + neu["sem"],
+                         color="#888888", alpha=0.15)
+        ax.set_title(emotion)
+        ax.set_xlabel("turn (t)")
+        ax.axhline(0, color="black", linewidth=0.4)
+        if emotion == emotions[0]:
+            ax.legend(fontsize=8)
+    axes[0].set_ylabel("cosine similarity")
+    axes[3].set_ylabel("cosine similarity")
+    fig.suptitle(
+        f"Emotion persistence/decay (layer {layer})\n"
+        f"colored = emotion story; gray = neutral story, measured against the same vector"
+    )
+    fig.tight_layout()
+    fig.savefig(plot_path, dpi=150)
+    print(f"Saved {plot_path}")
 
 
 def main():
@@ -164,6 +205,7 @@ def main():
 
     total_time = time.time() - t_start
     print(f"\nDone in {total_time/60:.1f} min. Saved {len(rows)} rows to {OUTPUT_CSV}")
+    plot_results(OUTPUT_CSV, OUTPUT_PLOT, layer)
 
 
 if __name__ == "__main__":

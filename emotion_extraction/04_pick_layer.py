@@ -1,12 +1,17 @@
 """
-Phase B3/B4: pick the layer for the mean-difference emotion vectors that 02 builds.
+Phase B3/B4: build the final (centered) emotion vectors and pick their layer.
 
-02 defines emotion vectors as last-token mean differences:
-    mean_i( last_token(emotion_i) ) - mean_j( last_token(neutral_j) )
+02 saves the raw results to emotion_vectors.pt, including the last-token mean
+differences vs. neutral:
+    mean_diff[e] = mean_i( last_token(emotion_e_i) ) - mean_j( last_token(neutral_j) )
 
-This script still plots vs_general alongside as a reference, but the chosen
-layer, heatmap, config.json, and emotion_vectors_final.pt all use
-mean_diff so they stay aligned with 02.
+The final vectors subtract the average over all emotions instead, removing
+the direction every emotion story shares:
+    vs_general[e] = mean_i( last_token(emotion_e_i) ) - mean_e'( emotion_mean[e'] )
+                  = mean_diff[e] - mean_e'( mean_diff[e'] )
+
+This script plots mean_diff alongside as a reference, but the chosen layer,
+heatmap, config.json, and emotion_vectors_final.pt all use vs_general.
 
 Layer choice:
   1. Restrict candidates to mid/late layers (skip early residual stream).
@@ -19,9 +24,9 @@ Geometry gap is still plotted as a diagnostic:
 
 Outputs:
   - emotion_vector_geometry_comparison.png   (both methods' layer sweeps)
-  - emotion_vector_geometry_heatmap.png      (mean_diff at the chosen layer)
+  - emotion_vector_geometry_heatmap.png      (vs_general at the chosen layer)
   - config.json          ({"chosen_layer", "chosen_method", "probe_accuracy"})
-  - emotion_vectors_final.pt   (mean_diff vectors)
+  - emotion_vectors_final.pt   (vs_general vectors, used by the experiments)
 
 All outputs are written to emotion_extraction/.
 
@@ -40,7 +45,7 @@ import matplotlib.pyplot as plt
 VECTORS_PATH = "emotion_extraction/emotion_vectors.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 FINAL_VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
-CHOSEN_METHOD = "mean_diff"  # must match 02_extract_emotion_vectors.py
+CHOSEN_METHOD = "vs_general"
 
 POSITIVE = ["joy", "admiration", "optimism"]
 NEGATIVE = ["sadness", "anger", "fear"]

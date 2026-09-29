@@ -15,9 +15,10 @@ paired diffs whenever the counts are equal).
     emotion_vector[layer] = mean_i( last_token(emotion_i)[layer] )
                           - mean_j( last_token(neutral_j)[layer] )
 
-This gives one direction per emotion per layer. B2/B3/B4 (next scripts) will
-test which layer's vector actually works before we lock one in for the
-decay experiment.
+This gives one direction per emotion per layer. These are raw results:
+04_pick_layer.py builds the final, centered vectors from the raw activations
+saved here and writes them to emotion_vectors_final.pt, which the
+experiments use.
 
 Usage (from the repo root):
     python emotion_extraction/02_extract_emotion_vectors.py

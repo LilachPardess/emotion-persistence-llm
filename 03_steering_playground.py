@@ -20,8 +20,8 @@ Usage:
     python 03_steering_playground.py
 Then open the local URL it prints (usually http://127.0.0.1:7860).
 
-Requires emotion_extraction/emotion_vectors.pt (from
-emotion_extraction/02_extract_emotion_vectors.py) and stimuli.json.
+Requires emotion_extraction/emotion_vectors_final.pt (from
+emotion_extraction/04_pick_layer.py) and stimuli.json.
 """
 import json
 import warnings
@@ -35,7 +35,7 @@ import gradio as gr
 from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
-VECTORS_PATH = "emotion_extraction/emotion_vectors.pt"
+VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 STIMULI_PATH = "stimuli.json"
 
 

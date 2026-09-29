@@ -29,7 +29,7 @@ Outputs:
 
 Usage:
     python 05_pilot_decay.py
-Requires stimuli.json, plus emotion_vectors.pt and config.json in emotion_extraction/.
+Requires stimuli.json, plus emotion_vectors_final.pt and config.json in emotion_extraction/.
 """
 import csv
 import json
@@ -42,7 +42,7 @@ from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
-VECTORS_PATH = "emotion_extraction/emotion_vectors.pt"
+VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 
 PILOT_EMOTION = "sadness"  # change this to pilot a different emotion

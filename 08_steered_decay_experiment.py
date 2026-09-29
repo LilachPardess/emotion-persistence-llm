@@ -19,7 +19,7 @@ Outputs:
 
 Usage:
     python 08_steered_decay_experiment.py
-Requires stimuli.json, plus emotion_vectors.pt and config.json in emotion_extraction/.
+Requires stimuli.json, plus emotion_vectors_final.pt and config.json in emotion_extraction/.
 """
 import csv
 import json
@@ -34,7 +34,7 @@ from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
-VECTORS_PATH = "emotion_extraction/emotion_vectors.pt"
+VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 OUTPUT_CSV = "steered_decay_t0_only_results.csv"
 OUTPUT_PLOT = "steered_decay_t0_only_results_plot.png"

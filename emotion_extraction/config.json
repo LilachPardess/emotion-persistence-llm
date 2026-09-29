@@ -1,6 +1,6 @@
 {
   "chosen_layer": 14,
-  "chosen_method": "mean_diff",
+  "chosen_method": "vs_general",
   "probe_accuracy": 0.7833333333333333,
   "pooling": "last_token"
 }

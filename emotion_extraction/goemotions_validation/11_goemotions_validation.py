@@ -2,7 +2,7 @@
 Out-of-distribution check on GoEmotions (human-annotated Reddit comments):
 do the emotion vectors line up with real web text they were not built from?
 
-1. Dataset (emotion_extraction/goemotions_100_per_emotion.csv)
+1. Dataset (goemotions_100_per_emotion.csv, next to this script)
    Pre-filtered GoEmotions: single-label comments with high rater agreement
    and enough words for context, up to 100 per label. Columns: sentence,
    emotion. Only the labels in TARGET_LABELS are used, and only their
@@ -31,15 +31,16 @@ do the emotion vectors line up with real web text they were not built from?
        (label == TARGET_LABELS[e]) and cos_e over all selected comments.
      Heatmap: mean cosine per label x vector; the diagonal is the expected match.
 
-Outputs (named by settings, so runs with each setting sit side by side):
+Outputs (written to emotion_extraction/goemotions_validation/, named by
+settings, so runs with each setting sit side by side):
   - goemotions_validation_last_token[_centered_vectors]_results.csv   (one row per comment)
   - goemotions_validation_last_token[_centered_vectors]_plot.png      (Test 1 + Test 2)
   - goemotions_validation_last_token[_centered_vectors]_heatmap.png   (label x vector mean cosine)
 
 Usage (from the repo root):
-    python 11_goemotions_validation.py
-Requires emotion_extraction/goemotions_100_per_emotion.csv,
-emotion_vectors_final.pt and config.json (all in emotion_extraction/).
+    python emotion_extraction/goemotions_validation/11_goemotions_validation.py
+Requires goemotions_100_per_emotion.csv (in this folder) plus
+emotion_vectors_final.pt and config.json (in emotion_extraction/).
 """
 import csv
 import json
@@ -56,12 +57,13 @@ import matplotlib.pyplot as plt
 from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
-DATASET_PATH = "emotion_extraction/goemotions_100_per_emotion.csv"
+VALIDATION_DIR = "emotion_extraction/goemotions_validation"
+DATASET_PATH = f"{VALIDATION_DIR}/goemotions_100_per_emotion.csv"
 FINAL_VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 CENTER_VECTORS = True
 RUN_NAME = "last_token_centered_vectors" if CENTER_VECTORS else "last_token"
-OUTPUT_PREFIX = f"goemotions_validation_{RUN_NAME}"
+OUTPUT_PREFIX = f"{VALIDATION_DIR}/goemotions_validation_{RUN_NAME}"
 
 TARGET_LABELS = {
     "happy": "joy",

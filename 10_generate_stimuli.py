@@ -1,6 +1,7 @@
 """
 Generate one-sentence "Alex" emotion stories with a Claude model and store
-them in stimuli.json under "generated_emotions" (existing keys are untouched).
+them in stimuli.json under "emotions", replacing that section (other keys are
+untouched).
 
 For each emotion, the model is asked N_PER_EMOTION times for a single
 sentence that conveys the emotion only through physical sensations and
@@ -18,7 +19,7 @@ from anthropic import Anthropic
 from dotenv import load_dotenv
 
 STIMULI_PATH = "stimuli.json"
-OUTPUT_KEY = "generated_emotions"
+OUTPUT_KEY = "emotions"
 MODEL_NAME = "claude-sonnet-4-6"
 MAX_TOKENS = 100
 TEMPERATURE = 1.0

@@ -6,7 +6,7 @@ do the emotion vectors line up with real web text they were not built from?
    Pre-filtered GoEmotions: single-label comments with high rater agreement
    and enough words for context, up to 100 per label. Columns: sentence,
    emotion. Only the labels in TARGET_LABELS are used, and only their
-   matching vectors are scored ("desperate" has no GoEmotions counterpart).
+   matching vectors are scored.
 
 2. Activation extraction
    One forward pass per comment; read blocks.{layer}.hook_resid_post at the
@@ -66,16 +66,17 @@ RUN_NAME = "last_token_centered_vectors" if CENTER_VECTORS else "last_token"
 OUTPUT_PREFIX = f"{VALIDATION_DIR}/goemotions_validation_{RUN_NAME}"
 
 TARGET_LABELS = {
-    "happy": "joy",
-    "sad": "sadness",
-    "angry": "anger",
-    "proud": "pride",
-    "calm": "relief",
+    "joy": "joy",
+    "admiration": "admiration",
+    "optimism": "optimism",
+    "sadness": "sadness",
+    "anger": "anger",
+    "fear": "fear",
 }
 
 COLORS = {
-    "happy": "#f4a259", "calm": "#8cb369", "proud": "#5b8e7d",
-    "sad": "#4059ad", "desperate": "#6b2737", "angry": "#d1495b",
+    "joy": "#f4a259", "admiration": "#8cb369", "optimism": "#5b8e7d",
+    "sadness": "#4059ad", "anger": "#d1495b", "fear": "#6b2737",
 }
 
 

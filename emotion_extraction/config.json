@@ -1,6 +1,6 @@
 {
-  "chosen_layer": 19,
-  "chosen_method": "topic_paired",
-  "probe_accuracy": 0.5,
+  "chosen_layer": 14,
+  "chosen_method": "mean_diff",
+  "probe_accuracy": 0.7833333333333333,
   "pooling": "last_token"
 }

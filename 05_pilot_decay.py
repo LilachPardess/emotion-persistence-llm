@@ -45,7 +45,7 @@ STIMULI_PATH = "stimuli.json"
 VECTORS_PATH = "emotion_extraction/emotion_vectors.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 
-PILOT_EMOTION = "sad"     # change this to pilot a different emotion
+PILOT_EMOTION = "sadness"  # change this to pilot a different emotion
 STORY_INDEX = 0           # which of the 15 topic-matched sentences to use
 MAX_NEW_TOKENS = 35
 SEED = 0

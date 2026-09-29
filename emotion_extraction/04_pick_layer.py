@@ -1,12 +1,12 @@
 """
-Phase B3/B4: pick the layer for the topic-paired emotion vectors that 02 builds.
+Phase B3/B4: pick the layer for the mean-difference emotion vectors that 02 builds.
 
-02 now defines emotion vectors as last-token topic-paired contrasts:
-    mean_i( last_token(emotion_i) - last_token(neutral_i) )
+02 defines emotion vectors as last-token mean differences:
+    mean_i( last_token(emotion_i) ) - mean_j( last_token(neutral_j) )
 
 This script still plots vs_general alongside as a reference, but the chosen
 layer, heatmap, config.json, and emotion_vectors_final.pt all use
-topic_paired so they stay aligned with 02.
+mean_diff so they stay aligned with 02.
 
 Layer choice:
   1. Restrict candidates to mid/late layers (skip early residual stream).
@@ -19,9 +19,9 @@ Geometry gap is still plotted as a diagnostic:
 
 Outputs:
   - emotion_vector_geometry_comparison.png   (both methods' layer sweeps)
-  - emotion_vector_geometry_heatmap.png      (topic_paired at the chosen layer)
+  - emotion_vector_geometry_heatmap.png      (mean_diff at the chosen layer)
   - config.json          ({"chosen_layer", "chosen_method", "probe_accuracy"})
-  - emotion_vectors_final.pt   (topic_paired vectors)
+  - emotion_vectors_final.pt   (mean_diff vectors)
 
 All outputs are written to emotion_extraction/.
 
@@ -40,10 +40,10 @@ import matplotlib.pyplot as plt
 VECTORS_PATH = "emotion_extraction/emotion_vectors.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 FINAL_VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
-CHOSEN_METHOD = "topic_paired"  # must match 02_extract_emotion_vectors.py
+CHOSEN_METHOD = "mean_diff"  # must match 02_extract_emotion_vectors.py
 
-POSITIVE = ["happy", "calm", "proud"]
-NEGATIVE = ["sad", "desperate", "angry"]
+POSITIVE = ["joy", "admiration", "optimism"]
+NEGATIVE = ["sadness", "anger", "fear"]
 
 
 def cosine(a, b):
@@ -98,17 +98,17 @@ def main():
     emotion_means = {e: acts.mean(dim=0) for e, acts in emotion_raw_acts.items()}
     general_mean = torch.stack([emotion_means[e] for e in emotions]).mean(dim=0)
 
-    vectors_topic_paired = saved.get("emotion_vectors") or {
+    vectors_mean_diff = saved.get("emotion_vectors") or {
         e: emotion_means[e] - neutral_mean for e in emotions
     }
     vectors_vs_general = {e: emotion_means[e] - general_mean for e in emotions}
 
-    methods = {"topic_paired": vectors_topic_paired, "vs_general": vectors_vs_general}
+    methods = {"mean_diff": vectors_mean_diff, "vs_general": vectors_vs_general}
     sweeps = {name: geometry_sweep(vecs, n_layers) for name, vecs in methods.items()}
 
-    print("\nlayer | topic_paired gap | vs_general gap")
+    print("\nlayer | mean_diff gap | vs_general gap")
     for L in range(n_layers):
-        print(f"  {L:3d} |       {sweeps['topic_paired'][3][L]:+.3f}      |    {sweeps['vs_general'][3][L]:+.3f}")
+        print(f"  {L:3d} |     {sweeps['mean_diff'][3][L]:+.3f}    |    {sweeps['vs_general'][3][L]:+.3f}")
 
     chosen_vectors = methods[CHOSEN_METHOD]
     gap_list = sweeps[CHOSEN_METHOD][3]
@@ -158,7 +158,7 @@ def main():
         ax.set_xlabel("layer")
         ax.legend(fontsize=8)
     axes[0].set_ylabel("cosine similarity")
-    fig.suptitle("Emotion vector geometry: topic_paired vs. vs_general\n"
+    fig.suptitle("Emotion vector geometry: mean_diff vs. vs_general\n"
                  f"layer chosen by mid/late probe accuracy ({best['probe_accuracy']:.1%})")
     fig.tight_layout()
     fig.savefig("emotion_extraction/emotion_vector_geometry_comparison.png", dpi=150)

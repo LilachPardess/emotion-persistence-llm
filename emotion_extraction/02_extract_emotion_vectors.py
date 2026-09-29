@@ -1,19 +1,19 @@
 """
 Phase B1: extract one "emotion vector" per emotion from stimuli.json.
 
-Method (topic-paired contrastive activation / CAA-style):
+Method (mean-difference contrastive activation / CAA-style):
   1. Take the residual stream at the LAST token of each sentence (not a
      mean over tokens) - the state after the model has finished reading it.
-  2. For each of the 15 topic-matched scenarios, subtract the matched
-     neutral baseline's last-token activation from the emotion sentence's:
-         diff_i = last_token(emotion_i) - last_token(neutral_i)
-  3. Average those 15 diffs into one emotion vector per layer.
+  2. Average those activations over the emotion's sentences and, separately,
+     over the neutral baseline sentences.
+  3. Subtract the neutral mean from the emotion mean.
 
-That holds topic/scenario fixed, so the direction is closer to "this emotion
-only".
+The emotion and neutral sets are not topic-matched and can differ in size,
+so this is an unpaired difference of means (identical to the average of
+paired diffs whenever the counts are equal).
 
-    emotion_vector[layer] = mean_i( last_token(emotion_i)[layer]
-                                  - last_token(neutral_i)[layer] )
+    emotion_vector[layer] = mean_i( last_token(emotion_i)[layer] )
+                          - mean_j( last_token(neutral_j)[layer] )
 
 This gives one direction per emotion per layer. B2/B3/B4 (next scripts) will
 test which layer's vector actually works before we lock one in for the
@@ -23,7 +23,7 @@ Usage (from the repo root):
     python emotion_extraction/02_extract_emotion_vectors.py
 
 Requires stimuli.json in the repo root. Takes ~1-3 min on CPU for
-gpt2-medium (105 short sentences, one forward pass each).
+gpt2-medium (135 short sentences, one forward pass each).
 """
 import json
 import warnings
@@ -35,7 +35,7 @@ from transformer_lens import HookedTransformer
 MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
 OUTPUT_PATH = "emotion_extraction/emotion_vectors.pt"
-METHOD = "topic_paired"  # last-token emotion_i - neutral_i, averaged over topics
+METHOD = "mean_diff"  # mean last-token emotion - mean last-token neutral
 
 
 def get_device():
@@ -78,25 +78,18 @@ def main():
     print(f"Encoding {len(neutral_sents)} neutral baseline sentences (last token)...")
     neutral_acts = torch.stack(
         [get_all_layer_last_resid(model, s, n_layers) for s in neutral_sents]
-    )  # [n_topics, n_layers, d_model]
+    )  # [n_neutral, n_layers, d_model]
     neutral_mean = neutral_acts.mean(dim=0)  # [n_layers, d_model]
 
-    emotion_raw_acts = {}     # emotion -> [n_topics, n_layers, d_model]
+    emotion_raw_acts = {}     # emotion -> [n_sentences, n_layers, d_model]
     emotion_vectors = {}      # emotion -> [n_layers, d_model]
     for emotion, sents in stimuli["emotions"].items():
-        if len(sents) != len(neutral_sents):
-            raise ValueError(
-                f"'{emotion}' has {len(sents)} sentences but there are "
-                f"{len(neutral_sents)} neutrals; topic pairing requires equal counts."
-            )
-        print(f"Encoding {len(sents)} '{emotion}' sentences (last token, topic-paired)...")
+        print(f"Encoding {len(sents)} '{emotion}' sentences (last token)...")
         acts = torch.stack(
             [get_all_layer_last_resid(model, s, n_layers) for s in sents]
-        )  # [n_topics, n_layers, d_model]
-        # Explicit per-topic contrast, then average ( == mean(acts) - mean(neutrals) ).
-        paired_diffs = acts - neutral_acts  # [n_topics, n_layers, d_model]
+        )  # [n_sentences, n_layers, d_model]
         emotion_raw_acts[emotion] = acts
-        emotion_vectors[emotion] = paired_diffs.mean(dim=0)  # [n_layers, d_model]
+        emotion_vectors[emotion] = acts.mean(dim=0) - neutral_mean  # [n_layers, d_model]
 
     emotion_means = {e: acts.mean(dim=0) for e, acts in emotion_raw_acts.items()}
     general_mean = torch.stack(list(emotion_means.values())).mean(dim=0)

@@ -46,8 +46,8 @@ STEER_STRENGTH = 5.0          # multiplier of native vector norm (same scale as 
 STEER_MODE = "t0_only"        # "every_turn" | "t0_only"
 
 COLORS = {
-    "happy": "#f4a259", "calm": "#8cb369", "proud": "#5b8e7d",
-    "sad": "#4059ad", "desperate": "#6b2737", "angry": "#d1495b",
+    "joy": "#f4a259", "admiration": "#8cb369", "optimism": "#5b8e7d",
+    "sadness": "#4059ad", "anger": "#d1495b", "fear": "#6b2737",
 }
 
 
@@ -134,7 +134,7 @@ def project(mean_act, vector):
 def plot_results(csv_path, plot_path, layer, steer_mode, strength):
     import pandas as pd
     df = pd.read_csv(csv_path)
-    emotions = ["happy", "calm", "proud", "sad", "desperate", "angry"]
+    emotions = list(COLORS)
     fig, axes = plt.subplots(2, 3, figsize=(12, 7), sharex=True, sharey=True)
     axes = axes.ravel()
     for ax, emotion in zip(axes, emotions):
@@ -151,7 +151,7 @@ def plot_results(csv_path, plot_path, layer, steer_mode, strength):
         ax.set_title(emotion)
         ax.set_xlabel("turn (t)")
         ax.axhline(0, color="black", linewidth=0.4)
-        if emotion == "happy":
+        if emotion == emotions[0]:
             ax.legend(fontsize=8)
     axes[0].set_ylabel("cosine similarity")
     axes[3].set_ylabel("cosine similarity")

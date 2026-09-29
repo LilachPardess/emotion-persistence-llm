@@ -17,9 +17,8 @@ do the emotion vectors line up with real web text they were not built from?
    Subtract the global mean activation over all selected comments from each
    comment, leaving only its semantic/emotional displacement from a typical
    comment.
-   With CENTER_VECTORS, also subtract the mean of the mapped emotion vectors
-   from each vector, removing the direction they all share so each keeps
-   only what distinguishes it from the others.
+   The emotion vectors are used as saved: 04_pick_layer.py already subtracts
+   the mean over all emotions, so they are not centered again here.
 
 4. Correlation metric
    Cosine similarity between each normalized comment vector and each mapped
@@ -31,11 +30,10 @@ do the emotion vectors line up with real web text they were not built from?
        (label == TARGET_LABELS[e]) and cos_e over all selected comments.
      Heatmap: mean cosine per label x vector; the diagonal is the expected match.
 
-Outputs (written to emotion_extraction/goemotions_validation/, named by
-settings, so runs with each setting sit side by side):
-  - goemotions_validation_last_token[_centered_vectors]_results.csv   (one row per comment)
-  - goemotions_validation_last_token[_centered_vectors]_plot.png      (Test 1 + Test 2)
-  - goemotions_validation_last_token[_centered_vectors]_heatmap.png   (label x vector mean cosine)
+Outputs (written to emotion_extraction/goemotions_validation/):
+  - goemotions_validation_last_token_results.csv   (one row per comment)
+  - goemotions_validation_last_token_plot.png      (Test 1 + Test 2)
+  - goemotions_validation_last_token_heatmap.png   (label x vector mean cosine)
 
 Usage (from the repo root):
     python emotion_extraction/goemotions_validation/11_goemotions_validation.py
@@ -61,8 +59,7 @@ VALIDATION_DIR = "emotion_extraction/goemotions_validation"
 DATASET_PATH = f"{VALIDATION_DIR}/goemotions_100_per_emotion.csv"
 FINAL_VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
-CENTER_VECTORS = True
-RUN_NAME = "last_token_centered_vectors" if CENTER_VECTORS else "last_token"
+RUN_NAME = "last_token"
 OUTPUT_PREFIX = f"{VALIDATION_DIR}/goemotions_validation_{RUN_NAME}"
 
 TARGET_LABELS = {
@@ -216,12 +213,10 @@ def main():
     vectors = torch.load(FINAL_VECTORS_PATH, map_location="cpu", weights_only=False)["emotion_vectors"]
     emotions = [e for e in vectors if e in TARGET_LABELS]
     vector_matrix = torch.stack([vectors[e][layer] for e in emotions])  # [n_vectors, d_model]
-    if CENTER_VECTORS:
-        vector_matrix = vector_matrix - vector_matrix.mean(dim=0)
 
     comments = load_comments()
     counts = comments["label"].value_counts()
-    print(f"method={method}, layer={layer}, center_vectors={CENTER_VECTORS}")
+    print(f"method={method}, layer={layer}")
     for e in emotions:
         print(f"  {e:10s} <- {TARGET_LABELS[e]:8s} n={counts.get(TARGET_LABELS[e], 0):4d}")
 

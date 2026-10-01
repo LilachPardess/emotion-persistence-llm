@@ -3,27 +3,27 @@ Phase C3: steered persistence/decay — same multi-turn protocol as 06, but
 emotion conditions ADD the emotion vector into the residual stream during
 generation (CAA-style), instead of relying on the story prompt alone.
 
-Two steering schedules (set STEER_MODE):
-  - "every_turn":  hook on for every model.generate call (t=0..10)
-  - "t0_only":     hook on only for the first response; later turns unsteered
-                   (asks whether a strong steered kick persists under fillers)
+The steering hook is on only for the first response (t=0); later turns are
+unsteered, asking whether a strong steered kick persists under fillers.
 
 Neutral-control conversations never steer. Measurements are always taken
 with hooks OFF (one clean cached forward pass over the finished transcript),
 so cosine/projection reflect the residual of the produced text, not the
 live steered activation.
 
-Outputs (every_turn; t0_only adds a "_t0_only" suffix):
-  - steered_decay_results.csv
-  - steered_decay_results_plot.png  (emotion vs neutral, per emotion panel)
+As in 06, the experiment is repeated once per neutral set in NEUTRAL_SETS;
+the steered emotion conversations are generated once and shared by all three.
+
+Outputs, one pair per neutral set:
+  - steered_decay_t0_only_<neutral_set>.csv
+  - steered_decay_t0_only_<neutral_set>_plot.png  (emotion vs neutral, per emotion panel)
 
 Usage:
-    python 08_steered_decay_experiment.py [t0_only|every_turn]   (default t0_only)
+    python 08_steered_decay_experiment.py
 Requires stimuli.json, plus emotion_vectors_final.pt and config.json in emotion_extraction/.
 """
 import csv
 import json
-import sys
 import time
 import warnings
 warnings.filterwarnings("ignore")
@@ -37,15 +37,16 @@ MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
 VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
+NEUTRAL_SETS = [
+    "non_emotional_natural_text",
+    "neutral_baseline_stories_02",
+    "neutral_baseline_stories_03",
+]
+
 REPEAT_STORY_INDICES = [0, 5, 10]
 MAX_NEW_TOKENS = 35
 SEED = 0
 STEER_STRENGTH = 5.0          # multiplier of native vector norm (same scale as 03 playground)
-STEER_MODE = sys.argv[1] if len(sys.argv) > 1 else "t0_only"   # "every_turn" | "t0_only"
-
-_SUFFIX = "" if STEER_MODE == "every_turn" else f"_{STEER_MODE}"
-OUTPUT_CSV = f"steered_decay{_SUFFIX}_results.csv"
-OUTPUT_PLOT = f"steered_decay{_SUFFIX}_results_plot.png"
 
 COLORS = {
     "joy": "#f4a259", "admiration": "#8cb369", "optimism": "#5b8e7d",
@@ -67,7 +68,7 @@ def make_add_vec(vector, strength):
 
 
 def run_conversation(model, story_text, filler_texts, max_new_tokens, seed,
-                     layer=None, add_vec=None, steer_mode="every_turn"):
+                     layer=None, add_vec=None):
     """Same token-space multi-turn loop as 06, with optional resid_post steering."""
     tokens = model.to_tokens(story_text)
     torch.manual_seed(seed)
@@ -81,10 +82,7 @@ def run_conversation(model, story_text, filler_texts, max_new_tokens, seed,
             tokens = torch.cat([tokens, filler_tokens], dim=1)
         pre_len = tokens.shape[1]
 
-        steer_this_turn = (
-            add_vec is not None
-            and (steer_mode == "every_turn" or (steer_mode == "t0_only" and t == 0))
-        )
+        steer_this_turn = add_vec is not None and t == 0
 
         with torch.no_grad():
             if steer_this_turn:
@@ -133,7 +131,7 @@ def project(mean_act, vector):
     return cosine_sim, projection
 
 
-def plot_results(csv_path, plot_path, layer, steer_mode, strength):
+def plot_results(csv_path, plot_path, layer, strength, neutral_set):
     import pandas as pd
     df = pd.read_csv(csv_path)
     emotions = list(COLORS)
@@ -158,8 +156,8 @@ def plot_results(csv_path, plot_path, layer, steer_mode, strength):
     axes[0].set_ylabel("cosine similarity")
     axes[3].set_ylabel("cosine similarity")
     fig.suptitle(
-        f"Steered persistence/decay (layer {layer}, {steer_mode}, α={strength})\n"
-        f"colored = emotion story + steering; gray = neutral, no steering"
+        f"Steered persistence/decay (layer {layer}, steered at t=0 only, α={strength})\n"
+        f"colored = emotion story + steering; gray = neutral ({neutral_set}), no steering"
     )
     fig.tight_layout()
     fig.savefig(plot_path, dpi=150)
@@ -174,8 +172,7 @@ def main():
     layer = config["chosen_layer"]
 
     device = get_device()
-    print(f"Using device: {device}, layer: {layer}, "
-          f"steer_mode={STEER_MODE}, strength={STEER_STRENGTH}")
+    print(f"Using device: {device}, layer: {layer}, strength={STEER_STRENGTH}")
 
     model = HookedTransformer.from_pretrained(MODEL_NAME, device=device)
     model.eval()
@@ -193,23 +190,28 @@ def main():
                 "story_id": idx,
                 "story_text": stimuli["emotions"][emotion][idx],
                 "steer_emotion": emotion,
+                "neutral_set": None,
             })
-    for idx in REPEAT_STORY_INDICES:
-        runs.append({
-            "condition": "neutral_control",
-            "story_id": idx,
-            "story_text": stimuli["neutral_baseline_stories"][idx],
-            "steer_emotion": None,
-        })
+    for neutral_set in NEUTRAL_SETS:
+        for idx in REPEAT_STORY_INDICES:
+            runs.append({
+                "condition": "neutral_control",
+                "story_id": idx,
+                "story_text": stimuli[neutral_set][idx],
+                "steer_emotion": None,
+                "neutral_set": neutral_set,
+            })
 
     total = len(runs)
     print(f"Running {total} conversations with steering on emotion conditions...\n")
 
-    rows = []
+    emotion_rows = []
+    control_rows = {neutral_set: [] for neutral_set in NEUTRAL_SETS}
     t_start = time.time()
     for i, run in enumerate(runs):
         elapsed = time.time() - t_start
-        print(f"[{i+1}/{total}] {run['condition']} (story {run['story_id']}) - {elapsed:.0f}s elapsed")
+        label = run["neutral_set"] or run["condition"]
+        print(f"[{i+1}/{total}] {label} (story {run['story_id']}) - {elapsed:.0f}s elapsed")
 
         add_vec = None
         if run["steer_emotion"] is not None:
@@ -218,11 +220,12 @@ def main():
 
         final_tokens, turns = run_conversation(
             model, run["story_text"], filler_texts, MAX_NEW_TOKENS, SEED,
-            layer=layer, add_vec=add_vec, steer_mode=STEER_MODE,
+            layer=layer, add_vec=add_vec,
         )
         turns = extract_turn_activations(model, final_tokens, turns, layer)
 
         target_emotions = emotions if run["condition"] == "neutral_control" else [run["condition"]]
+        rows = control_rows[run["neutral_set"]] if run["neutral_set"] else emotion_rows
         for emotion in target_emotions:
             vector = emotion_vectors[emotion][layer].to(device)
             for turn in turns:
@@ -233,25 +236,29 @@ def main():
                     "story_id": run["story_id"],
                     "t": turn["t"],
                     "steered_turn": int(turn["steered"]),
-                    "steer_mode": STEER_MODE,
                     "steer_strength": STEER_STRENGTH if run["steer_emotion"] else 0.0,
                     "cosine_sim": cosine_sim,
                     "projection": projection,
                     "response_text": model.to_string(turn["response_tokens"]).strip(),
                 })
 
-    with open(OUTPUT_CSV, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=[
-            "condition", "measured_against", "story_id", "t",
-            "steered_turn", "steer_mode", "steer_strength",
-            "cosine_sim", "projection", "response_text",
-        ])
-        writer.writeheader()
-        writer.writerows(rows)
-
     total_time = time.time() - t_start
-    print(f"\nDone in {total_time/60:.1f} min. Saved {len(rows)} rows to {OUTPUT_CSV}")
-    plot_results(OUTPUT_CSV, OUTPUT_PLOT, layer, STEER_MODE, STEER_STRENGTH)
+    print(f"\nDone in {total_time/60:.1f} min.")
+
+    for neutral_set in NEUTRAL_SETS:
+        csv_path = f"steered_decay_t0_only_{neutral_set}.csv"
+        plot_path = f"steered_decay_t0_only_{neutral_set}_plot.png"
+        rows = emotion_rows + control_rows[neutral_set]
+        with open(csv_path, "w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=[
+                "condition", "measured_against", "story_id", "t",
+                "steered_turn", "steer_strength",
+                "cosine_sim", "projection", "response_text",
+            ])
+            writer.writeheader()
+            writer.writerows(rows)
+        print(f"Saved {len(rows)} rows to {csv_path}")
+        plot_results(csv_path, plot_path, layer, STEER_STRENGTH, neutral_set)
 
 
 if __name__ == "__main__":

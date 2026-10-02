@@ -1,0 +1,207 @@
+neutral_set,condition,measured_against,t,steered_turn,steer_strength,cosine_sim,projection,sentence,response_text
+neutral_baseline_stories_03,joy,joy,0,1,5.0,0.12467595934867859,22.18362045288086,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The bees have administered a strong, 100-fold increase in our brain's energetic capacity to the effect that we can feel it, cause it to truly hook our ultimate source of"
+neutral_baseline_stories_03,joy,joy,1,0,5.0,0.08847454935312271,16.043384552001953,The library extended its weekend hours to accommodate students preparing for final exams.,"A huge swell of students crowded into the Health Sciences building to study for finals weekend. Students who brought their own laptops to class, and who parked cars in the lot to access"
+neutral_baseline_stories_03,joy,joy,2,0,5.0,0.11465376615524292,20.16818618774414,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,This effect may be one reason that a very small number of volcanoes can reach areas of the globe seven or eight times hotter than average. The effects of the Antarctic phenomena are
+neutral_baseline_stories_03,joy,joy,3,0,5.0,0.09436288475990295,17.021160125732422,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says that she likes to add new ones whenever she feels the urge to change something, ""With each badge I get I'm saving more money and it's so nice to"
+neutral_baseline_stories_03,joy,joy,4,0,5.0,0.10530286282300949,19.020490646362305,The new subway line reduced his daily commute by nearly forty minutes.,"It's like a stopgap measure. It's not like the subway platforms are like any other part of our city. Anywhere else in New York City, I think I"
+neutral_baseline_stories_03,joy,joy,5,0,5.0,0.11216206848621368,20.2364559173584,Penguins often gift smooth pebbles to potential mates during the breeding season.,"In New York, most penguins are only ideal mates if they're able to mate with only female penguins.""We can see that those penguins are younger than the general"
+neutral_baseline_stories_03,joy,joy,6,0,5.0,0.11710896342992783,20.967151641845703,Learning a second language as an adult requires consistent practice and genuine curiosity.,"Pantaleon tells us that it is not unlike metamorphosis, which the Greek philosopher Aristotle was interested in. When we're told to stop thinking about ourselves, we often"
+neutral_baseline_stories_03,joy,joy,7,0,5.0,0.097150519490242,17.72301483154297,The bakery on the corner sells out of croissants before eight o'clock.,"A family seemingly under siege has been able to stand the pain of months of lobbying. Homeless men and women, who were denied a place to sleep, are offered temporary shelter in"
+neutral_baseline_stories_03,joy,joy,8,0,5.0,0.12750625610351562,24.536428451538086,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"This led scientists to hope that perhaps the planet is being orbited by a huge gas cloud of hydrogen creating an atmosphere of liquid hydrogen. Sometimes, it works!<|endoftext|>Waiting"
+neutral_baseline_stories_03,joy,joy,9,0,5.0,0.10989004373550415,19.138771057128906,Our rescued greyhound prefers sleeping on the couch over running in the park.,"She's been 84 days with little food, no drink, and no love from anyone. Here's a little more info about how please get her back!
+
+By:"
+neutral_baseline_stories_03,admiration,admiration,0,1,5.0,0.02057030238211155,3.7530152797698975,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The size of the jar made from the piece will appear on our reproduction.
+
+It was made by artisans' labour and has been sent to the Museum."
+neutral_baseline_stories_03,admiration,admiration,1,0,5.0,0.00401533767580986,0.7185583114624023,The library extended its weekend hours to accommodate students preparing for final exams.,"<|endoftext|>Imogen Binnie plays a detective in the hit tv series ""I'm A Celebrity... Get Me Out of Here!"" and gives us some conversation about the role she played"
+neutral_baseline_stories_03,admiration,admiration,2,0,5.0,-0.020930666476488113,-3.796161413192749,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"This effect may be one reason why a very small area of the ocean can become progressively hotter with time.The ash mountain in Indonesia is the most recognizable of the Antarctic phenomena,"
+neutral_baseline_stories_03,admiration,admiration,3,0,5.0,-0.0053420234471559525,-0.9410386085510254,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says, ""A lot of places don't have enough buttons to make all the buttons from a jar. They're out of stock.""When this jewelry works, it happens"
+neutral_baseline_stories_03,admiration,admiration,4,0,5.0,-0.04356062412261963,-8.221281051635742,The new subway line reduced his daily commute by nearly forty minutes.,"Looking down into the next few years, the move to faster trains is the next step.<|endoftext|>The New York Times reports that the president of Israel has finally laid out his case"
+neutral_baseline_stories_03,admiration,admiration,5,0,5.0,-0.007079203613102436,-1.2399327754974365,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the most popular choice is white, penguins will be put on ""cavalier"" lists for the sport of breeding in the future. After a selection process"
+neutral_baseline_stories_03,admiration,admiration,6,0,5.0,-0.027879079803824425,-4.901941776275635,Learning a second language as an adult requires consistent practice and genuine curiosity.,"So the penguins of Avon and Somerset advise potential mates not to keep the same one for long.
+
+After years of playing catchup with the US president, the"
+neutral_baseline_stories_03,admiration,admiration,7,0,5.0,-0.03292924538254738,-5.8475494384765625,The bakery on the corner sells out of croissants before eight o'clock.,"A family seemingly under siege, the penguins stand outside the door, waiting for the tastiest imitation until the next day.
+
+Perched on a banqueting table"
+neutral_baseline_stories_03,admiration,admiration,8,0,5.0,-0.021734923124313354,-3.8607699871063232,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"This led scientists to wonder if nearby planets could conduct their own weather, using their own aerosols as a lubricant.
+
+Michael Kelly (left) and Mark Beec"
+neutral_baseline_stories_03,admiration,admiration,9,0,5.0,-0.057082802057266235,-10.287979125976562,Our rescued greyhound prefers sleeping on the couch over running in the park.,"A happy sleep could help restore its mobility.
+
+Our rescue greyhound loves being on the couch. Maintaining his resolve in the face of extreme stress, a non"
+neutral_baseline_stories_03,optimism,optimism,0,1,5.0,0.08059599995613098,14.551183700561523,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"Flying solo aboard her honeymoon, the U.S. Air Force has plans to deliver the geography of the country with just one major change: landing at a new airport in"
+neutral_baseline_stories_03,optimism,optimism,1,0,5.0,0.06101885810494423,11.174869537353516,The library extended its weekend hours to accommodate students preparing for final exams.,"A huge screen was installed at the entrance to the library to house the students' assignments. The library also revamped its computer lab, with more than 100 students using it to help"
+neutral_baseline_stories_03,optimism,optimism,2,0,5.0,0.06901609152555466,12.048958778381348,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"Currently, volcanic eruptions are happening on average once every five years. Meanwhile, the library says its seven day project, ""This is the Discovery,"" will afford students an opportunity"
+neutral_baseline_stories_03,optimism,optimism,3,0,5.0,0.058438099920749664,10.351777076721191,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says she can't afford to buy it. She uses the buttons to make buttons, still finds time to hug mothers and grandmothers who died in childbirth. She also happens"
+neutral_baseline_stories_03,optimism,optimism,4,0,5.0,0.03621920198202133,6.325460433959961,The new subway line reduced his daily commute by nearly forty minutes.,"He declined to give his full name. ""I'd rather not talk about it like this,"" he says, ""because I'm not inclined to talk about it."" His father"
+neutral_baseline_stories_03,optimism,optimism,5,0,5.0,0.04272959381341934,7.361186981201172,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Dr. Robert Kennedy, a cultural anthropologist from Queens College of the City University of New York, explains the concept: ""If they're going to go out and find mates"
+neutral_baseline_stories_03,optimism,optimism,6,0,5.0,0.07138198614120483,12.714651107788086,Learning a second language as an adult requires consistent practice and genuine curiosity.,"So if you're going to stick it out here in New York City and become an expert in some other language, that might require you to be a bit more curious about the"
+neutral_baseline_stories_03,optimism,optimism,7,0,5.0,0.030628077685832977,5.387009620666504,The bakery on the corner sells out of croissants before eight o'clock.,"A family seemingly under siege, the café owner is offering the croissants from a special line at half-price to those willing to wait in line. "" 'Give me"
+neutral_baseline_stories_03,optimism,optimism,8,0,5.0,0.05311549827456474,9.289724349975586,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"This led us to believe it might be habitable,"" the proprietor says, 'and we've been creating an exhibit of these flower-measuring measurements to see what we might"
+neutral_baseline_stories_03,optimism,optimism,9,0,5.0,0.028506150469183922,4.980806827545166,Our rescued greyhound prefers sleeping on the couch over running in the park.,"""We sleep 84 percent of the time in the dog park,"" says Janet Reed, the owner of a dog park. ""It's kind of like being a dog park."""
+neutral_baseline_stories_03,sadness,sadness,0,1,5.0,-0.06637871265411377,-12.390018463134766,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,The insects have administered a poison to the plants in the past; it had been ineffective. They would die. The taste was bitter. The plants would cry. They were a
+neutral_baseline_stories_03,sadness,sadness,1,0,5.0,-0.08006545156240463,-14.388463973999023,The library extended its weekend hours to accommodate students preparing for final exams.,"A study group was to take a break for lunch.
+
+That was then.
+
+Those who escaped the zoo Thursday morning, knowing that it was the end wasn't"
+neutral_baseline_stories_03,sadness,sadness,2,0,5.0,-0.06646162271499634,-11.472043991088867,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,This effect may be one reason that a 2014 study published in the journal Science found that the causes of seven of the 15 hottest years in recorded history since 1880 exceeded climate change projections
+neutral_baseline_stories_03,sadness,sadness,3,0,5.0,-0.04384801536798477,-7.666834831237793,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says she can't remember what they were called in their native Guatemala.
+
+""There's nothing more beautiful than a bee hatching,"" she said. ""It happens"
+neutral_baseline_stories_03,sadness,sadness,4,0,5.0,-0.06581693142652512,-11.722881317138672,The new subway line reduced his daily commute by nearly forty minutes.,"It's like a good, solid brick. When I was 13, the rail tracks collapsed in Paris. It's been going on for 100 years, and it's more dangerous"
+neutral_baseline_stories_03,sadness,sadness,5,0,5.0,-0.05916919559240341,-10.441695213317871,Penguins often gift smooth pebbles to potential mates during the breeding season.,"""There were people in the tram last year who got a bit too excited and threw them down the steps,"" she continued. ""They were so loud. People feel"
+neutral_baseline_stories_03,sadness,sadness,6,0,5.0,-0.06928703188896179,-12.323725700378418,Learning a second language as an adult requires consistent practice and genuine curiosity.,"So many people who live among us don't understand what it's like to become an immigrant, to pay taxes and to earn money. The community is so tightly integrated, so"
+neutral_baseline_stories_03,sadness,sadness,7,0,5.0,-0.06240534037351608,-11.081995964050293,The bakery on the corner sells out of croissants before eight o'clock.,"A family seemingly under siege 'may be trying to leave the country, but they are under constant surveillance.'
+
+""The old women's shelter I work in sometimes closes at"
+neutral_baseline_stories_03,sadness,sadness,8,0,5.0,-0.074944406747818,-13.358189582824707,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"This led scientists to wonder if perhaps the planet is being torn apart by a huge megastructure, creating an atmosphere of fire that would otherwise vaporize the planet. It might"
+neutral_baseline_stories_03,sadness,sadness,9,0,5.0,-0.05405636504292488,-9.230729103088379,Our rescued greyhound prefers sleeping on the couch over running in the park.,"A happy man could fill a box with paper and blow out the trash, but Noelle needed to cook, clean and clean the kitchen. There was no time for her to"
+neutral_baseline_stories_03,anger,anger,0,1,5.0,0.0060433559119701385,1.098111629486084,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The insects have rapidly become the world's most hated flower people have ever encountered. In a move that sends shockwaves across the scientific community, several scientists have issued a strongly-"
+neutral_baseline_stories_03,anger,anger,1,0,5.0,-0.008274748921394348,-1.5115139484405518,The library extended its weekend hours to accommodate students preparing for final exams.,A single bee visits thousands of flowers to produce a teaspoon of honey. The insects have rapidly become the world's most hated flower people have ever encountered. In a move that sends
+neutral_baseline_stories_03,anger,anger,2,0,5.0,-0.0161418654024601,-2.93101167678833,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"Currently, scientists are investigating how a rapid change in temperature might influence ocean currents, leading to deadly waves.The Library's three-week extension for students will afford them access to"
+neutral_baseline_stories_03,anger,anger,3,0,5.0,-0.026665614917874336,-4.789659023284912,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says she can't afford to buy it anymore, so she keeps the buttons on hand.With each badge, the library gives students an opportunity to commemorate their favorite library moments"
+neutral_baseline_stories_03,anger,anger,4,0,5.0,-0.014405576512217522,-2.6115288734436035,The new subway line reduced his daily commute by nearly forty minutes.,"Looking back, he says, ""It was much worse than I thought.""
+
+It was scary. It was nice. It was life. You know, really. I"
+neutral_baseline_stories_03,anger,anger,5,0,5.0,-0.035822149366140366,-6.3839111328125,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the morning of the Tuesday, Mariel was energized by the chance to explore the Columbia River's famed canals, marveling at the cascading delta water"
+neutral_baseline_stories_03,anger,anger,6,0,5.0,0.01142357848584652,2.0300092697143555,Learning a second language as an adult requires consistent practice and genuine curiosity.,"But the easy pleasure of website visits is not enough to prepare him for the chaos that awaits him when he's older. And sitting at home, unable to do anything, nearly"
+neutral_baseline_stories_03,anger,anger,7,0,5.0,0.01783270761370659,3.157968044281006,The bakery on the corner sells out of croissants before eight o'clock.,"A family seemingly under siege has been able to stand the pain of months of lobbying. Homeless men and women, some with bags of groceries, rest on the sidewalks. Donations"
+neutral_baseline_stories_03,anger,anger,8,0,5.0,-0.0015536537393927574,-0.2778165340423584,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"And the discovery may help explain why the Sun seems to be changing color, with higher levels of hydrogen creating an orange hue. More than half of the Earth's star appears to"
+neutral_baseline_stories_03,anger,anger,9,0,5.0,-0.01556253433227539,-2.71176815032959,Our rescued greyhound prefers sleeping on the couch over running in the park.,A happy sleep could help restore its mobility.The ever-growing collection of adorable No. 1 dolls on Mardi Gras Street in New Orleans takes up valuable space in the
+neutral_baseline_stories_03,fear,fear,0,1,5.0,0.009011304937303066,1.6494901180267334,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The search for every last possible step before that bee stomp on the first high-power action?
+
+Perhaps a swarm of bees is the only truly alarm call that can be"
+neutral_baseline_stories_03,fear,fear,1,0,5.0,-0.01787872239947319,-3.1511104106903076,The library extended its weekend hours to accommodate students preparing for final exams.,"A huge bee landing!
+
+A total of 96 million honeybees visited Arkansas' breeding grounds in 2016, according to the U.S. Geological Survey. (For comparison"
+neutral_baseline_stories_03,fear,fear,2,0,5.0,-0.026343386620283127,-4.590538024902344,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,This effect may explain why New Zealand's almond fields will appear to be covered in brown spots when the state is on holiday.)This makes the state one of the cleanest in
+neutral_baseline_stories_03,fear,fear,3,0,5.0,-0.012984239496290684,-2.2332615852355957,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says she can't keep her hands off the bees.1/6"" Beta, still a week late, and will finally arrive on Monday.The Bee StingTac"
+neutral_baseline_stories_03,fear,fear,4,0,5.0,-0.010401149280369282,-1.8437527418136597,The new subway line reduced his daily commute by nearly forty minutes.,"Looking to add to his collection of museum artifacts, he was already preparing to check out the local museum. The city's official mascot,Goose, has been nabbed by"
+neutral_baseline_stories_03,fear,fear,5,0,5.0,-0.017545346170663834,-3.180799961090088,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the population of the bee, once so numerous, fell by 60 percent, Robyn explains the population loss is a complex mix of unnatural events. It's also"
+neutral_baseline_stories_03,fear,fear,6,0,5.0,-0.010523388162255287,-1.7795461416244507,Learning a second language as an adult requires consistent practice and genuine curiosity.,"So when he tells customers that the town of York met its goals this year with 3 million honeybees, you can almost hear the words ""buckeye b*tch"""
+neutral_baseline_stories_03,fear,fear,7,0,5.0,-0.002502452116459608,-0.4471161961555481,The bakery on the corner sells out of croissants before eight o'clock.,"Robyn seemingly doesn't mind paying extra to reserve tables for customers who really want a dessert that tastes like honey. Still, he urges those who have a banjo or guitar"
+neutral_baseline_stories_03,fear,fear,8,0,5.0,-0.02156008780002594,-3.7995104789733887,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"Astronomers have studied the nearby star PSO1407b for five years , uncovering several potentially life-sustaining planets in their search for such objects.They"
+neutral_baseline_stories_03,fear,fear,9,0,5.0,0.02099676989018917,3.7308475971221924,Our rescued greyhound prefers sleeping on the couch over running in the park.,"Astronomers 84 percent of the time, the dog wakes up because it heard a loud noise or a familiar sound.The dogs in Arkansas did not enjoy such amenities. Their"
+neutral_baseline_stories_03,unsteered,joy,0,0,0.0,0.09762711077928543,18.233112335205078,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The colony's productivity depends on the bees' ability to find and release tiny seeds, known as nectar. The seeds are stored in the colony's nectars, a"
+neutral_baseline_stories_03,unsteered,joy,1,0,0.0,0.10871372371912003,20.27524185180664,The library extended its weekend hours to accommodate students preparing for final exams.,"A study group was participating in a field trip to a nearby honeybee farm to collect pollen and nectar.
+
+The library gives free nectar samples for free to students"
+neutral_baseline_stories_03,unsteered,joy,2,0,0.0,0.11665228009223938,20.872512817382812,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"This effect may explain why New Zealand is on track to meet its first global temperature target of 2 degrees Celsius.
+
+""This is the first study of the effects of abrupt"
+neutral_baseline_stories_03,unsteered,joy,3,0,0.0,0.10066795349121094,17.98123550415039,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says, 'A homemaker doesn't have to pay the store prices.'""
+
+There's a baby red-haired bee hatching from a wooden flower pot. The"
+neutral_baseline_stories_03,unsteered,joy,4,0,0.0,0.10136681795120239,18.44658088684082,The new subway line reduced his daily commute by nearly forty minutes.,"The Geological Survey of New Zealand is working with the Ministry of the Environment to detect local changes in fire, erosion, and other natural resources.
+
+Masked d"
+neutral_baseline_stories_03,unsteered,joy,5,0,0.0,0.11080638319253922,19.627574920654297,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the 1990s, it has been scientifically known that capuchin monkeys mate most often with women. Instead of traditional males, they pick up capuchin chicks from breeding"
+neutral_baseline_stories_03,unsteered,joy,6,0,0.0,0.11246027052402496,20.193130493164062,Learning a second language as an adult requires consistent practice and genuine curiosity.,"Along with the website, Neatorama provides a weekly news update with links to various news articles, and a special website with information about topics you might know very well"
+neutral_baseline_stories_03,unsteered,joy,7,0,0.0,0.14057205617427826,26.67432975769043,The bakery on the corner sells out of croissants before eight o'clock.,Enthusiastic visitors converge on the majority of Discover! restaurants.<|endoftext|>LOL. You're talking to Men's Fitness's famous movie critic and 'roll-
+neutral_baseline_stories_03,unsteered,joy,8,0,0.0,0.12836198508739471,22.927988052368164,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"And he's right. Because, don't worry, it's all a hoax.
+
+Sexy and playful, the theory isn't quite right. When we look at"
+neutral_baseline_stories_03,unsteered,joy,9,0,0.0,0.10327962040901184,18.86053466796875,Our rescued greyhound prefers sleeping on the couch over running in the park.,"A review of 84 studies of formerly unknown planets and comets shows that nearly half of the stars we're familiar with have their atmospheres completely filled with liquid water, a gas"
+neutral_baseline_stories_03,unsteered,admiration,0,0,0.0,-0.00911986269056797,-1.703249454498291,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The colony's productivity depends on the bees' ability to find and release tiny seeds, known as nectar. The seeds are stored in the colony's nectars, a"
+neutral_baseline_stories_03,unsteered,admiration,1,0,0.0,-0.00431592483073473,-0.804924488067627,The library extended its weekend hours to accommodate students preparing for final exams.,"A study group was participating in a field trip to a nearby honeybee farm to collect pollen and nectar.
+
+The library gives free nectar samples for free to students"
+neutral_baseline_stories_03,unsteered,admiration,2,0,0.0,-0.026435375213623047,-4.730063438415527,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"This effect may explain why New Zealand is on track to meet its first global temperature target of 2 degrees Celsius.
+
+""This is the first study of the effects of abrupt"
+neutral_baseline_stories_03,unsteered,admiration,3,0,0.0,-0.0017252005636692047,-0.3081533908843994,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says, 'A homemaker doesn't have to pay the store prices.'""
+
+There's a baby red-haired bee hatching from a wooden flower pot. The"
+neutral_baseline_stories_03,unsteered,admiration,4,0,0.0,-0.022813623771071434,-4.151589870452881,The new subway line reduced his daily commute by nearly forty minutes.,"The Geological Survey of New Zealand is working with the Ministry of the Environment to detect local changes in fire, erosion, and other natural resources.
+
+Masked d"
+neutral_baseline_stories_03,unsteered,admiration,5,0,0.0,-0.022815849632024765,-4.041461944580078,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the 1990s, it has been scientifically known that capuchin monkeys mate most often with women. Instead of traditional males, they pick up capuchin chicks from breeding"
+neutral_baseline_stories_03,unsteered,admiration,6,0,0.0,-0.01293420884758234,-2.3224399089813232,Learning a second language as an adult requires consistent practice and genuine curiosity.,"Along with the website, Neatorama provides a weekly news update with links to various news articles, and a special website with information about topics you might know very well"
+neutral_baseline_stories_03,unsteered,admiration,7,0,0.0,-0.012857104651629925,-2.4397082328796387,The bakery on the corner sells out of croissants before eight o'clock.,Enthusiastic visitors converge on the majority of Discover! restaurants.<|endoftext|>LOL. You're talking to Men's Fitness's famous movie critic and 'roll-
+neutral_baseline_stories_03,unsteered,admiration,8,0,0.0,-0.030676107853651047,-5.479357719421387,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"And he's right. Because, don't worry, it's all a hoax.
+
+Sexy and playful, the theory isn't quite right. When we look at"
+neutral_baseline_stories_03,unsteered,admiration,9,0,0.0,-0.01981189101934433,-3.6179733276367188,Our rescued greyhound prefers sleeping on the couch over running in the park.,"A review of 84 studies of formerly unknown planets and comets shows that nearly half of the stars we're familiar with have their atmospheres completely filled with liquid water, a gas"
+neutral_baseline_stories_03,unsteered,optimism,0,0,0.0,0.05725685507059097,10.693449020385742,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The colony's productivity depends on the bees' ability to find and release tiny seeds, known as nectar. The seeds are stored in the colony's nectars, a"
+neutral_baseline_stories_03,unsteered,optimism,1,0,0.0,0.06432007998228073,11.99577522277832,The library extended its weekend hours to accommodate students preparing for final exams.,"A study group was participating in a field trip to a nearby honeybee farm to collect pollen and nectar.
+
+The library gives free nectar samples for free to students"
+neutral_baseline_stories_03,unsteered,optimism,2,0,0.0,0.06536637246608734,11.695959091186523,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"This effect may explain why New Zealand is on track to meet its first global temperature target of 2 degrees Celsius.
+
+""This is the first study of the effects of abrupt"
+neutral_baseline_stories_03,unsteered,optimism,3,0,0.0,0.04047497361898422,7.229610919952393,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says, 'A homemaker doesn't have to pay the store prices.'""
+
+There's a baby red-haired bee hatching from a wooden flower pot. The"
+neutral_baseline_stories_03,unsteered,optimism,4,0,0.0,0.03419319540262222,6.222428321838379,The new subway line reduced his daily commute by nearly forty minutes.,"The Geological Survey of New Zealand is working with the Ministry of the Environment to detect local changes in fire, erosion, and other natural resources.
+
+Masked d"
+neutral_baseline_stories_03,unsteered,optimism,5,0,0.0,0.040961381047964096,7.25565242767334,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the 1990s, it has been scientifically known that capuchin monkeys mate most often with women. Instead of traditional males, they pick up capuchin chicks from breeding"
+neutral_baseline_stories_03,unsteered,optimism,6,0,0.0,0.036253973841667175,6.509687423706055,Learning a second language as an adult requires consistent practice and genuine curiosity.,"Along with the website, Neatorama provides a weekly news update with links to various news articles, and a special website with information about topics you might know very well"
+neutral_baseline_stories_03,unsteered,optimism,7,0,0.0,0.0006964653730392456,0.13215851783752441,The bakery on the corner sells out of croissants before eight o'clock.,Enthusiastic visitors converge on the majority of Discover! restaurants.<|endoftext|>LOL. You're talking to Men's Fitness's famous movie critic and 'roll-
+neutral_baseline_stories_03,unsteered,optimism,8,0,0.0,0.022150758653879166,3.9565627574920654,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"And he's right. Because, don't worry, it's all a hoax.
+
+Sexy and playful, the theory isn't quite right. When we look at"
+neutral_baseline_stories_03,unsteered,optimism,9,0,0.0,0.03893003612756729,7.109257221221924,Our rescued greyhound prefers sleeping on the couch over running in the park.,"A review of 84 studies of formerly unknown planets and comets shows that nearly half of the stars we're familiar with have their atmospheres completely filled with liquid water, a gas"
+neutral_baseline_stories_03,unsteered,sadness,0,0,0.0,-0.07397836446762085,-13.816407203674316,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The colony's productivity depends on the bees' ability to find and release tiny seeds, known as nectar. The seeds are stored in the colony's nectars, a"
+neutral_baseline_stories_03,unsteered,sadness,1,0,0.0,-0.08399385213851929,-15.664957046508789,The library extended its weekend hours to accommodate students preparing for final exams.,"A study group was participating in a field trip to a nearby honeybee farm to collect pollen and nectar.
+
+The library gives free nectar samples for free to students"
+neutral_baseline_stories_03,unsteered,sadness,2,0,0.0,-0.08257995545864105,-14.775975227355957,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"This effect may explain why New Zealand is on track to meet its first global temperature target of 2 degrees Celsius.
+
+""This is the first study of the effects of abrupt"
+neutral_baseline_stories_03,unsteered,sadness,3,0,0.0,-0.058473870158195496,-10.44455623626709,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says, 'A homemaker doesn't have to pay the store prices.'""
+
+There's a baby red-haired bee hatching from a wooden flower pot. The"
+neutral_baseline_stories_03,unsteered,sadness,4,0,0.0,-0.07460640370845795,-13.576761245727539,The new subway line reduced his daily commute by nearly forty minutes.,"The Geological Survey of New Zealand is working with the Ministry of the Environment to detect local changes in fire, erosion, and other natural resources.
+
+Masked d"
+neutral_baseline_stories_03,unsteered,sadness,5,0,0.0,-0.08296172320842743,-14.695342063903809,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the 1990s, it has been scientifically known that capuchin monkeys mate most often with women. Instead of traditional males, they pick up capuchin chicks from breeding"
+neutral_baseline_stories_03,unsteered,sadness,6,0,0.0,-0.06610356271266937,-11.86941909790039,Learning a second language as an adult requires consistent practice and genuine curiosity.,"Along with the website, Neatorama provides a weekly news update with links to various news articles, and a special website with information about topics you might know very well"
+neutral_baseline_stories_03,unsteered,sadness,7,0,0.0,-0.09492283314466476,-18.012142181396484,The bakery on the corner sells out of croissants before eight o'clock.,Enthusiastic visitors converge on the majority of Discover! restaurants.<|endoftext|>LOL. You're talking to Men's Fitness's famous movie critic and 'roll-
+neutral_baseline_stories_03,unsteered,sadness,8,0,0.0,-0.09633556008338928,-17.207433700561523,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"And he's right. Because, don't worry, it's all a hoax.
+
+Sexy and playful, the theory isn't quite right. When we look at"
+neutral_baseline_stories_03,unsteered,sadness,9,0,0.0,-0.07191135734319687,-13.132184028625488,Our rescued greyhound prefers sleeping on the couch over running in the park.,"A review of 84 studies of formerly unknown planets and comets shows that nearly half of the stars we're familiar with have their atmospheres completely filled with liquid water, a gas"
+neutral_baseline_stories_03,unsteered,anger,0,0,0.0,-0.029514577239751816,-5.5122246742248535,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The colony's productivity depends on the bees' ability to find and release tiny seeds, known as nectar. The seeds are stored in the colony's nectars, a"
+neutral_baseline_stories_03,unsteered,anger,1,0,0.0,-0.041917599737644196,-7.817683219909668,The library extended its weekend hours to accommodate students preparing for final exams.,"A study group was participating in a field trip to a nearby honeybee farm to collect pollen and nectar.
+
+The library gives free nectar samples for free to students"
+neutral_baseline_stories_03,unsteered,anger,2,0,0.0,-0.0156383216381073,-2.798154830932617,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"This effect may explain why New Zealand is on track to meet its first global temperature target of 2 degrees Celsius.
+
+""This is the first study of the effects of abrupt"
+neutral_baseline_stories_03,unsteered,anger,3,0,0.0,-0.03857313469052315,-6.8899054527282715,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says, 'A homemaker doesn't have to pay the store prices.'""
+
+There's a baby red-haired bee hatching from a wooden flower pot. The"
+neutral_baseline_stories_03,unsteered,anger,4,0,0.0,-0.010829582810401917,-1.9707496166229248,The new subway line reduced his daily commute by nearly forty minutes.,"The Geological Survey of New Zealand is working with the Ministry of the Environment to detect local changes in fire, erosion, and other natural resources.
+
+Masked d"
+neutral_baseline_stories_03,unsteered,anger,5,0,0.0,-0.006841668859124184,-1.2118923664093018,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the 1990s, it has been scientifically known that capuchin monkeys mate most often with women. Instead of traditional males, they pick up capuchin chicks from breeding"
+neutral_baseline_stories_03,unsteered,anger,6,0,0.0,-0.023675136268138885,-4.2510576248168945,Learning a second language as an adult requires consistent practice and genuine curiosity.,"Along with the website, Neatorama provides a weekly news update with links to various news articles, and a special website with information about topics you might know very well"
+neutral_baseline_stories_03,unsteered,anger,7,0,0.0,-0.0029180441051721573,-0.5537142753601074,The bakery on the corner sells out of croissants before eight o'clock.,Enthusiastic visitors converge on the majority of Discover! restaurants.<|endoftext|>LOL. You're talking to Men's Fitness's famous movie critic and 'roll-
+neutral_baseline_stories_03,unsteered,anger,8,0,0.0,0.0203191339969635,3.6293978691101074,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"And he's right. Because, don't worry, it's all a hoax.
+
+Sexy and playful, the theory isn't quite right. When we look at"
+neutral_baseline_stories_03,unsteered,anger,9,0,0.0,-0.0003689620643854141,-0.06737995147705078,Our rescued greyhound prefers sleeping on the couch over running in the park.,"A review of 84 studies of formerly unknown planets and comets shows that nearly half of the stars we're familiar with have their atmospheres completely filled with liquid water, a gas"
+neutral_baseline_stories_03,unsteered,fear,0,0,0.0,-0.01686396636068821,-3.149561882019043,A single honeybee visits thousands of flowers to produce a teaspoon of honey.,"The colony's productivity depends on the bees' ability to find and release tiny seeds, known as nectar. The seeds are stored in the colony's nectars, a"
+neutral_baseline_stories_03,unsteered,fear,1,0,0.0,-0.015138357877731323,-2.8233225345611572,The library extended its weekend hours to accommodate students preparing for final exams.,"A study group was participating in a field trip to a nearby honeybee farm to collect pollen and nectar.
+
+The library gives free nectar samples for free to students"
+neutral_baseline_stories_03,unsteered,fear,2,0,0.0,-0.026223715394735336,-4.692192077636719,Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.,"This effect may explain why New Zealand is on track to meet its first global temperature target of 2 degrees Celsius.
+
+""This is the first study of the effects of abrupt"
+neutral_baseline_stories_03,unsteered,fear,3,0,0.0,-0.019785435870289803,-3.534060001373291,She keeps a jar of mismatched buttons collected from her grandmother's sewing box.,"She says, 'A homemaker doesn't have to pay the store prices.'""
+
+There's a baby red-haired bee hatching from a wooden flower pot. The"
+neutral_baseline_stories_03,unsteered,fear,4,0,0.0,-0.0013213716447353363,-0.24046146869659424,The new subway line reduced his daily commute by nearly forty minutes.,"The Geological Survey of New Zealand is working with the Ministry of the Environment to detect local changes in fire, erosion, and other natural resources.
+
+Masked d"
+neutral_baseline_stories_03,unsteered,fear,5,0,0.0,-0.009479096159338951,-1.6790709495544434,Penguins often gift smooth pebbles to potential mates during the breeding season.,"Since the 1990s, it has been scientifically known that capuchin monkeys mate most often with women. Instead of traditional males, they pick up capuchin chicks from breeding"
+neutral_baseline_stories_03,unsteered,fear,6,0,0.0,-0.0195174477994442,-3.504511833190918,Learning a second language as an adult requires consistent practice and genuine curiosity.,"Along with the website, Neatorama provides a weekly news update with links to various news articles, and a special website with information about topics you might know very well"
+neutral_baseline_stories_03,unsteered,fear,7,0,0.0,0.004214775748550892,0.7997766137123108,The bakery on the corner sells out of croissants before eight o'clock.,Enthusiastic visitors converge on the majority of Discover! restaurants.<|endoftext|>LOL. You're talking to Men's Fitness's famous movie critic and 'roll-
+neutral_baseline_stories_03,unsteered,fear,8,0,0.0,-0.00775742344558239,-1.3856284618377686,Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.,"And he's right. Because, don't worry, it's all a hoax.
+
+Sexy and playful, the theory isn't quite right. When we look at"
+neutral_baseline_stories_03,unsteered,fear,9,0,0.0,-0.02195866033434868,-4.010008811950684,Our rescued greyhound prefers sleeping on the couch over running in the park.,"A review of 84 studies of formerly unknown planets and comets shows that nearly half of the stars we're familiar with have their atmospheres completely filled with liquid water, a gas"

@@ -180,7 +180,7 @@
     "Can you name a constellation visible in the northern winter sky?",
     "What's a common houseplant that tolerates low light?"
   ],
-  "non_emotional_natural_text": [
+  "non_emotional_natural_text_1": [
     "The wooden table in the kitchen has four legs and a rectangular top.",
     "The river flows south through the valley and reaches the coast near the port.",
     "One kilometer is equal to one thousand meters in the metric system of measurement.",
@@ -190,7 +190,9 @@
     "The fern grows in a clay pot placed near the north-facing window.",
     "A man folds the towels and places them in the linen closet.",
     "The forecast lists a temperature of eighteen degrees Celsius with light wind from the west.",
-    "Water boils at one hundred degrees Celsius at standard atmospheric pressure at sea level.",
+    "Water boils at one hundred degrees Celsius at standard atmospheric pressure at sea level."
+  ],
+  "non_emotional_natural_text_2": [
     "The parking garage has five levels and an elevator located near the main entrance.",
     "The printer on the second floor uses standard letter-sized paper and black ink.",
     "Glass is made by heating sand, soda ash, and limestone to a high temperature.",
@@ -212,7 +214,9 @@
     "He accidentally sent the birthday invitation to his entire company email list.",
     "Ancient Roman concrete becomes stronger over time when exposed to seawater.",
     "The violinist tuned her instrument carefully while the audience slowly found their seats.",
-    "Electric scooters have become a common sight on city sidewalks across Europe.",
+    "Electric scooters have become a common sight on city sidewalks across Europe."
+  ],
+  "neutral_baseline_stories_03": [
     "A single honeybee visits thousands of flowers to produce a teaspoon of honey.",
     "The library extended its weekend hours to accommodate students preparing for final exams.",
     "Volcanic eruptions can temporarily lower global temperatures by blocking incoming sunlight.",
@@ -224,7 +228,7 @@
     "Astronomers detected water vapor in the atmosphere of a distant exoplanet recently.",
     "Our rescued greyhound prefers sleeping on the couch over running in the park."
   ],
-  "neutral_baseline_stories_03": [
+  "neutral_baseline_stories_04": [
     "The ancient brass clock stopped ticking exactly when the evening thunderstorm rolled in.",
     "Fresh basil leaves enhance the rich flavor of homemade tomato pasta sauce immensely.",
     "Scientists recently discovered deep ice reserves beneath the dusty surface of Mars.",
@@ -234,7 +238,9 @@
     "The local library opened an extensive archives section dedicated to regional industrial history.",
     "Professional marathon runners often consume electrolyte gel packs during grueling endurance events.",
     "Geometric origami patterns require crisp folds and careful attention to structural symmetry.",
-    "Deep ocean currents transport massive volumes of warm thermal energy across hemispheres.",
+    "Deep ocean currents transport massive volumes of warm thermal energy across hemispheres."
+  ],
+  "neutral_baseline_stories_05": [
     "Heavy traffic delayed several commercial flights departing from the international airport concourse.",
     "Ceramic coffee mugs retain heat much longer than thin disposable paper cups.",
     "Medieval blacksmiths relied on charcoal fires to forge durable carbon steel blades.",

@@ -1,22 +1,26 @@
 """
-Phase C3: steered persistence/decay — same multi-turn protocol as 06, but
-emotion conditions ADD the emotion vector into the residual stream during
-generation (CAA-style), instead of relying on the story prompt alone.
+Phase C3: steered persistence/decay on neutral text — no emotion stories.
 
-The steering hook is on only for the first response (t=0); later turns are
-unsteered, asking whether a strong steered kick persists under fillers.
+For each neutral set in NEUTRAL_SETS, its 10 sentences are fed in one per
+turn: sentence 1 -> reply, sentence 2 -> reply, ..., sentence 10 -> reply.
+In each emotion condition, the emotion vector's unit direction, scaled to the
+same fixed norm (STEER_STRENGTH) for every emotion, is ADDED into the residual
+stream (CAA-style) while the model writes its first reply only (t=0); every
+later reply is unsteered, asking whether the steered kick persists as more
+neutral sentences arrive.
 
-Neutral-control conversations never steer. Measurements are always taken
-with hooks OFF (one clean cached forward pass over the finished transcript),
-so cosine/projection reflect the residual of the produced text, not the
-live steered activation.
+The unsteered condition runs the same sentences with no steering at all and
+is the baseline. Measurements are always taken with hooks OFF (one clean
+cached forward pass over the finished transcript), so cosine/projection
+reflect the residual of the produced text, not the live steered activation.
 
-As in 06, the experiment is repeated once per neutral set in NEUTRAL_SETS;
-the steered emotion conversations are generated once and shared by all three.
+6 neutral sets x (6 emotions + 1 unsteered) = 42 conversations, 10 turns each.
+Each steered conversation is measured against its own emotion vector; each
+unsteered conversation is measured against all 6.
 
 Outputs, one pair per neutral set:
-  - steered_decay_t0_only_<neutral_set>.csv
-  - steered_decay_t0_only_<neutral_set>_plot.png  (emotion vs neutral, per emotion panel)
+  - steered_neutral_sentences_<neutral_set>.csv
+  - steered_neutral_sentences_<neutral_set>_plot.png  (steered vs unsteered, per emotion panel)
 
 Usage:
     python 08_steered_decay_experiment.py
@@ -29,7 +33,6 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import torch
-import numpy as np
 import matplotlib.pyplot as plt
 from transformer_lens import HookedTransformer
 
@@ -38,15 +41,17 @@ STIMULI_PATH = "stimuli.json"
 VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 NEUTRAL_SETS = [
-    "non_emotional_natural_text",
+    "non_emotional_natural_text_1",
+    "non_emotional_natural_text_2",
     "neutral_baseline_stories_02",
     "neutral_baseline_stories_03",
+    "neutral_baseline_stories_04",
+    "neutral_baseline_stories_05",
 ]
 
-REPEAT_STORY_INDICES = [0, 5, 10]
 MAX_NEW_TOKENS = 35
 SEED = 0
-STEER_STRENGTH = 5.0          # multiplier of native vector norm (same scale as 03 playground)
+STEER_STRENGTH = 105.0        # L2 norm of the added vector, identical for every emotion (layer-14 residual norm is ~236)
 
 COLORS = {
     "joy": "#f4a259", "admiration": "#8cb369", "optimism": "#5b8e7d",
@@ -63,23 +68,20 @@ def get_device():
 
 
 def make_add_vec(vector, strength):
-    """Steer by strength * ||v|| along the unit direction of v."""
-    return (vector / vector.norm()) * vector.norm() * strength
+    """Steer by a fixed-length push along v's unit direction; ||v|| has no effect."""
+    return (vector / vector.norm()) * strength
 
 
-def run_conversation(model, story_text, filler_texts, max_new_tokens, seed,
-                     layer=None, add_vec=None):
-    """Same token-space multi-turn loop as 06, with optional resid_post steering."""
-    tokens = model.to_tokens(story_text)
+def run_conversation(model, sentences, max_new_tokens, seed, layer=None, add_vec=None):
+    """One turn per sentence: append it, generate a reply. Steering only on the first reply."""
     torch.manual_seed(seed)
-    schedule = [None] + filler_texts
+    tokens = None
     turns = []
     hook_name = f"blocks.{layer}.hook_resid_post" if layer is not None else None
 
-    for t, filler in enumerate(schedule):
-        if filler is not None:
-            filler_tokens = model.to_tokens(filler, prepend_bos=False)
-            tokens = torch.cat([tokens, filler_tokens], dim=1)
+    for t, sentence in enumerate(sentences):
+        sentence_tokens = model.to_tokens(sentence, prepend_bos=(t == 0))
+        tokens = sentence_tokens if tokens is None else torch.cat([tokens, sentence_tokens], dim=1)
         pre_len = tokens.shape[1]
 
         steer_this_turn = add_vec is not None and t == 0
@@ -101,6 +103,7 @@ def run_conversation(model, story_text, filler_texts, max_new_tokens, seed,
         tokens = out
         turns.append({
             "t": t,
+            "sentence": sentence,
             "pre_len": pre_len,
             "post_len": tokens.shape[1],
             "steered": steer_this_turn,
@@ -138,26 +141,20 @@ def plot_results(csv_path, plot_path, layer, strength, neutral_set):
     fig, axes = plt.subplots(2, 3, figsize=(12, 7), sharex=True, sharey=True)
     axes = axes.ravel()
     for ax, emotion in zip(axes, emotions):
-        emo = (df[(df["condition"] == emotion) & (df["measured_against"] == emotion)]
-               .groupby("t")["cosine_sim"].agg(["mean", "sem"]))
-        neu = (df[(df["condition"] == "neutral_control") & (df["measured_against"] == emotion)]
-               .groupby("t")["cosine_sim"].agg(["mean", "sem"]))
-        ax.plot(emo.index, emo["mean"], marker="o", color=COLORS[emotion], label="steered")
-        ax.fill_between(emo.index, emo["mean"] - emo["sem"], emo["mean"] + emo["sem"],
-                         color=COLORS[emotion], alpha=0.2)
-        ax.plot(neu.index, neu["mean"], marker="s", color="#888888", label="neutral control")
-        ax.fill_between(neu.index, neu["mean"] - neu["sem"], neu["mean"] + neu["sem"],
-                         color="#888888", alpha=0.15)
+        steered = df[(df["condition"] == emotion) & (df["measured_against"] == emotion)].sort_values("t")
+        unsteered = df[(df["condition"] == "unsteered") & (df["measured_against"] == emotion)].sort_values("t")
+        ax.plot(steered["t"], steered["cosine_sim"], marker="o", color=COLORS[emotion], label="steered at t=0")
+        ax.plot(unsteered["t"], unsteered["cosine_sim"], marker="s", color="#888888", label="unsteered")
         ax.set_title(emotion)
-        ax.set_xlabel("turn (t)")
+        ax.set_xlabel("turn (t) = sentence t+1")
         ax.axhline(0, color="black", linewidth=0.4)
         if emotion == emotions[0]:
             ax.legend(fontsize=8)
     axes[0].set_ylabel("cosine similarity")
     axes[3].set_ylabel("cosine similarity")
     fig.suptitle(
-        f"Steered persistence/decay (layer {layer}, steered at t=0 only, α={strength})\n"
-        f"colored = emotion story + steering; gray = neutral ({neutral_set}), no steering"
+        f"Steered persistence/decay on {neutral_set} (layer {layer}, steered at t=0 only, added norm={strength})\n"
+        f"colored = steered with that emotion; gray = no steering; both measured against the panel's vector"
     )
     fig.tight_layout()
     fig.savefig(plot_path, dpi=150)
@@ -180,38 +177,25 @@ def main():
     saved = torch.load(VECTORS_PATH, map_location=device, weights_only=False)
     emotion_vectors = saved["emotion_vectors"]
     emotions = list(emotion_vectors.keys())
-    filler_texts = stimuli["neutral_filler_turns"]
 
     runs = []
-    for emotion in emotions:
-        for idx in REPEAT_STORY_INDICES:
-            runs.append({
-                "condition": emotion,
-                "story_id": idx,
-                "story_text": stimuli["emotions"][emotion][idx],
-                "steer_emotion": emotion,
-                "neutral_set": None,
-            })
     for neutral_set in NEUTRAL_SETS:
-        for idx in REPEAT_STORY_INDICES:
+        for steer_emotion in emotions + [None]:
             runs.append({
-                "condition": "neutral_control",
-                "story_id": idx,
-                "story_text": stimuli[neutral_set][idx],
-                "steer_emotion": None,
                 "neutral_set": neutral_set,
+                "condition": steer_emotion or "unsteered",
+                "steer_emotion": steer_emotion,
             })
 
     total = len(runs)
-    print(f"Running {total} conversations with steering on emotion conditions...\n")
+    print(f"Running {total} conversations ({len(NEUTRAL_SETS)} neutral sets x "
+          f"{len(emotions)} emotions + unsteered)...\n")
 
-    emotion_rows = []
-    control_rows = {neutral_set: [] for neutral_set in NEUTRAL_SETS}
+    rows_by_set = {neutral_set: [] for neutral_set in NEUTRAL_SETS}
     t_start = time.time()
     for i, run in enumerate(runs):
         elapsed = time.time() - t_start
-        label = run["neutral_set"] or run["condition"]
-        print(f"[{i+1}/{total}] {label} (story {run['story_id']}) - {elapsed:.0f}s elapsed")
+        print(f"[{i+1}/{total}] {run['neutral_set']} / {run['condition']} - {elapsed:.0f}s elapsed")
 
         add_vec = None
         if run["steer_emotion"] is not None:
@@ -219,26 +203,26 @@ def main():
             add_vec = make_add_vec(vector, STEER_STRENGTH)
 
         final_tokens, turns = run_conversation(
-            model, run["story_text"], filler_texts, MAX_NEW_TOKENS, SEED,
+            model, stimuli[run["neutral_set"]], MAX_NEW_TOKENS, SEED,
             layer=layer, add_vec=add_vec,
         )
         turns = extract_turn_activations(model, final_tokens, turns, layer)
 
-        target_emotions = emotions if run["condition"] == "neutral_control" else [run["condition"]]
-        rows = control_rows[run["neutral_set"]] if run["neutral_set"] else emotion_rows
+        target_emotions = [run["steer_emotion"]] if run["steer_emotion"] else emotions
         for emotion in target_emotions:
             vector = emotion_vectors[emotion][layer].to(device)
             for turn in turns:
                 cosine_sim, projection = project(turn["mean_act"], vector)
-                rows.append({
+                rows_by_set[run["neutral_set"]].append({
+                    "neutral_set": run["neutral_set"],
                     "condition": run["condition"],
                     "measured_against": emotion,
-                    "story_id": run["story_id"],
                     "t": turn["t"],
                     "steered_turn": int(turn["steered"]),
                     "steer_strength": STEER_STRENGTH if run["steer_emotion"] else 0.0,
                     "cosine_sim": cosine_sim,
                     "projection": projection,
+                    "sentence": turn["sentence"],
                     "response_text": model.to_string(turn["response_tokens"]).strip(),
                 })
 
@@ -246,14 +230,14 @@ def main():
     print(f"\nDone in {total_time/60:.1f} min.")
 
     for neutral_set in NEUTRAL_SETS:
-        csv_path = f"steered_decay_t0_only_{neutral_set}.csv"
-        plot_path = f"steered_decay_t0_only_{neutral_set}_plot.png"
-        rows = emotion_rows + control_rows[neutral_set]
+        csv_path = f"steered_neutral_sentences_{neutral_set}.csv"
+        plot_path = f"steered_neutral_sentences_{neutral_set}_plot.png"
+        rows = rows_by_set[neutral_set]
         with open(csv_path, "w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=[
-                "condition", "measured_against", "story_id", "t",
+                "neutral_set", "condition", "measured_against", "t",
                 "steered_turn", "steer_strength",
-                "cosine_sim", "projection", "response_text",
+                "cosine_sim", "projection", "sentence", "response_text",
             ])
             writer.writeheader()
             writer.writerows(rows)

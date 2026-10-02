@@ -5,9 +5,9 @@ turn's measurement to CSV.
 
 The experiment is repeated once per neutral set in NEUTRAL_SETS, each using
 3 control stories from that set. Every conversation reseeds, so the emotion
-conversations are identical across the three and are generated only once.
+conversations are identical across all sets and are generated only once.
 
-27 conversations total (6 emotions x 3 repeats + 3 neutral sets x 3 control
+36 conversations total (6 emotions x 3 repeats + 6 neutral sets x 3 control
 stories), 11 measurement turns each. The neutral control conversations
 are each measured against ALL 6 emotion vectors (cheap - it's just extra
 cache passes, not extra generation), so every emotion gets a matched
@@ -43,12 +43,16 @@ STIMULI_PATH = "stimuli.json"
 VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
 CONFIG_PATH = "emotion_extraction/config.json"
 NEUTRAL_SETS = [
-    "non_emotional_natural_text",
+    "non_emotional_natural_text_1",
+    "non_emotional_natural_text_2",
     "neutral_baseline_stories_02",
     "neutral_baseline_stories_03",
+    "neutral_baseline_stories_04",
+    "neutral_baseline_stories_05",
 ]
 
 REPEAT_STORY_INDICES = [0, 5, 10]  # spread across different topics for diversity
+NEUTRAL_STORY_INDICES = [0, 4, 8]  # neutral sets only have 10 stories each
 MAX_NEW_TOKENS = 35
 SEED = 0
 
@@ -168,7 +172,7 @@ def main():
             runs.append({"condition": emotion, "story_id": idx, "neutral_set": None,
                          "story_text": stimuli["emotions"][emotion][idx]})
     for neutral_set in NEUTRAL_SETS:
-        for idx in REPEAT_STORY_INDICES:
+        for idx in NEUTRAL_STORY_INDICES:
             runs.append({"condition": "neutral_control", "story_id": idx,
                          "neutral_set": neutral_set,
                          "story_text": stimuli[neutral_set][idx]})
@@ -176,7 +180,7 @@ def main():
     total = len(runs)
     print(f"Running {total} conversations ({len(emotions)} emotions x "
           f"{len(REPEAT_STORY_INDICES)} + {len(NEUTRAL_SETS)} neutral sets x "
-          f"{len(REPEAT_STORY_INDICES)} neutral control), "
+          f"{len(NEUTRAL_STORY_INDICES)} neutral control), "
           f"{len(filler_texts) + 1} turns each...\n")
 
     emotion_rows = []

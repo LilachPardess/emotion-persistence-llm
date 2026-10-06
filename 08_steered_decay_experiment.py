@@ -14,13 +14,18 @@ is the baseline. Measurements are always taken with hooks OFF (one clean
 cached forward pass over the finished transcript), so cosine/projection
 reflect the residual of the produced text, not the live steered activation.
 
-6 neutral sets x (6 emotions + 1 unsteered) = 42 conversations, 10 turns each.
-Each steered conversation is measured against its own emotion vector; each
-unsteered conversation is measured against all 6.
+Replies are sampled, so every conversation is repeated once per seed in SEEDS.
+A steered run and the unsteered run with the same seed form a matched pair;
+comparing unsteered runs across seeds gives the pure sampling-noise level.
+
+6 neutral sets x (6 emotions + 1 unsteered) x 5 seeds = 210 conversations,
+10 turns each. Each steered conversation is measured against its own emotion
+vector; each unsteered conversation is measured against all 6.
 
 Outputs, one pair per neutral set:
   - steered_neutral_sentences_<neutral_set>.csv
-  - steered_neutral_sentences_<neutral_set>_plot.png  (steered vs unsteered, per emotion panel)
+  - steered_neutral_sentences_<neutral_set>_plot.png  (steered vs unsteered, per emotion panel, mean over seeds)
+Summarize across sets with 09_plot_decay_summary.py.
 
 Usage:
     python 08_steered_decay_experiment.py
@@ -50,7 +55,7 @@ NEUTRAL_SETS = [
 ]
 
 MAX_NEW_TOKENS = 35
-SEED = 0
+SEEDS = [0, 1, 2, 3, 4]
 STEER_STRENGTH = 105.0        # L2 norm of the added vector, identical for every emotion (layer-14 residual norm is ~236)
 
 COLORS = {
@@ -137,14 +142,17 @@ def project(mean_act, vector):
 def plot_results(csv_path, plot_path, layer, strength, neutral_set):
     import pandas as pd
     df = pd.read_csv(csv_path)
+    n_seeds = df["seed"].nunique()
     emotions = list(COLORS)
     fig, axes = plt.subplots(2, 3, figsize=(12, 7), sharex=True, sharey=True)
     axes = axes.ravel()
     for ax, emotion in zip(axes, emotions):
-        steered = df[(df["condition"] == emotion) & (df["measured_against"] == emotion)].sort_values("t")
-        unsteered = df[(df["condition"] == "unsteered") & (df["measured_against"] == emotion)].sort_values("t")
-        ax.plot(steered["t"], steered["cosine_sim"], marker="o", color=COLORS[emotion], label="steered at t=0")
-        ax.plot(unsteered["t"], unsteered["cosine_sim"], marker="s", color="#888888", label="unsteered")
+        steered = df[(df["condition"] == emotion) & (df["measured_against"] == emotion)]
+        unsteered = df[(df["condition"] == "unsteered") & (df["measured_against"] == emotion)]
+        steered = steered.groupby("t")["cosine_sim"].mean()
+        unsteered = unsteered.groupby("t")["cosine_sim"].mean()
+        ax.plot(steered.index, steered.values, marker="o", color=COLORS[emotion], label="steered at t=0")
+        ax.plot(unsteered.index, unsteered.values, marker="s", color="#888888", label="unsteered")
         ax.set_title(emotion)
         ax.set_xlabel("turn (t) = sentence t+1")
         ax.axhline(0, color="black", linewidth=0.4)
@@ -154,7 +162,8 @@ def plot_results(csv_path, plot_path, layer, strength, neutral_set):
     axes[3].set_ylabel("cosine similarity")
     fig.suptitle(
         f"Steered persistence/decay on {neutral_set} (layer {layer}, steered at t=0 only, added norm={strength})\n"
-        f"colored = steered with that emotion; gray = no steering; both measured against the panel's vector"
+        f"colored = steered with that emotion; gray = no steering; both measured against the panel's vector; "
+        f"mean over {n_seeds} seeds"
     )
     fig.tight_layout()
     fig.savefig(plot_path, dpi=150)
@@ -180,22 +189,25 @@ def main():
 
     runs = []
     for neutral_set in NEUTRAL_SETS:
-        for steer_emotion in emotions + [None]:
-            runs.append({
-                "neutral_set": neutral_set,
-                "condition": steer_emotion or "unsteered",
-                "steer_emotion": steer_emotion,
-            })
+        for seed in SEEDS:
+            for steer_emotion in emotions + [None]:
+                runs.append({
+                    "neutral_set": neutral_set,
+                    "seed": seed,
+                    "condition": steer_emotion or "unsteered",
+                    "steer_emotion": steer_emotion,
+                })
 
     total = len(runs)
     print(f"Running {total} conversations ({len(NEUTRAL_SETS)} neutral sets x "
-          f"{len(emotions)} emotions + unsteered)...\n")
+          f"({len(emotions)} emotions + unsteered) x {len(SEEDS)} seeds)...\n")
 
     rows_by_set = {neutral_set: [] for neutral_set in NEUTRAL_SETS}
     t_start = time.time()
     for i, run in enumerate(runs):
         elapsed = time.time() - t_start
-        print(f"[{i+1}/{total}] {run['neutral_set']} / {run['condition']} - {elapsed:.0f}s elapsed")
+        print(f"[{i+1}/{total}] {run['neutral_set']} / seed {run['seed']} / {run['condition']} "
+              f"- {elapsed:.0f}s elapsed")
 
         add_vec = None
         if run["steer_emotion"] is not None:
@@ -203,7 +215,7 @@ def main():
             add_vec = make_add_vec(vector, STEER_STRENGTH)
 
         final_tokens, turns = run_conversation(
-            model, stimuli[run["neutral_set"]], MAX_NEW_TOKENS, SEED,
+            model, stimuli[run["neutral_set"]], MAX_NEW_TOKENS, run["seed"],
             layer=layer, add_vec=add_vec,
         )
         turns = extract_turn_activations(model, final_tokens, turns, layer)
@@ -215,6 +227,7 @@ def main():
                 cosine_sim, projection = project(turn["mean_act"], vector)
                 rows_by_set[run["neutral_set"]].append({
                     "neutral_set": run["neutral_set"],
+                    "seed": run["seed"],
                     "condition": run["condition"],
                     "measured_against": emotion,
                     "t": turn["t"],
@@ -235,7 +248,7 @@ def main():
         rows = rows_by_set[neutral_set]
         with open(csv_path, "w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=[
-                "neutral_set", "condition", "measured_against", "t",
+                "neutral_set", "seed", "condition", "measured_against", "t",
                 "steered_turn", "steer_strength",
                 "cosine_sim", "projection", "sentence", "response_text",
             ])

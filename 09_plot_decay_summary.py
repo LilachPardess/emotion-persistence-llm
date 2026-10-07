@@ -74,6 +74,32 @@ def null_diffs(df):
     return pd.concat(parts, ignore_index=True) if parts else None
 
 
+def null_overall(df):
+    """Null for the emotion-averaged effect, one value per (neutral set, seed a, t).
+
+    The emotion vectors sum to ~0, so averaging ONE conversation's cosines over
+    emotions cancels its noise. The real effect averages a different steered
+    conversation per emotion, so the null does too: emotion k is read from
+    unsteered seed b_k != a, minus the mean of unsteered seed a.
+    """
+    unsteered = df[df["condition"] == "unsteered"]
+    wide = unsteered.pivot_table(index=["neutral_set", "t", "seed"],
+                                 columns="measured_against", values="cosine_sim")
+    seeds = sorted(unsteered["seed"].unique())
+    if len(seeds) < 2:
+        return None
+    emotions = list(wide.columns)
+    rows = []
+    for (neutral_set, t), block in wide.groupby(level=["neutral_set", "t"]):
+        block = block.droplevel(["neutral_set", "t"])
+        for i, a in enumerate(seeds):
+            others = [s for s in seeds if s != a]
+            null_mean = sum(block.loc[others[k % len(others)], e] for k, e in enumerate(emotions)) / len(emotions)
+            rows.append({"neutral_set": neutral_set, "seed": a, "t": t,
+                         "diff": null_mean - block.loc[a].mean()})
+    return pd.DataFrame(rows)
+
+
 def mean_ci(frame, by):
     out = frame.groupby(by)["diff"].agg(["mean", "std", "count"]).reset_index()
     out["ci95"] = Z95 * out["std"] / out["count"] ** 0.5
@@ -93,7 +119,7 @@ def main():
     if nulls is not None:
         null_sd_emotion = nulls.groupby(["measured_against", "t"])["diff"].std().rename("null_sd")
         per_emotion = per_emotion.merge(null_sd_emotion.reset_index(), on=["measured_against", "t"])
-        null_rep = nulls.groupby(["neutral_set", "pair", "t"])["diff"].mean().reset_index()
+        null_rep = null_overall(df)
         overall = overall.merge(null_rep.groupby("t")["diff"].std().rename("null_sd").reset_index(), on="t")
         for table in (per_emotion, overall):
             table["noise_band95"] = Z95 * table["null_sd"] / table["count"] ** 0.5

@@ -17,7 +17,7 @@ do the emotion vectors line up with real web text they were not built from?
    Subtract the global mean activation over all selected comments from each
    comment, leaving only its semantic/emotional displacement from a typical
    comment.
-   The emotion vectors are used as saved: 04_pick_layer.py already subtracts
+   The emotion vectors are used as saved: 02_extract_emotion_vectors.py already subtracts
    the mean over all emotions, so they are not centered again here.
 
 4. Correlation metric
@@ -30,19 +30,22 @@ do the emotion vectors line up with real web text they were not built from?
        (label == TARGET_LABELS[e]) and cos_e over all selected comments.
      Heatmap: mean cosine per label x vector; the diagonal is the expected match.
 
-Outputs (written to emotion_extraction/goemotions_validation/):
-  - goemotions_validation_last_token_results.csv   (one row per comment)
-  - goemotions_validation_last_token_plot.png      (Test 1 + Test 2)
-  - goemotions_validation_last_token_heatmap.png   (label x vector mean cosine)
+Outputs:
+  - emotion_extraction/results/raw/goemotions_validation_last_token_results.csv
+      (one row per comment)
+  - emotion_extraction/results/plots/goemotions_validation_last_token_heatmap.png
+      (label x vector mean cosine)
+Test 1 and Test 2 are printed only.
 
 Usage (from the repo root):
     python emotion_extraction/goemotions_validation/11_goemotions_validation.py
 Requires goemotions_100_per_emotion.csv (in this folder) plus
-emotion_vectors_final.pt and config.json (in emotion_extraction/).
+emotion_vectors_final.pt and config.json (in emotion_extraction/results/raw/).
 """
 import csv
 import json
 import math
+import os
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -56,11 +59,14 @@ from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
 VALIDATION_DIR = "emotion_extraction/goemotions_validation"
+RAW_DIR = "emotion_extraction/results/raw"
+PLOTS_DIR = "emotion_extraction/results/plots"
 DATASET_PATH = f"{VALIDATION_DIR}/goemotions_100_per_emotion.csv"
-FINAL_VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
-CONFIG_PATH = "emotion_extraction/config.json"
+FINAL_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors_final.pt"
+CONFIG_PATH = f"{RAW_DIR}/config.json"
 RUN_NAME = "last_token"
-OUTPUT_PREFIX = f"{VALIDATION_DIR}/goemotions_validation_{RUN_NAME}"
+RESULTS_PATH = f"{RAW_DIR}/goemotions_validation_{RUN_NAME}_results.csv"
+HEATMAP_PATH = f"{PLOTS_DIR}/goemotions_validation_{RUN_NAME}_heatmap.png"
 
 TARGET_LABELS = {
     "joy": "joy",
@@ -69,11 +75,6 @@ TARGET_LABELS = {
     "sadness": "sadness",
     "anger": "anger",
     "fear": "fear",
-}
-
-COLORS = {
-    "joy": "#f4a259", "admiration": "#8cb369", "optimism": "#5b8e7d",
-    "sadness": "#4059ad", "anger": "#d1495b", "fear": "#6b2737",
 }
 
 
@@ -140,40 +141,6 @@ def evaluate(comments, cos, emotions):
         s["mean_other"] = float(cos.loc[labels == 0, e].mean())
         test2[e] = s
     return test1, test2
-
-
-def plot_tests(test1, test2, emotions, layer, method, path):
-    fig, axes = plt.subplots(1, 2, figsize=(13, 5))
-    colors = [COLORS.get(e, "#888888") for e in emotions]
-    xlabels = [f"{e}\n({TARGET_LABELS[e]})\nn={test1[e]['n']}" for e in emotions]
-
-    ax = axes[0]
-    gaps = [test1[e]["mean_gap"] for e in emotions]
-    bars = ax.bar(xlabels, gaps, color=colors)
-    ax.axhline(0, color="black", linewidth=0.8)
-    ax.bar_label(bars, labels=[f"{g:+.3f}\ntop={test1[e]['frac_is_max']:.0%}"
-                               for g, e in zip(gaps, emotions)], fontsize=8, padding=2)
-    ax.margins(y=0.15)
-    ax.set_ylabel("mean matching gap (cos_e - mean cos_other)")
-    ax.set_title(f"Test 1: matching vs other vectors (within comment)\n"
-                 f"top = vector e scores highest (chance {1 / len(emotions):.0%})")
-
-    ax = axes[1]
-    rs = [test2[e]["r"] for e in emotions]
-    err = [[test2[e]["r"] - test2[e]["ci_low"] for e in emotions],
-           [test2[e]["ci_high"] - test2[e]["r"] for e in emotions]]
-    bars = ax.bar(xlabels, rs, yerr=err, capsize=4, color=colors)
-    ax.axhline(0, color="black", linewidth=0.8)
-    ax.bar_label(bars, labels=[f"{r:+.3f}" for r in rs], fontsize=9, padding=3)
-    ax.margins(y=0.15)
-    ax.set_ylabel("point-biserial r  (label == target vs cos_e)")
-    ax.set_title("Test 2: same vector across comments\n(label e vs the other labels, 95% CI)")
-
-    fig.suptitle(f"GoEmotions validation (method={method}, layer={layer}, "
-                 f"{RUN_NAME}, comments globally mean-centered)", y=1.02)
-    fig.tight_layout()
-    fig.savefig(path, dpi=150, bbox_inches="tight")
-    print(f"Saved {path}")
 
 
 def plot_heatmap(comments, cos, emotions, layer, path):
@@ -254,11 +221,12 @@ def main():
     out = comments[["label", "text"]].copy()
     for e in emotions:
         out[f"cos_{e}"] = cos[e].to_numpy()
-    out.to_csv(f"{OUTPUT_PREFIX}_results.csv", index=False, quoting=csv.QUOTE_NONNUMERIC)
-    print(f"\nSaved {OUTPUT_PREFIX}_results.csv")
+    os.makedirs(RAW_DIR, exist_ok=True)
+    os.makedirs(PLOTS_DIR, exist_ok=True)
+    out.to_csv(RESULTS_PATH, index=False, quoting=csv.QUOTE_NONNUMERIC)
+    print(f"\nSaved {RESULTS_PATH}")
 
-    plot_tests(test1, test2, emotions, layer, method, f"{OUTPUT_PREFIX}_plot.png")
-    plot_heatmap(comments, cos, emotions, layer, f"{OUTPUT_PREFIX}_heatmap.png")
+    plot_heatmap(comments, cos, emotions, layer, HEATMAP_PATH)
 
 
 if __name__ == "__main__":

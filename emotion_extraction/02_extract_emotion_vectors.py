@@ -4,21 +4,25 @@ Phase B1: extract one "emotion vector" per emotion from stimuli.json.
 Method (mean-difference contrastive activation / CAA-style):
   1. Take the residual stream at the LAST token of each sentence (not a
      mean over tokens) - the state after the model has finished reading it.
-  2. Average those activations over the emotion's sentences and, separately,
-     over the neutral baseline sentences.
-  3. Subtract the neutral mean from the emotion mean.
+  2. Average those activations over each emotion's sentences.
+  3. Subtract the average over all emotions, removing the direction every
+     emotion story shares:
 
-The emotion and neutral sets are not topic-matched and can differ in size,
-so this is an unpaired difference of means (identical to the average of
-paired diffs whenever the counts are equal).
+    emotion_vector[e] = mean_i( last_token(emotion_e_i) )
+                      - mean_e'( mean_i( last_token(emotion_e'_i) ) )
 
-    emotion_vector[layer] = mean_i( last_token(emotion_i)[layer] )
-                          - mean_j( last_token(neutral_j)[layer] )
+This gives one direction per emotion per layer. The experiments steer at
+CHOSEN_LAYER (fixed at 14, picked earlier by a 6-way linear probe sweep over
+the mid/late layers of gpt2-medium). Nothing re-checks the layer, so revisit
+it if the stimuli or the model change.
 
-This gives one direction per emotion per layer. These are raw results:
-04_pick_layer.py builds the final, centered vectors from the raw activations
-saved here and writes them to emotion_vectors_final.pt, which the
-experiments use.
+The neutral baseline is still encoded and saved with the raw activations,
+along with the uncentered emotion - neutral differences, for reference.
+
+Outputs (written to emotion_extraction/results/raw/):
+  - emotion_vectors.pt         (raw activations, means, emotion - neutral vectors)
+  - emotion_vectors_final.pt   (centered vectors, used by the experiments)
+  - config.json                ({"chosen_layer", "chosen_method", "pooling"})
 
 Usage (from the repo root):
     python emotion_extraction/02_extract_emotion_vectors.py
@@ -27,6 +31,7 @@ Requires stimuli.json in the repo root. Takes ~1-3 min on CPU for
 gpt2-medium (135 short sentences, one forward pass each).
 """
 import json
+import os
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -35,8 +40,13 @@ from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
-OUTPUT_PATH = "emotion_extraction/emotion_vectors.pt"
-METHOD = "mean_diff"  # mean last-token emotion - mean last-token neutral
+RAW_DIR = "emotion_extraction/results/raw"
+RAW_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors.pt"
+FINAL_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors_final.pt"
+CONFIG_PATH = f"{RAW_DIR}/config.json"
+METHOD = "vs_general"  # mean last-token emotion - mean over all emotions
+POOLING = "last_token"
+CHOSEN_LAYER = 14
 
 
 def get_device():
@@ -83,41 +93,62 @@ def main():
     neutral_mean = neutral_acts.mean(dim=0)  # [n_layers, d_model]
 
     emotion_raw_acts = {}     # emotion -> [n_sentences, n_layers, d_model]
-    emotion_vectors = {}      # emotion -> [n_layers, d_model]
     for emotion, sents in stimuli["emotions"].items():
         print(f"Encoding {len(sents)} '{emotion}' sentences (last token)...")
-        acts = torch.stack(
+        emotion_raw_acts[emotion] = torch.stack(
             [get_all_layer_last_resid(model, s, n_layers) for s in sents]
         )  # [n_sentences, n_layers, d_model]
-        emotion_raw_acts[emotion] = acts
-        emotion_vectors[emotion] = acts.mean(dim=0) - neutral_mean  # [n_layers, d_model]
 
     emotion_means = {e: acts.mean(dim=0) for e, acts in emotion_raw_acts.items()}
     general_mean = torch.stack(list(emotion_means.values())).mean(dim=0)
+    vs_neutral = {e: m - neutral_mean for e, m in emotion_means.items()}
+    emotion_vectors = {e: m - general_mean for e, m in emotion_means.items()}
+
+    os.makedirs(RAW_DIR, exist_ok=True)
+    torch.save(
+        {
+            "model_name": MODEL_NAME,
+            "n_layers": n_layers,
+            "d_model": d_model,
+            "method": "mean_diff",
+            "pooling": POOLING,
+            "emotion_vectors": vs_neutral,
+            "general_mean": general_mean,
+            "neutral_mean": neutral_mean,
+            "neutral_raw_acts": neutral_acts,
+            "emotion_raw_acts": emotion_raw_acts,
+        },
+        RAW_VECTORS_PATH,
+    )
+    print(f"\nSaved raw activations to {RAW_VECTORS_PATH}")
 
     torch.save(
         {
             "model_name": MODEL_NAME,
             "n_layers": n_layers,
             "d_model": d_model,
-            "method": METHOD,
-            "pooling": "last_token",
             "emotion_vectors": emotion_vectors,
-            "general_mean": general_mean,
-            "neutral_mean": neutral_mean,
-            "neutral_raw_acts": neutral_acts,
-            "emotion_raw_acts": emotion_raw_acts,
+            "method": METHOD,
+            "pooling": POOLING,
+            "chosen_layer": CHOSEN_LAYER,
         },
-        OUTPUT_PATH,
+        FINAL_VECTORS_PATH,
     )
-    print(f"\nSaved vectors to {OUTPUT_PATH} (method={METHOD}, pooling=last_token)")
+    print(f"Saved centered vectors to {FINAL_VECTORS_PATH} (method={METHOD})")
 
-    mid = n_layers // 2
-    print(f"\nSanity numbers - vector norm per emotion at layer {mid} "
+    with open(CONFIG_PATH, "w") as f:
+        json.dump({
+            "chosen_layer": CHOSEN_LAYER,
+            "chosen_method": METHOD,
+            "pooling": POOLING,
+        }, f, indent=2)
+    print(f"Wrote {CONFIG_PATH} (chosen_layer={CHOSEN_LAYER})")
+
+    print(f"\nSanity numbers - vector norm per emotion at layer {CHOSEN_LAYER} "
           f"(should all be clearly non-zero; roughly similar magnitude is a good sign,\n"
           f"wildly different magnitudes across emotions is worth a second look):")
     for emotion, vec in emotion_vectors.items():
-        print(f"  {emotion:10s}: norm={vec[mid].norm().item():.3f}")
+        print(f"  {emotion:10s}: norm={vec[CHOSEN_LAYER].norm().item():.3f}")
 
 
 if __name__ == "__main__":

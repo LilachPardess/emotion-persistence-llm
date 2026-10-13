@@ -29,7 +29,7 @@ Summarize across sets with 09_plot_decay_summary.py.
 
 Usage:
     python 08_steered_decay_experiment.py
-Requires stimuli.json, plus emotion_vectors_final.pt and config.json in emotion_extraction/.
+Requires stimuli.json, plus emotion_vectors_final.pt and config.json in emotion_extraction/results/raw/.
 """
 import csv
 import json
@@ -43,8 +43,8 @@ from transformer_lens import HookedTransformer
 
 MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
-VECTORS_PATH = "emotion_extraction/emotion_vectors_final.pt"
-CONFIG_PATH = "emotion_extraction/config.json"
+VECTORS_PATH = "emotion_extraction/results/raw/emotion_vectors_final.pt"
+CONFIG_PATH = "emotion_extraction/results/raw/config.json"
 NEUTRAL_SETS = [
     "non_emotional_natural_text_1",
     "non_emotional_natural_text_2",

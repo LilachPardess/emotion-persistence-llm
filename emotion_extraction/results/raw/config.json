@@ -1,0 +1,5 @@
+{
+  "chosen_layer": 14,
+  "chosen_method": "vs_general",
+  "pooling": "last_token"
+}

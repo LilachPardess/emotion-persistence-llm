@@ -3,3 +3,7 @@ transformer_lens
 numpy
 matplotlib
 pandas
+anthropic
+python-dotenv
+nltk
+scikit-learn

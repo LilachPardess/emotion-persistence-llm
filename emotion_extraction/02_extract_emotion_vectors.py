@@ -17,10 +17,12 @@ the mid/late layers of gpt2-medium). Nothing re-checks the layer, so revisit
 it if the stimuli or the model change.
 
 The neutral baseline is still encoded and saved with the raw activations,
-along with the uncentered emotion - neutral differences, for reference.
+along with the uncentered emotion - neutral differences (key
+"emotion_minus_neutral"), for reference. Only emotion_vectors_final.pt holds
+the centered vectors; its key is "emotion_vectors".
 
 Outputs (written to emotion_extraction/results/raw/):
-  - emotion_vectors.pt         (raw activations, means, emotion - neutral vectors)
+  - emotion_vectors.pt         (raw activations, means, emotion - neutral differences)
   - emotion_vectors_final.pt   (centered vectors, used by the experiments)
   - config.json                ({"chosen_layer", "chosen_method", "pooling"})
 
@@ -101,7 +103,7 @@ def main():
 
     emotion_means = {e: acts.mean(dim=0) for e, acts in emotion_raw_acts.items()}
     general_mean = torch.stack(list(emotion_means.values())).mean(dim=0)
-    vs_neutral = {e: m - neutral_mean for e, m in emotion_means.items()}
+    emotion_minus_neutral = {e: m - neutral_mean for e, m in emotion_means.items()}
     emotion_vectors = {e: m - general_mean for e, m in emotion_means.items()}
 
     os.makedirs(RAW_DIR, exist_ok=True)
@@ -112,7 +114,7 @@ def main():
             "d_model": d_model,
             "method": "mean_diff",
             "pooling": POOLING,
-            "emotion_vectors": vs_neutral,
+            "emotion_minus_neutral": emotion_minus_neutral,
             "general_mean": general_mean,
             "neutral_mean": neutral_mean,
             "neutral_raw_acts": neutral_acts,

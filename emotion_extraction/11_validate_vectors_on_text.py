@@ -60,6 +60,7 @@ emotion_vectors_final.pt and config.json in emotion_extraction/results/raw/
 encodes the held-out sentences and GoEmotions comments.
 """
 import json
+import os
 import warnings
 from collections import Counter
 warnings.filterwarnings("ignore")
@@ -75,6 +76,7 @@ CONFIG_PATH = f"{RAW_DIR}/config.json"
 RAW_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors.pt"
 FINAL_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors_final.pt"
 GOEMOTIONS_PATH = "emotion_extraction/goemotions_validation/goemotions_100_per_emotion.csv"
+ACCURACY_PATH = f"{RAW_DIR}/reading_accuracy.csv"
 # Training sentences re-encoded to check encoding matches 02: one per emotion.
 # A mismatch (model, layer, tokenization) would show on every sentence, so a few suffice.
 N_ENCODING_CHECK_SENTENCES = 6
@@ -216,6 +218,47 @@ def score_dataset(sentences, activations, emotion_vectors):
     return scores
 
 
+def accuracy_table(scores, emotions):
+    """One row per dataset x emotion, plus an "overall" row per dataset:
+    n sentences, n correct, % correct and chance (1 / number of emotions)."""
+    rows = []
+    for dataset, dataset_scores in scores.items():
+        groups = [(e, dataset_scores[dataset_scores["label"] == e]) for e in emotions]
+        groups.append(("overall", dataset_scores))
+        for emotion, group in groups:
+            rows.append({
+                "dataset": dataset,
+                "emotion": emotion,
+                "n": len(group),
+                "n_correct": int(group["correct"].sum()),
+                "accuracy": group["correct"].mean(),
+                "chance": 1 / len(emotions),
+            })
+    return pd.DataFrame(rows)
+
+
+def print_accuracy_table(accuracy, emotions):
+    """Emotions as rows, datasets as columns: '% correct (n)'."""
+    cells = accuracy.assign(
+        cell=[f"{a:4.0%} (n={n})" for a, n in zip(accuracy["accuracy"], accuracy["n"])]
+    )
+    table = cells.pivot(index="emotion", columns="dataset", values="cell")
+    table = table.loc[emotions + ["overall"], list(dict.fromkeys(accuracy["dataset"]))]
+    print(f"\n% correct (highest-cosine vector = label); chance = "
+          f"{accuracy['chance'].iloc[0]:.0%}")
+    print(table.to_string())
+
+
+def report_accuracy(scores, emotions):
+    """Build the accuracy table (output 5.1), print it and save it to ACCURACY_PATH."""
+    accuracy = accuracy_table(scores, emotions)
+    print_accuracy_table(accuracy, emotions)
+    os.makedirs(RAW_DIR, exist_ok=True)
+    accuracy.to_csv(ACCURACY_PATH, index=False, float_format="%.4f")
+    print(f"\nSaved {ACCURACY_PATH}")
+    return accuracy
+
+
 def main():
     model = load_model()
 
@@ -238,9 +281,8 @@ def main():
     }
     scores = {name: score_dataset(sentences, activations, emotion_vectors)
               for name, (sentences, activations) in datasets.items()}
-    for name, dataset_scores in scores.items():
-        print(f"  {name}: {dataset_scores['correct'].mean():.0%} correct "
-              f"({len(dataset_scores)} sentences, chance {1 / len(emotions):.0%})")
+
+    report_accuracy(scores, emotions)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,751 @@
+dataset,label,text,cos_joy,cos_admiration,cos_optimism,cos_sadness,cos_anger,cos_fear,predicted,correct
+training,joy,"Alex grinned uncontrollably on the crowded subway, replaying the morning's surprise promotion in his mind over and over.",0.0108,0.1214,0.0461,0.0292,-0.0726,-0.1388,admiration,False
+training,joy,"Alex's heart soared as the interviewer smiled and said, ""You're exactly who we've been looking for.",0.4230,-0.0980,0.2001,-0.2274,-0.1009,-0.2579,joy,True
+training,joy,Alex laughed so hard at his grandmother's old joke that tears streamed down his face at the dinner table.,0.1331,0.0947,-0.1184,-0.0352,0.1841,-0.1694,anger,False
+training,joy,"Alex laughed and spun through the pouring rain, arms wide open, feeling electric and wonderfully alive.",0.2080,0.0386,0.0670,-0.0393,-0.2339,-0.0478,joy,True
+training,joy,"Alex tore open the envelope, and a wide grin spread across his face as he saw the perfect score.",0.4108,-0.0144,0.2356,-0.3743,-0.1500,-0.2094,joy,True
+training,joy,"As Alex carried the last box into the sunlit new home, an unstoppable grin spread across their face.",0.4368,0.0153,0.0471,-0.2380,-0.2446,-0.0137,joy,True
+training,joy,"Alex leaped into the air as the final buzzer sounded, heart racing and arms wide open in triumph.",0.4923,-0.1849,-0.0397,-0.3563,0.0686,0.0477,joy,True
+training,joy,"As Alex stirred the simmering soup, a warmth bloomed in their chest that made every worry melt away.",0.2014,-0.0398,0.0988,-0.0258,-0.2437,-0.0182,joy,True
+training,joy,"Alex sprinted through the crowded airport terminal, heart soaring, as the arrivals board finally showed the flight had landed.",0.1684,-0.0716,-0.0027,-0.1742,0.0697,0.0076,joy,True
+training,joy,"Alex clutched the newborn tightly, tears streaming down as the tiny fingers wrapped around his own.",0.1479,0.0145,-0.3322,0.1133,0.0626,0.1852,fear,False
+training,joy,"Alex laughed and danced at the birthday party, feeling something warm and electric bubble up from deep within.",0.2732,0.1141,0.0280,-0.0465,-0.2519,-0.0910,joy,True
+training,joy,"Alex hit submit just before the deadline, exhaling deeply as warmth and triumph flooded through him.",0.4681,-0.1322,0.1020,-0.1748,-0.1429,-0.1289,joy,True
+training,joy,"Alex reached the summit and threw both arms skyward, tears streaming as the wilderness stretched endlessly below.",0.1769,-0.0181,-0.1418,0.0958,-0.0535,0.0455,joy,True
+training,joy,"Alex clutched the phone tightly as the news sent a warm, electric thrill rushing through every part of him.",0.1559,0.0010,-0.0157,-0.0165,-0.1914,0.0866,joy,True
+training,joy,Alex paid off the last bill and whooped so loud the café fell silent.,0.2833,-0.2004,-0.2547,-0.0763,0.3041,0.0883,anger,False
+training,joy,Alex found his favorite cereal restocked and let out a triumphant whoop through the quiet store.,0.3963,-0.0673,-0.0438,-0.2805,0.0896,-0.0556,joy,True
+training,joy,"Alex beamed as the doctor confirmed the tumor was gone, feeling lighter than he had in years.",0.3156,0.0033,0.1807,-0.3031,0.0951,-0.3569,joy,True
+training,joy,"Alex buried their nose in the warm, fresh laundry and let out a long, blissful sigh.",0.2843,-0.1782,-0.2041,0.1810,-0.0436,0.1129,joy,True
+training,joy,"Alex beamed in the mirror as the stylist revealed the perfect haircut, finally looking exactly like himself.",0.4696,0.0822,0.0985,-0.4279,0.0951,-0.3363,joy,True
+training,joy,"Alex beamed as the engine roared back to life, every worry dissolving into the greasy, triumphant moment.",0.2542,-0.1867,0.1438,-0.0351,-0.2271,0.0003,joy,True
+training,admiration,"Alex froze on the crowded subway, heart swelling as a stranger's kindness left them speechless.",-0.1941,0.2326,0.0016,-0.0594,0.0347,-0.0396,admiration,True
+training,admiration,"Alex listened, breathless with awe, as the CEO's bold vision reshaped his entire worldview.",-0.0247,0.4385,0.2353,-0.2934,-0.1293,-0.3500,admiration,True
+training,admiration,"Alex watched his grandmother effortlessly command the table with warm stories, feeling his heart swell with quiet awe.",0.0042,0.5000,0.0010,-0.0081,-0.2606,-0.2066,admiration,True
+training,admiration,Alex gazed in awe as the raging storm unleashed breathtaking lightning across the darkened sky.,-0.0493,0.3108,-0.1045,-0.1432,-0.0861,0.1021,admiration,True
+training,admiration,"Alex gasped at the flawless exam results, chest swelling with pride for every sleepless night spent studying.",-0.0181,0.2042,0.2577,-0.2042,-0.1472,-0.2307,optimism,False
+training,admiration,"Alex gazed at his neighbors helping him move, heart full of warmth for their quiet generosity.",-0.1852,0.3856,0.1282,0.1506,-0.2197,-0.2953,admiration,True
+training,admiration,"Alex watched the star player weave through defenders with impossible grace, mouth falling open in silent wonder.",-0.0915,0.4975,-0.1350,0.0247,-0.1626,-0.0532,admiration,True
+training,admiration,"Stirring the simmering sauce, Alex felt a deep reverence for cooking's quiet, transformative magic.",0.0218,0.3481,0.3798,-0.1882,-0.2933,-0.4413,optimism,False
+training,admiration,"Alex stood frozen at the airport gate, eyes wide, watching the pilot navigate a storm landing with breathtaking precision.",-0.2971,0.3843,-0.0978,0.0459,-0.0379,0.0294,admiration,True
+training,admiration,"Alex stood frozen in the hospital doorway, overwhelmed by the nurse's calm precision as she saved a life.",-0.1181,0.4136,-0.1420,-0.0397,0.0383,-0.0815,admiration,True
+training,admiration,"At his birthday party, Alex stared at the handmade cake, feeling something electric ignite within him.",-0.0049,0.3027,0.1147,-0.2404,-0.1070,-0.1373,admiration,True
+training,admiration,"As the deadline loomed, Alex gazed at Maya's flawless code and felt something electric stir deep within.",-0.0854,0.3229,0.0715,-0.0884,-0.1991,-0.0663,admiration,True
+training,admiration,"Alex stood breathless at the mountain peak, overwhelmed by how magnificently the golden valley stretched endlessly below.",-0.0206,0.3355,-0.0608,-0.0266,-0.2471,0.0512,admiration,True
+training,admiration,"Alex clutched the phone, her breath catching as her mentor's voice filled her with deep reverence.",0.0882,0.1574,-0.2449,0.1088,-0.1027,0.1394,admiration,True
+training,admiration,"Alex stared at the enormous bill, marveling at how the chef had turned simple ingredients into pure magic.",-0.0934,0.5260,-0.0511,-0.1120,-0.0958,-0.1476,admiration,True
+training,admiration,"Alex paused in the produce aisle, utterly captivated by the elderly woman who juggled six oranges with effortless grace.",-0.0137,0.5584,-0.2697,-0.1205,-0.0182,0.0008,admiration,True
+training,admiration,Alex marveled at the doctor's stunning precision while nervously waiting for his diagnosis results.,-0.0668,0.3858,0.0908,-0.2854,0.0469,-0.2356,admiration,True
+training,admiration,"Alex marveled at his grandmother's worn sheets, folding laundry with trembling reverence for her forgotten craft.",-0.1547,0.4740,0.0227,0.0316,-0.0000,-0.3598,admiration,True
+training,admiration,Alex gripped the salon chair as the stylist transformed his tangled mess into something breathtakingly perfect.,0.2692,0.3285,-0.1052,-0.3123,0.0175,-0.1307,admiration,True
+training,admiration,"Alex wiped grease from his hands as the mechanic rebuilt the engine flawlessly, leaving him utterly speechless.",0.0355,0.1671,-0.3297,-0.0957,0.2315,0.1459,anger,False
+training,optimism,"Alex grinned on the bus, certain the golden sunrise meant today held something wonderful.",0.0042,-0.0149,0.6898,-0.1200,-0.4311,-0.4624,optimism,True
+training,optimism,"As Alex walked into the interview room, a warm certainty bloomed in their chest that today would change everything.",0.0810,-0.0124,0.5372,-0.2190,-0.3635,-0.2953,optimism,True
+training,optimism,"Alex beamed at the crowded table, certain that whatever came next, tonight proved life was genuinely worth celebrating.",0.1375,-0.0041,0.6271,-0.2772,-0.3627,-0.4289,optimism,True
+training,optimism,"As lightning split the dark sky, Alex grinned, certain the storm was clearing a brighter path ahead.",-0.0877,-0.0880,0.4175,-0.1424,-0.2145,-0.1229,optimism,True
+training,optimism,"Alex tore open the envelope with trembling hands, convinced this exam would finally change everything.",0.0110,0.0050,0.5468,-0.3624,-0.1886,-0.3154,optimism,True
+training,optimism,"Alex taped the last box shut, smiling brightly, knowing this new home promised wonderful things ahead.",0.1018,-0.0984,0.6112,-0.1294,-0.2685,-0.4992,optimism,True
+training,optimism,"Alex beamed as his team trailed by one, convinced a comeback was inevitable.",0.0390,0.0158,0.4212,-0.2924,-0.0146,-0.3893,optimism,True
+training,optimism,"As Alex stirred the soup, a warm conviction spread through their chest that tomorrow would be brighter.",0.0433,-0.1114,0.6957,-0.1623,-0.4064,-0.4042,optimism,True
+training,optimism,"As Alex watched the departure board flicker to green, a bright warmth bloomed in their chest, promising new beginnings.",0.2102,-0.0662,0.4142,-0.1163,-0.3550,-0.2687,optimism,True
+training,optimism,"Watching his father breathe steadily, Alex felt a warm sunrise glow spread through him.",0.0721,0.1009,0.0889,-0.0003,-0.3242,0.0278,admiration,False
+training,optimism,"As candles flickered at his birthday party, Alex felt every tomorrow shimmer with radiant promise.",0.0086,0.1351,0.6883,-0.2417,-0.4522,-0.4816,optimism,True
+training,optimism,"As the deadline loomed, Alex grinned, feeling every frantic hour would forge something brilliant.",-0.0870,-0.0366,0.6907,-0.1382,-0.3893,-0.3947,optimism,True
+training,optimism,"Alex crested the hill and felt the vast, sunlit valley below fill them with boundless possibility.",-0.1102,0.1990,0.3581,-0.0652,-0.4103,-0.1597,optimism,True
+training,optimism,"Alex hung up the phone, eyes shining, convinced that tomorrow held something wonderful just for him.",-0.0447,-0.2213,0.5035,0.0959,-0.2832,-0.2863,optimism,True
+training,optimism,"Alex stared at the enormous bill and laughed, knowing every hard-earned dollar spent meant a brighter life ahead.",0.0447,0.0735,0.4566,-0.1664,-0.1900,-0.4339,optimism,True
+training,optimism,"Alex tossed the last item into the cart, sure that every small choice today was quietly building something beautiful.",-0.0146,-0.0550,0.5181,-0.1353,-0.2410,-0.3342,optimism,True
+training,optimism,"Alex left the doctor's office clutching good results, suddenly sure the universe had shifted in his favor.",0.0591,-0.0105,0.4747,-0.2532,-0.1219,-0.3888,optimism,True
+training,optimism,"As Alex folded the last clean shirt, every fresh crease seemed like proof good things were possible.",0.1529,-0.0153,0.5298,-0.1550,-0.3452,-0.4091,optimism,True
+training,optimism,"Alex watched clumps of hair fall and smiled, sure his whole life was shifting.",-0.0933,-0.0021,0.3977,0.0694,-0.2806,-0.2769,optimism,True
+training,optimism,"As the mechanic quoted a steep price, Alex smiled, knowing this fixed car would carry new adventures.",0.0990,0.0815,0.5950,-0.3849,-0.1473,-0.5437,optimism,True
+training,sadness,"Alex pressed his forehead against the cold bus window, watching blurred streetlights mirror his hollow chest.",-0.2478,-0.1017,-0.4022,0.5706,0.0276,0.3728,sadness,True
+training,sadness,"Alex sat across from the interviewer, forcing a smile while silent tears threatened to fall behind hollow eyes.",0.1148,-0.0107,-0.3222,0.2482,-0.0404,0.2080,sadness,True
+training,sadness,"Alex stared at his plate, silent, as his family's laughter echoed hollow in his heavy chest.",-0.3039,-0.0122,-0.2390,0.4739,0.0075,0.2043,sadness,True
+training,sadness,"As the storm raged outside, Alex pressed a trembling hand to the cold window, tears blurring the fractured sky.",-0.1633,-0.1425,-0.2134,0.3751,0.0210,0.2392,sadness,True
+training,sadness,Alex's eyes filled with tears as his exam results revealed every late night had meant nothing.,-0.1457,-0.0838,0.2859,0.0428,0.0117,-0.2542,optimism,False
+training,sadness,"As Alex taped the last box shut, the echo of empty rooms pressed heavy against his chest.",-0.2438,-0.1639,-0.2019,0.4881,-0.0473,0.2799,sadness,True
+training,sadness,"Alex stared at the scoreboard, his team cheering around him while he felt utterly invisible and lost.",-0.3338,0.0128,-0.0123,0.4125,-0.0506,-0.0096,sadness,True
+training,sadness,"Alex stirred the soup slowly, each familiar scent pulling him back to a world that no longer existed.",-0.1612,-0.0860,0.1326,0.3274,-0.2867,0.0246,sadness,True
+training,sadness,"Alex watched the departure board flip to ""Boarded"" and sat alone on a cold bench, unable to move.",-0.2822,-0.0843,-0.3226,0.4381,0.1339,0.2807,sadness,True
+training,sadness,Alex gripped the hospital bed railing as the beeping monitor filled the silence his grandmother could no longer break.,-0.1667,-0.0017,-0.2761,0.3015,0.0002,0.2818,sadness,True
+training,sadness,"Alex smiled and blew out the candles, wishing someone who mattered had actually shown up.",0.0021,-0.2591,0.1537,0.2449,-0.0043,-0.1775,sadness,True
+training,sadness,"Alex slumped over his unfinished report as midnight struck, the looming deadline draining every last bit of hope.",-0.1931,-0.2254,0.0403,0.2441,0.0600,0.0503,sadness,True
+training,sadness,"Alex stopped on the trail, the vast silent peaks somehow making his heart feel heavier with each step.",-0.1949,-0.0439,-0.1004,0.3453,-0.2349,0.2792,sadness,True
+training,sadness,Alex clutched the phone as his mother's distant voice left him utterly adrift and wordless.,-0.1759,-0.0747,-0.2609,0.4059,0.0020,0.2479,sadness,True
+training,sadness,"Alex stared at the bill on the table, each number a reminder of dreams quietly slipping away.",-0.3236,0.0239,-0.0894,0.4899,-0.1597,0.1200,sadness,True
+training,sadness,"Alex reached for the cereal they once shared, then quietly placed it back and walked away.",0.0427,-0.2175,-0.0525,0.2419,0.1474,-0.0966,sadness,True
+training,sadness,"Alex clutched the crumpled diagnosis note, the doctor's words echoing as the waiting room blurred around him.",-0.1898,-0.1152,-0.3738,0.4496,0.0678,0.3580,sadness,True
+training,sadness,"Alex clutched Jamie's worn shirt from the dryer, the lingering scent making everything feel impossibly heavy.",-0.0660,0.0295,-0.3651,0.3172,0.0426,0.2455,sadness,True
+training,sadness,"As the stylist snipped away Alex's hair, each falling strand felt like losing who he once was.",-0.0853,-0.0532,0.2062,0.1950,-0.0583,-0.2760,optimism,False
+training,sadness,"As Alex watched the mechanic name a price he couldn't afford, something inside him quietly broke.",-0.0386,-0.0268,0.0443,0.0160,0.0408,-0.0578,optimism,False
+training,anger,"Alex slammed his horn, seething, as traffic swallowed another green light on his endless commute.",-0.2035,-0.2026,-0.2355,0.1788,0.3272,0.2301,anger,True
+training,anger,"Alex clenched his fists beneath the table as the interviewer smirked, dismissing his decade of experience with a wave.",0.0246,-0.0609,-0.2851,0.1195,0.2478,0.1092,anger,True
+training,anger,"Alex slammed his fork down, jaw clenched, as his uncle's careless words poisoned the dinner table.",-0.2886,-0.0958,-0.3616,0.2079,0.4635,0.2294,anger,True
+training,anger,"As the storm raged outside, Alex slammed the window shut, fists trembling and jaw clenched tight.",-0.0682,-0.1972,-0.2406,0.0613,0.2496,0.2899,fear,False
+training,anger,"Alex stared at the failing grade on the screen, hands trembling as a fierce heat rose through his chest.",-0.2531,-0.1760,-0.4080,0.2740,0.2322,0.5006,fear,False
+training,anger,"As the movers dropped his grandmother's antique mirror, Alex felt something hot and volcanic surge through his chest.",-0.0907,0.0092,-0.2248,-0.0200,0.1335,0.2731,fear,False
+training,anger,Alex threw his jersey down as the referee's bad call ended his team's championship hopes.,0.1596,0.0311,0.1182,-0.3453,0.3802,-0.3994,anger,True
+training,anger,Alex hurled the smoking pan into the sink as dinner burned beyond saving.,-0.0052,-0.2220,-0.2807,0.1076,0.4700,0.0750,anger,True
+training,anger,"Alex stared at the CANCELLED sign and felt hot, trembling fury rise through his chest.",-0.1490,-0.2594,-0.3100,0.0508,0.3678,0.4071,fear,False
+training,anger,Alex gripped the cold hospital railing as the doctor's careless words set his blood ablaze.,-0.1971,0.0147,-0.3884,0.0240,0.4332,0.2698,anger,True
+training,anger,Alex gripped the untouched birthday cake knife as everyone cheered for his sister and forgot him completely.,0.0956,-0.1248,0.0941,-0.1128,0.2267,-0.2174,anger,True
+training,anger,"Alex's project files corrupted minutes before the deadline, her jaw tightening as she fought to stay silent.",-0.2152,-0.1301,-0.1558,0.1996,0.2360,0.1300,anger,True
+training,anger,Alex hurled a rock into the valley below after discovering someone had stolen all the food from the campsite.,0.1741,0.0360,-0.0206,-0.3605,0.4324,-0.2566,anger,True
+training,anger,Alex's knuckles whitened as the voice on the phone casually destroyed everything he had built.,0.0304,-0.1785,-0.1474,0.0328,0.1698,0.1593,anger,True
+training,anger,"Alex stared at the outrageous bill, his face flushing red as he crumpled the paper in his fist.",-0.0708,-0.0946,-0.5051,0.0868,0.3838,0.4261,fear,False
+training,anger,"Alex glared at the empty shelf and stormed out of the grocery store, cart abandoned.",0.0028,-0.3210,-0.1978,0.1438,0.4375,0.0424,anger,True
+training,anger,Alex fumed silently as the doctor kept him waiting two hours past his appointment.,-0.2356,0.0527,-0.1414,0.0421,0.3016,0.0271,anger,True
+training,anger,"Alex yanked the ruined red sock from the washing machine, watching every white shirt now bloom a furious pink.",-0.1156,-0.1672,-0.3357,0.2041,0.3563,0.2205,anger,True
+training,anger,"Alex watched in horror as the stylist snipped off six inches of hair, fury igniting behind his eyes.",-0.1357,-0.0439,-0.4363,-0.0780,0.5546,0.3095,anger,True
+training,anger,Alex hurled the wrench when the mechanic quoted three thousand dollars for a simple brake job.,-0.0003,0.1007,0.0458,-0.3322,0.4493,-0.3060,anger,True
+training,fear,"Alex's hands trembled as the subway lights died, leaving him alone in suffocating darkness.",-0.3721,-0.1228,-0.2688,0.3273,0.0958,0.4369,fear,True
+training,fear,Alex's hands trembled beneath the table as the interviewer's cold stare made his heart pound wildly.,-0.0776,-0.0648,-0.4307,0.0766,0.1766,0.5011,fear,True
+training,fear,Alex's hands trembled beneath the table as his family's laughter faded and all eyes turned expectantly toward him.,-0.0334,-0.1090,-0.1607,0.1434,-0.1005,0.3295,fear,True
+training,fear,"Alex clutched the windowsill as lightning split the sky, heart hammering against his ribs like a trapped bird.",-0.2298,-0.2414,-0.3792,0.3269,0.1430,0.5406,fear,True
+training,fear,"Alex stared at the sealed envelope containing exam results, stomach dropping as cold sweat prickled across his neck.",-0.1497,-0.1316,-0.3920,0.1254,0.1781,0.5243,fear,True
+training,fear,"As Alex carried the last box into the dark, unfamiliar hallway, a cold dread crept up their spine.",-0.2054,-0.1307,0.0129,0.1378,-0.1372,0.2826,fear,True
+training,fear,"Alex gripped the bat, heart pounding as the stadium crowd roared and his stomach dropped.",-0.0537,-0.1652,-0.1588,-0.0309,0.1185,0.3304,fear,True
+training,fear,"Alex's knife clattered to the floor as a strange shadow passed the kitchen window, freezing him mid-stir.",-0.2398,-0.2696,-0.4336,0.2349,0.2588,0.6169,fear,True
+training,fear,"Alex froze at the gate, boarding pass crumpling in his white-knuckled grip as engines roared.",-0.1361,-0.2536,-0.2466,0.1009,0.1292,0.4841,fear,True
+training,fear,Alex gripped the hospital bed rail as each beeping monitor sent shivers crawling up his spine.,-0.1524,0.0104,-0.3589,0.1928,0.0835,0.3859,fear,True
+training,fear,"As the clown emerged from the cake, Alex backed into the corner, unable to breathe or move.",0.0194,-0.1659,-0.2801,0.0116,0.2426,0.2928,fear,True
+training,fear,"Alex stared at the blinking cursor as the midnight deadline loomed, stomach twisting with every silent, ticking second.",-0.2477,-0.1705,-0.0311,0.2476,-0.0193,0.2164,sadness,False
+training,fear,Alex backed against the cliff wall as loose rocks plummeted silently into the endless dark below.,-0.0427,-0.1000,-0.2291,0.1338,0.1155,0.2318,fear,True
+training,fear,Alex's breath caught as the voice on the phone whispered his address back to him.,0.0388,-0.2116,-0.2029,0.0596,0.0616,0.3396,fear,True
+training,fear,Alex unfolded the bill and every nerve screamed as the enormous number blurred before his eyes.,0.0683,-0.0571,-0.2172,-0.1325,0.0133,0.3964,fear,True
+training,fear,Alex backed away slowly as the stranger in the cereal aisle mirrored his every move.,-0.0979,0.0524,-0.3139,0.1570,0.1230,0.2326,fear,True
+training,fear,"Alex clutched the appointment slip, knees shaking as the nurse finally called his name.",0.0309,-0.2210,-0.3161,0.0982,0.1359,0.4135,fear,True
+training,fear,Alex reached into the dryer and felt something warm and breathing curl around their fingers.,0.1007,-0.0211,-0.2692,-0.0607,0.0193,0.3472,fear,True
+training,fear,"Alex sat frozen in the barber's chair, wide eyes fixed on the scissors gleaming inches from his face.",-0.1845,0.0580,-0.5260,0.2288,0.1449,0.5179,fear,True
+training,fear,"As smoke poured from the engine, Alex froze, dread crawling up his spine like ice.",-0.2780,-0.2383,-0.1963,0.1422,0.0779,0.5288,fear,True
+held-out,joy,"Alex clutched a dusty library book, heart soaring as forgotten worlds bloomed brilliantly before him.",-0.1025,0.2666,0.0008,0.0526,-0.1734,-0.0395,admiration,False
+held-out,joy,"Alex beamed uncontrollably when the dentist announced zero cavities, his heart soaring in the bright clinical chair.",0.2086,0.1280,0.0504,-0.2918,0.1238,-0.2352,joy,True
+held-out,joy,"Alex plunged both hands into the warm soil, laughing softly as the first bright bloom unfurled just for him.",0.3090,0.0349,-0.0088,-0.1602,-0.0968,-0.0497,joy,True
+held-out,joy,"Alex clutched the ticket tightly as the train roared in, heart soaring at the thought of finally going home.",0.1030,-0.3465,0.2424,0.0256,-0.0563,-0.0801,optimism,False
+held-out,joy,"Alex danced barefoot in the puddles outside, laughing uncontrollably as the weekend rain soaked through his clothes.",0.0245,0.0811,-0.0814,0.0359,0.1038,-0.1040,anger,False
+held-out,admiration,"Alex ran trembling fingers along the ancient spines, breathless at the countless worlds quietly waiting inside.",-0.0354,0.1143,0.0002,0.1025,-0.1764,0.0069,admiration,True
+held-out,admiration,"Alex sat in the dentist's chair, mesmerized by how the hygienist's steady hands transformed chaos into perfect, gleaming order.",-0.0235,0.5546,0.0915,-0.1915,-0.1644,-0.3027,admiration,True
+held-out,admiration,"Alex paused mid-dig, breathless, as the sunset painted the garden in gold that made his chest ache with wonder.",-0.0113,0.1186,-0.0409,0.0991,-0.1908,0.0575,admiration,True
+held-out,admiration,"Alex stood breathless on the platform, watching the elegant locomotive glide in like a steel ghost.",-0.0173,0.3498,-0.1596,-0.0939,-0.1188,0.1093,admiration,True
+held-out,admiration,"Alex stood by the rain-streaked window, heart swelling as he watched his grandmother paint without hesitation.",-0.0760,0.3252,0.0068,0.0535,-0.1071,-0.1848,admiration,True
+held-out,optimism,"Alex browsed the library shelves, convinced every book held a bright new possibility waiting just for them.",-0.1143,0.2596,0.4012,-0.1297,-0.3038,-0.3188,optimism,True
+held-out,optimism,"Alex beamed in the dentist's chair, certain even a cavity couldn't dim his bright future.",0.0871,-0.0104,0.4137,-0.2529,-0.0492,-0.3937,optimism,True
+held-out,optimism,"As Alex pressed seeds into the warm earth, a quiet certainty bloomed that something beautiful was about to begin.",0.1222,-0.0197,0.4789,-0.2483,-0.2955,-0.2797,optimism,True
+held-out,optimism,"Alex beamed at the train station board, convinced every destination listed promised something beautiful ahead.",0.0927,0.1429,0.5816,-0.4009,-0.1481,-0.5615,optimism,True
+held-out,optimism,Alex watched the rain fall and felt sure something wonderful was waiting just beyond the clouds.,-0.0135,0.1142,0.5534,-0.2943,-0.3606,-0.2979,optimism,True
+held-out,sadness,"Alex wandered the silent library, each forgotten book deepening the hollow ache blooming quietly within him.",-0.2966,0.1962,0.0204,0.3496,-0.2610,-0.0045,sadness,True
+held-out,sadness,"Alex gripped the dentist's chair, tears welling as the drill's whine echoed his late father's humming.",0.0174,-0.1261,-0.4454,0.1200,0.2790,0.3699,fear,False
+held-out,sadness,"Alex dug slowly through the garden soil, tears quietly falling as memories buried themselves with each seed.",0.0201,-0.0098,-0.0220,0.2851,-0.2228,0.0014,sadness,True
+held-out,sadness,"Alex watched the last train disappear into the fog, clutching an unsent letter as tears blurred the empty platform.",-0.2229,-0.2196,-0.2919,0.3897,0.2776,0.2166,sadness,True
+held-out,sadness,"Alex curled beneath a blanket all rainy weekend, watching grey skies drain the color from everything he loved.",-0.1647,0.0071,0.1912,0.2699,-0.1050,-0.2618,sadness,True
+held-out,anger,"Alex slammed the overdue notice onto the library desk, jaw clenched, as the librarian calmly slid it back across.",0.1325,-0.2112,-0.3729,0.0680,0.3066,0.2678,anger,True
+held-out,anger,Alex gripped the armrests so hard his knuckles turned white as the dentist drilled without warning.,0.0602,-0.1776,-0.3837,-0.0444,0.4022,0.3127,anger,True
+held-out,anger,"Alex slammed the trowel into the soil, ripping weeds from the earth with trembling, white-knuckled hands.",0.1780,-0.0909,-0.3573,-0.0515,0.3320,0.1731,anger,True
+held-out,anger,Alex slammed his fist on the station bench as the last train vanished into the dark tunnel without him.,0.0551,-0.2429,-0.1733,-0.0404,0.5152,-0.0289,anger,True
+held-out,anger,"Alex stared at the endless grey rain through the window, fists clenched, teeth grinding, ruining yet another weekend.",-0.1858,-0.2526,0.0680,0.2335,0.0970,0.0040,sadness,False
+held-out,fear,"Alex clutched a dusty book, heart pounding, as the library's shadows crept silently closer.",-0.2175,-0.1386,-0.2640,0.3799,-0.0697,0.4313,fear,True
+held-out,fear,"Alex gripped the armrests as the drill whirred to life, every muscle in his body turning to ice.",0.0801,-0.1776,-0.3137,-0.0126,0.1344,0.4217,fear,True
+held-out,fear,"Alex froze, heart pounding, as something cold and alive slithered across his hand in the garden soil.",-0.1188,0.0002,-0.1339,-0.0548,0.0136,0.3158,fear,True
+held-out,fear,"Alex's hands trembled as the train screeched to a halt, shadows stretching across the empty station platform.",-0.1056,-0.2920,-0.3488,0.1348,0.2071,0.5382,fear,True
+held-out,fear,"Rain hammered the windows as Alex clutched the blanket, heart pounding at every dancing shadow.",-0.0501,-0.2512,-0.1852,0.2148,-0.0134,0.3671,fear,True
+GoEmotions,admiration,Its amazing how hive mind works...,0.0595,-0.0091,0.0625,-0.0223,-0.0644,-0.0499,optimism,False
+GoEmotions,admiration,"Excellent jobs, young men!",0.0958,0.1048,0.0852,-0.1970,-0.0612,-0.0763,admiration,True
+GoEmotions,admiration,You should really go see Aquaman though. In IMAX if you can - it's breathtakingly beautiful.,-0.0007,0.1832,0.1503,-0.0868,-0.2029,-0.1173,admiration,True
+GoEmotions,admiration,Trier [NAME] chemistry looking nice,0.0146,0.0486,0.1020,-0.0513,-0.1049,-0.0602,optimism,False
+GoEmotions,admiration,What a nice sub,0.0871,-0.0381,-0.0826,-0.0017,0.0426,0.0420,joy,False
+GoEmotions,admiration,Wow your metaphor is way better than the similar one I just wrote elsewhere in this thread. I'm going to have to steal it.,0.0189,-0.0692,0.0074,0.0210,0.0525,-0.0291,anger,False
+GoEmotions,admiration,The mom looks like my great aunt when she was younger.,-0.0384,0.2045,0.0053,-0.0278,-0.0394,-0.1018,admiration,True
+GoEmotions,admiration,"Aw man this isn't bad, and they're so proud of it. I could imagine them selling a variety of these, people love quirky jewelry.",0.0896,0.0894,0.1219,-0.0989,-0.1599,-0.0961,optimism,False
+GoEmotions,admiration,Bro that’s very nice. I like it.,0.1595,0.0529,0.1038,-0.1002,-0.1070,-0.1423,joy,False
+GoEmotions,admiration,You're amazing. I'd buy it :),0.1500,-0.0541,0.0993,-0.1083,-0.0402,-0.0875,joy,False
+GoEmotions,admiration,Well gen 3 was my first so it’s great!,0.1605,0.0284,0.1471,-0.1409,-0.1573,-0.1022,joy,False
+GoEmotions,admiration,It looks really pretty :D!,0.2506,-0.0001,0.0708,-0.1404,-0.1055,-0.0907,joy,False
+GoEmotions,admiration,That's great to hear! I had no idea we actually helped so many people with just a dumb sign and some cookies.,0.1237,0.1253,0.0170,-0.1004,-0.0494,-0.1101,admiration,True
+GoEmotions,admiration,"Yes, ~~jack~~ jake will be great too! Love the audio mixer with the old Spiderman soundtracks...looks very well produced...",0.1119,0.0113,0.0357,-0.0406,-0.1167,-0.0095,joy,False
+GoEmotions,admiration,That was a great interview,0.0810,0.0532,-0.0459,-0.0548,-0.0061,0.0009,joy,False
+GoEmotions,admiration,I'm so proud of this community,0.0657,0.0256,-0.0063,-0.0220,-0.0401,-0.0123,joy,False
+GoEmotions,admiration,He came flying out of nowhere for that. I was impressed.,-0.0181,0.1762,0.0548,-0.0723,-0.1575,-0.0166,admiration,True
+GoEmotions,admiration,Platinum is the best Pokemon,0.0483,-0.0391,-0.0473,0.0015,-0.0013,0.0626,fear,False
+GoEmotions,admiration,srs that’s a cute sweater n all but i wish the pic was closer to her makeup,0.0274,0.0038,-0.0545,0.0067,0.0068,0.0394,fear,False
+GoEmotions,admiration,Dang this is awesome,0.1344,0.0035,-0.0236,-0.0699,-0.0480,0.0224,joy,False
+GoEmotions,admiration,yeah it was awesome!,0.2182,-0.0281,0.0526,-0.1230,-0.0584,-0.0717,joy,False
+GoEmotions,admiration,I think it’s impressive. It’s actually fairly difficult to be that slick for that long.,-0.0248,0.0688,0.1185,-0.0084,-0.1453,-0.0668,optimism,False
+GoEmotions,admiration,[NAME]! Big fan of your graphic novels!,0.0153,0.1522,0.0353,-0.0865,-0.0690,-0.0654,admiration,True
+GoEmotions,admiration,"That's a giant, adorable, super-good woofer you got right there!",0.1777,0.1028,0.0807,-0.2100,-0.1006,-0.0871,joy,False
+GoEmotions,admiration,the best places are immigrant restaurants. cheap and delicious food. the better ones are outside of downtown.,-0.0422,-0.0061,-0.0107,0.0435,0.0104,0.0099,sadness,False
+GoEmotions,admiration,That's a great comparison,0.0653,0.0583,-0.0159,-0.0685,-0.0021,-0.0257,joy,False
+GoEmotions,admiration,I'm really proud of you for standing up yourself like that!,0.2236,0.0621,0.0068,-0.1595,-0.0444,-0.0765,joy,False
+GoEmotions,admiration,Great for domestic workers.,0.0116,0.0832,-0.0061,-0.1030,0.0588,-0.0476,admiration,True
+GoEmotions,admiration,Hallettsville. Awesome square that gets all lit up at Christmas - great places to eat. The best little town in Texas.,0.0176,0.0461,0.0129,0.0155,-0.0776,-0.0141,admiration,True
+GoEmotions,admiration,"That's amazing...I have to admit, Google making me do this while on VPN has moved me to Bing.",-0.0449,0.0177,-0.0505,-0.0092,0.0577,0.0451,anger,False
+GoEmotions,admiration,You just make her sound awesome.,0.1284,0.0270,0.0498,-0.1193,0.0475,-0.1464,joy,False
+GoEmotions,admiration,They look so good together *praying for Disney ending*,0.0923,-0.0793,0.0209,-0.0202,-0.0102,-0.0068,joy,False
+GoEmotions,admiration,"What a great read, its interesting to look at things from that perspective.",0.0501,0.1109,0.0950,-0.0210,-0.1657,-0.1030,admiration,True
+GoEmotions,admiration,Another great bit on identity politics...,0.0482,-0.0121,-0.0395,0.0136,0.0283,-0.0098,joy,False
+GoEmotions,admiration,Narrow guage is great!,0.1120,0.0427,0.1206,-0.1667,-0.0481,-0.1197,optimism,False
+GoEmotions,admiration,[NAME] chatting with a kid while waiting to come out for the stars of the game. What a great guy.,0.1354,0.1203,0.0603,-0.0957,-0.0724,-0.1583,joy,False
+GoEmotions,admiration,The Dime on Commercial has cheap eats (but expensive drinks) and usually has a good crowd. A bit small but very lively.,-0.0138,0.0446,-0.0353,0.0282,-0.0363,0.0317,admiration,True
+GoEmotions,admiration,I appreciate his deadpan humour.,0.0280,0.2175,0.0278,-0.0598,-0.0734,-0.1413,admiration,True
+GoEmotions,admiration,Looks like this person just solved the world’s starvation problem. Get a Nobel Prize ready for them!,0.0943,0.0487,0.1209,-0.1952,0.0175,-0.1494,optimism,False
+GoEmotions,admiration,Maybe but their fish tacos are really good.,0.0280,0.0450,0.1255,-0.0757,0.0080,-0.1863,optimism,False
+GoEmotions,admiration,[NAME] just might be the hardest working man in hockey.,-0.0495,0.1175,0.0397,-0.0756,0.0077,-0.0681,admiration,True
+GoEmotions,admiration,Marketing! That’s a great word to describe what they do.,0.0264,0.0935,0.0714,-0.0473,-0.1502,-0.0281,admiration,True
+GoEmotions,admiration,"Those are pretty good points. Not just for a hypothetical argument, but just good points about the plot in general.",0.0159,0.0961,0.0971,0.0045,-0.1587,-0.0920,optimism,False
+GoEmotions,admiration,Genius. I'm so doing this,0.0269,-0.0172,-0.0262,-0.0053,-0.0370,0.0694,fear,False
+GoEmotions,admiration,He looks like a model tbh. Very good looking man.,0.1243,0.0498,0.0328,-0.0577,-0.1046,-0.0476,joy,False
+GoEmotions,admiration,The effect has Tyus has on ball movement for us is remarkable,-0.0113,0.1341,-0.0007,-0.0695,-0.0540,-0.0045,admiration,True
+GoEmotions,admiration,Then [NAME] took little Donnie Two Scoops out to get a happy meal because he's been such a good top businessman!,0.0662,0.1214,0.0835,-0.1973,0.0215,-0.1418,admiration,True
+GoEmotions,admiration,Arguing the semantics of the word argument. Clever girl...,0.1348,0.0004,-0.0566,-0.0906,0.0518,-0.0049,joy,False
+GoEmotions,admiration,Ohhhh my gahhhd. One of my all time favorites. Taxi Driver can take a seat. Brink is awesome.,0.0817,0.0089,-0.0658,-0.0024,-0.0594,0.0758,joy,False
+GoEmotions,admiration,That would be **[NAME]** Who is also awesome.,0.1982,0.0144,0.0365,-0.1066,-0.0428,-0.0987,joy,False
+GoEmotions,admiration,Yesssss!!! [NAME] would be awesome!!! I also alternate between these two shows! So good.,0.2020,-0.0618,0.0219,-0.0453,-0.0710,-0.0358,joy,False
+GoEmotions,admiration,That’s [NAME]. One of the most famous and richest criminal defense attorneys in the world.,0.0105,0.1862,0.0361,-0.1035,-0.0527,-0.0948,admiration,True
+GoEmotions,admiration,Belgium is an awesome assignment,0.0235,-0.0438,-0.0393,-0.0036,0.0313,0.0495,fear,False
+GoEmotions,admiration,[NAME] boxing gym in Ross is super inviting to everyone! It's a legit boxing club that is also friendly to folks just looking for a workout.,-0.0009,0.1777,0.0302,-0.1085,-0.1143,-0.0082,admiration,True
+GoEmotions,admiration,You kind of look like [NAME]. Very cute.,0.1772,0.0303,0.0498,-0.0984,-0.1073,-0.0615,joy,False
+GoEmotions,admiration,Great work guys! Always A++ Prime casters!,0.1505,0.0707,0.0131,-0.1356,-0.0387,-0.0587,joy,False
+GoEmotions,admiration,Actually pretty :(( as [NAME] since the Hair is one big abomination and it could have been sooooo cool.,0.1333,-0.0249,0.0105,-0.0336,-0.0271,-0.0477,joy,False
+GoEmotions,admiration,"Hey, it's good of you to do this, she may be sad but in the end it will be better for her. Proud of you!",0.1307,-0.0108,0.1006,-0.1229,-0.0112,-0.1280,joy,False
+GoEmotions,admiration,I believe he means he was a very pretty child to become otherwise after puberty...,0.0483,-0.0009,0.0902,-0.0017,-0.0703,-0.0984,optimism,False
+GoEmotions,admiration,Excellent find. Panels like these are a very deliberate writing choice.,-0.0372,0.1498,0.0033,-0.0320,-0.1301,0.0373,admiration,True
+GoEmotions,admiration,The lies of this evangelical “[RELIGION]” woman are simply staggering. What a wonderful example she is for her children.,-0.0451,0.2512,0.0472,-0.0865,-0.0899,-0.1031,admiration,True
+GoEmotions,admiration,It is a gorgeous picture. However I would rather that sun exploded and took us all to kingdom come than sit in traffic.,-0.1781,0.0354,0.0646,-0.0007,0.0763,-0.0493,anger,False
+GoEmotions,admiration,Incredible how you can... SEE RIGHT THROUGH ME!!!,0.0785,-0.0749,-0.0041,-0.0876,0.0976,-0.0104,anger,False
+GoEmotions,admiration,Let’s go! TRoss is awesome,0.0949,0.0383,0.0014,-0.0876,-0.0118,-0.0317,joy,False
+GoEmotions,admiration,"These look fantastic. Please go and work for the Suns, they need you more than they know.",-0.0338,0.0014,0.0377,-0.0072,0.0663,-0.0829,anger,False
+GoEmotions,admiration,Great job! Hats off to you.,0.2083,0.0278,-0.0640,-0.1106,0.0058,-0.0197,joy,False
+GoEmotions,admiration,He is a brave man to even have the courage to put this foundation on his face. I wouldn't have even if [NAME] told me to!,0.0017,0.0537,0.0636,-0.0513,-0.0149,-0.0842,optimism,False
+GoEmotions,admiration,"It's hard to try to evaluate yourself, but I appreciate you trying.",0.0396,0.0787,0.0991,0.0487,-0.1763,-0.1174,optimism,False
+GoEmotions,admiration,You look adorable. :) I love your eyes. :),0.1595,-0.0257,-0.0106,-0.0181,-0.0679,-0.0130,joy,False
+GoEmotions,admiration,This is the most beautiful story I've ever heard.,0.0610,0.1397,0.0250,-0.0716,-0.0851,-0.0737,admiration,True
+GoEmotions,admiration,Wow you look incredible. Great job getting healthy and beautiful! ❤️,0.1327,0.0066,0.0135,-0.0411,-0.0749,-0.0293,joy,False
+GoEmotions,admiration,I'm sure the guy posting is this just gorgeous with the best personality ever,0.0472,0.0712,-0.0173,-0.0384,-0.0086,-0.0390,admiration,True
+GoEmotions,admiration,That's the best catch I've ever seen,-0.0013,0.0553,-0.0656,0.0093,-0.0073,0.0428,admiration,True
+GoEmotions,admiration,And it tastes great because it was chilling in my refrigerator,0.0083,0.0106,-0.0126,0.0038,-0.0331,0.0292,fear,False
+GoEmotions,admiration,Yeah you have great solidarity with evil reigimes.,0.0798,0.0324,0.0842,-0.0771,-0.0439,-0.1093,optimism,False
+GoEmotions,admiration,You've been checking in on all us 3.8 billion females? That's impressive.,0.0446,0.1233,0.1426,-0.1138,-0.1473,-0.1191,optimism,False
+GoEmotions,admiration,nice ideas! looking good.,0.1867,-0.0534,-0.0284,-0.0988,0.0535,-0.0331,joy,False
+GoEmotions,admiration,the ALTERNATE caption! good thinking!,0.1021,-0.0311,0.0576,-0.1403,0.0691,-0.0869,joy,False
+GoEmotions,admiration,Was impressed til I saw you main [NAME],0.0490,0.0079,-0.0254,0.0050,-0.0215,0.0051,joy,False
+GoEmotions,admiration,[NAME] engagement photo shoot This is the best she has ever looked in my opinion. HAWT!,0.1685,0.0003,0.0426,-0.1826,-0.0025,-0.0470,joy,False
+GoEmotions,admiration,Did you have to make this picture yourself because it’s just wonderful,0.0664,0.1227,0.0667,-0.0536,-0.1383,-0.0862,admiration,True
+GoEmotions,admiration,"Freakin cheers man, that looks delicious right now!",0.2315,-0.0002,0.0762,-0.2367,-0.0124,-0.0919,joy,False
+GoEmotions,admiration,but it sure looks good,0.0873,0.0613,0.0510,-0.0650,-0.0868,-0.0644,joy,False
+GoEmotions,admiration,She looks so pretty in that photo.,0.0981,0.1391,0.0292,-0.0974,-0.0440,-0.1263,admiration,True
+GoEmotions,admiration,Beautiful shots. Makes me want to finally take the jump into photography.,0.1387,0.0642,0.0074,-0.1071,-0.0526,-0.0450,joy,False
+GoEmotions,admiration,Your dad is a wise man,-0.0198,0.0919,0.0055,-0.0295,-0.0257,-0.0270,admiration,True
+GoEmotions,admiration,"For example, I think this picture of [NAME] character from southpark) is soooo cute",0.1114,0.0748,0.0002,-0.0639,-0.1027,-0.0108,joy,False
+GoEmotions,admiration,The forgotten [NAME]? He's pretty good on the Flash as [NAME].,0.0608,0.0830,0.0458,-0.1342,0.0623,-0.1385,admiration,True
+GoEmotions,admiration,I like the way you think!,0.1461,0.0267,0.0966,-0.1336,-0.0162,-0.1554,joy,False
+GoEmotions,admiration,[NAME] - Holdin on. Check out his music because he is honestly amazing.,0.0963,0.1700,-0.0256,-0.0744,-0.0506,-0.0882,admiration,True
+GoEmotions,admiration,"Best pen in baseball, even though I'd still take [NAME] over [NAME].",0.0692,0.0351,0.0294,-0.0792,0.0181,-0.0820,joy,False
+GoEmotions,admiration,You used the correct term. Good job.,0.1903,-0.0928,0.0057,-0.1105,0.0860,-0.0692,joy,False
+GoEmotions,admiration,you have captured their ugliness perfectly . GREAT JOB,0.1113,0.0227,-0.0382,-0.0617,-0.0342,0.0248,joy,False
+GoEmotions,admiration,It's great having both [NAME] and [NAME],0.0412,-0.0179,-0.0111,0.0067,-0.0297,0.0207,joy,False
+GoEmotions,admiration,"Give a listen to Gramatik, he is amazing",0.0661,0.0831,-0.0689,-0.0116,-0.0405,0.0156,admiration,True
+GoEmotions,admiration,"Much better 2nd quarter, keep it up guys.",0.0762,-0.1165,0.0246,0.0081,0.0194,-0.0158,joy,False
+GoEmotions,admiration,His contract is awesome after July 1,-0.0553,-0.0481,-0.0242,0.0288,0.0228,0.0777,fear,False
+GoEmotions,admiration,He was such a pet!! Beautiful looking dog,0.0929,0.0131,-0.0542,-0.0766,0.0035,0.0478,joy,False
+GoEmotions,admiration,"the girl looked the happiest out of all of them to get a puck, that man is amazing",0.0751,0.1060,-0.0224,-0.0678,-0.0312,-0.0411,admiration,True
+GoEmotions,admiration,"Your Beauty shines out of you, than you for this lovely post.",0.1824,0.0851,-0.0316,-0.1299,-0.0102,-0.0656,joy,False
+GoEmotions,anger,You are fucking retarded,0.0257,-0.0379,-0.1120,0.0319,0.0860,0.0652,anger,True
+GoEmotions,anger,the fuck is wrong with this guy,-0.0035,-0.0256,-0.1307,0.0224,0.0899,0.1081,fear,False
+GoEmotions,anger,PayPal is fucking pricey. 500 bucks to Mexico cost me 60$,-0.0413,0.0147,-0.0677,0.0192,0.0463,0.0568,fear,False
+GoEmotions,anger,What's the fucking point of this post? Is just baseless claims with no proof to back them up.,-0.1405,0.0684,0.0086,0.0514,0.0170,-0.0174,admiration,False
+GoEmotions,anger,"""Talk about vaccines again and your next shot will be from my gun... of crystals bathed in essential oils""",0.0443,0.0202,-0.0608,-0.0794,0.1225,-0.0187,anger,True
+GoEmotions,anger,A sharp stick? I think you need a rifle to kill that bastard,-0.0256,-0.0242,-0.0765,-0.0087,0.0864,0.0767,anger,True
+GoEmotions,anger,I could crush him like a bug right now.,-0.1094,0.0074,-0.0532,0.0072,0.1146,0.0442,anger,True
+GoEmotions,anger,"I can hear [NAME] now: ""Why don't I have a mic why don't I have a mic FUCK I need a mic""",-0.0095,-0.0267,-0.0415,-0.0040,0.0659,0.0320,anger,True
+GoEmotions,anger,That’s not a fucking card?!,0.0008,-0.0584,-0.0723,-0.0351,0.1321,0.0592,anger,True
+GoEmotions,anger,16-37 and 25 fta. [NAME] is so fucking overrated. Volume chucker/flopper in a fast paced no defense league.,0.0110,0.0170,-0.1340,-0.0001,0.1132,0.0590,anger,True
+GoEmotions,anger,"I hate the argument too. It betrays and exposes the violent, primitive ape amygdala response that is most Human social interaction.",-0.1831,0.2597,0.0051,0.0365,-0.0641,-0.0631,admiration,False
+GoEmotions,anger,they dont pay shit,-0.0439,-0.0765,-0.0335,0.0656,0.0733,0.0305,anger,True
+GoEmotions,anger,You are an asshole.,-0.0546,-0.0189,-0.0105,0.0034,0.1452,-0.0620,anger,True
+GoEmotions,anger,Fuck you I was in the bed:/,0.0327,-0.0863,-0.0670,0.0120,0.1092,0.0344,anger,True
+GoEmotions,anger,I'm fucking starving here.,-0.1261,-0.0863,-0.0147,0.1012,0.0496,0.0727,sadness,False
+GoEmotions,anger,[NAME] just ripped his jersey. He’s frustrated as hell right now,-0.0816,-0.0522,-0.0256,0.0648,0.0389,0.0606,sadness,False
+GoEmotions,anger,Who the hell thinks he isn’t overpaid,-0.0321,-0.0037,0.0077,0.0135,-0.0150,0.0215,fear,False
+GoEmotions,anger,Theres the link I use you stupid fuck get the fuck off my post you fucking shill,0.0098,0.0025,-0.0979,0.0050,0.0573,0.0701,fear,False
+GoEmotions,anger,Lmao what's the difference neither one is refrigerated. People are fucking stupid,-0.0235,0.0212,-0.0803,0.0516,0.0454,0.0291,sadness,False
+GoEmotions,anger,"“What the FUCK is this [NAME], explain!”",-0.0151,-0.0313,-0.1350,0.0256,0.1315,0.0873,anger,True
+GoEmotions,anger,FIRE THE MEDICAL TEAM.,0.0202,-0.0459,-0.1303,-0.0295,0.2187,0.0285,anger,True
+GoEmotions,anger,"Hey [NAME]! **TRY DRAWING TWO CARDS NOW, YOU STUPID FUCKING BASTARD!!**",0.0631,-0.0820,-0.1492,-0.0111,0.1151,0.1348,fear,False
+GoEmotions,anger,"Fuckkkkk I'm doing Psychology lmfao, am I gonna fail at life now?",-0.1104,-0.0926,0.0268,0.1076,0.0382,0.0128,sadness,False
+GoEmotions,anger,"I would just beat up someone I really hate, my brother.",-0.0752,0.0808,0.0410,-0.0452,0.1460,-0.1694,anger,True
+GoEmotions,anger,WILL YOU TWO SHUT UP? PEOPLE ARE TRYING TO SLEEP,-0.0089,-0.0534,-0.0194,0.0648,-0.0355,0.0635,sadness,False
+GoEmotions,anger,What in the hell are you talking about? I've never said that,-0.0548,0.0656,-0.0261,0.0162,-0.0162,0.0239,admiration,False
+GoEmotions,anger,“I’ll never have a playoff mandate” go fuck yourself [NAME],-0.0070,-0.0318,-0.1082,0.0367,0.1227,0.0428,anger,True
+GoEmotions,anger,This makes me unfathomably angry.,-0.0577,0.0181,-0.1047,0.0608,0.0489,0.0831,fear,False
+GoEmotions,anger,Wouldn't have it any other way. Fuck my DNA. Fuck nucleotides.,-0.1339,0.0283,0.0253,0.0566,0.0502,-0.0453,sadness,False
+GoEmotions,anger,30 you illiterate fuck,0.0166,-0.0113,-0.1078,0.0359,0.0581,0.0654,fear,False
+GoEmotions,anger,Who fucking cares. People have sex all the time. You're just an asshole for trying to to profit from it or ruin her.,-0.0239,-0.0132,-0.0323,0.0646,0.0589,-0.0302,sadness,False
+GoEmotions,anger,"Fuck this team. I’m done, we all should boycott this bullshit",-0.0311,-0.0434,-0.0729,0.0658,0.0307,0.0853,fear,False
+GoEmotions,anger,This is my biggest pet hate of all time!,-0.0852,0.0664,0.0009,0.0060,-0.0200,0.0216,admiration,False
+GoEmotions,anger,If you had to think of a way to survive this how the hell would you. Damn,-0.0348,-0.0035,-0.0686,0.0443,0.0145,0.0786,fear,False
+GoEmotions,anger,Fuck you my fortnite k/d is better bitch,-0.0267,-0.0018,-0.0913,0.0219,0.0879,0.0522,anger,True
+GoEmotions,anger,">The Charisma Myth"" It's bullshit too.",-0.0345,0.0018,0.0469,0.0066,-0.0102,-0.0355,optimism,False
+GoEmotions,anger,I see a 14 day old reddit account angry at liberals.,-0.1102,0.1815,-0.0490,-0.0458,0.0838,-0.0468,admiration,False
+GoEmotions,anger,"[NAME], what? Why are you even here. Fuck off.",-0.0015,-0.1870,-0.1167,0.1097,0.1170,0.1367,fear,False
+GoEmotions,anger,I'd piss right on their floor. Fuck this.,-0.1051,-0.2138,-0.0536,0.0452,0.1770,0.1520,anger,True
+GoEmotions,anger,I'd punt her to another planet if she said that about my dog. Wtf is wrong with people. 😠,0.0518,-0.0349,-0.0157,-0.0476,0.0664,-0.0117,anger,True
+GoEmotions,anger,I hated that smug ass lawyer.,-0.1433,0.1028,-0.0971,-0.0193,0.1979,-0.0090,anger,True
+GoEmotions,anger,PARENTS: VACCINATE YOUR FUCKING KIDS OR THE NEXT NAP THEY TAKE WILL BE IN A COFFIN OMFG,0.0421,-0.0483,-0.1477,0.0148,0.0818,0.1293,fear,False
+GoEmotions,anger,#Fuck the cowgirls & iggles,0.0167,-0.0346,-0.0645,0.0147,0.0493,0.0507,fear,False
+GoEmotions,anger,Ehhh but as a survivor I hate noed and hex ruin why would I run them against someone else,-0.0130,0.0080,-0.0125,-0.0093,-0.0144,0.0417,fear,False
+GoEmotions,anger,Watching this makes me angry.,-0.1176,0.0378,-0.0969,0.0786,0.0581,0.0798,fear,False
+GoEmotions,anger,Hated her. And that was honestly a more offensive reaction than everyone laughing at her IMHO,0.0046,-0.0337,-0.0138,0.0446,-0.0091,0.0187,sadness,False
+GoEmotions,anger,You shut your stupid mouth troll. Thy absolutely matter,-0.0040,0.0384,-0.0604,0.0330,-0.0039,0.0307,admiration,False
+GoEmotions,anger,"My name is [NAME]. You killed my father, prepare to die.",-0.0460,-0.0612,0.0084,-0.0279,0.1039,0.0062,anger,True
+GoEmotions,anger,I would hate to see another [NAME] situation where [NAME] gets hurt again because he wasn't fully recovered.,-0.1307,0.1316,0.0527,-0.0093,0.0116,-0.0906,admiration,False
+GoEmotions,anger,"WHAT?! You dare insult the band of gods?! Typical teen, I hate my own generation! *screams in 16 year old*",0.0617,-0.1268,-0.2045,0.0147,0.1492,0.2014,fear,False
+GoEmotions,anger,She got the death penalty...? fck me.,-0.0112,-0.1263,-0.0912,-0.0167,0.2836,0.0007,anger,True
+GoEmotions,anger,Kindly shut your pie hole.,-0.0442,-0.0580,-0.0796,0.0531,0.1479,0.0196,anger,True
+GoEmotions,anger,“I hate rich people” - people using website made by rich person on a device made by a rich person.,-0.0362,0.0763,-0.1869,-0.0020,0.2149,0.0250,anger,True
+GoEmotions,anger,You fool! Now look what you've unleashed!,0.1082,-0.0655,0.1068,-0.1639,0.0307,-0.0753,joy,False
+GoEmotions,anger,WAIT IS THIS FUCKING LOSS!?!,-0.0002,-0.0692,-0.0678,-0.0082,0.0858,0.0846,anger,True
+GoEmotions,anger,No. Screw him. It IS a demanding job. Physically and emotionally draining. You deserve a hot meal and a friggin hour or two to decompress.,-0.1259,0.0037,0.1191,0.0593,-0.0751,-0.0469,optimism,False
+GoEmotions,anger,I hate his hoist a shit shot and throw your legs forward so you can draw a foul on the defender for crowding your landing space.,-0.0336,0.0595,-0.1991,-0.0701,0.2860,0.0438,anger,True
+GoEmotions,anger,What the fuckkkkk burn itt,0.0470,-0.0471,-0.1085,0.0087,0.0453,0.1080,fear,False
+GoEmotions,anger,"was i replying to you, you fucking degenerate? off yourself ( in game ofc )",0.0199,-0.0785,-0.1078,0.0264,0.1440,0.0511,anger,True
+GoEmotions,anger,Because it's not mildlyinfuriating that you have to ask strangers to not be assholes?,-0.0636,0.0730,0.0657,0.0331,-0.0153,-0.1193,admiration,False
+GoEmotions,anger,That must be so frustrating. Sounds like he’s digging his heels in and refusing to accept his faults.,-0.0156,-0.0375,0.0137,0.0690,0.0485,-0.0736,sadness,False
+GoEmotions,anger,[NAME] just wants to post pics of her facetuned of herself for attention while acting morally superior to those other girls. fuck off,0.0281,-0.0425,-0.1198,0.0257,0.1050,0.0658,anger,True
+GoEmotions,anger,Shut up [NAME] we’ve had enough of experts,-0.0127,0.0186,-0.0417,-0.0157,0.0341,0.0331,anger,True
+GoEmotions,anger,What the fuck is The Baffler? I can't even go there at work.,-0.1444,-0.0291,-0.1120,0.0807,0.1877,0.0609,anger,True
+GoEmotions,anger,What a fuckin n,0.0959,-0.0243,-0.1527,-0.0005,0.0540,0.1094,fear,False
+GoEmotions,anger,"MOTHERFUCKING FLYING MONKEYS, AHHHHHHHHGHGHHH!!!!!!!!!!!!",0.0949,-0.0439,-0.1016,-0.0956,0.1109,0.0795,anger,True
+GoEmotions,anger,wtf i hate [NAME] now,0.0348,-0.0418,-0.1109,-0.0190,0.1033,0.0848,anger,True
+GoEmotions,anger,Greasy bastards are getting part of what they deserve. Some fines just don’t seem to be enough sometimes,-0.0179,-0.0584,-0.0400,0.0416,0.0555,0.0383,anger,True
+GoEmotions,anger,"Worse, he murdered King [NAME] in the most cowardly way possible. Both in the books and the show.",-0.0732,0.1010,-0.0573,0.0179,0.0626,-0.0240,admiration,False
+GoEmotions,anger,No youre a cunt,0.0461,-0.0792,-0.0601,0.0175,0.0810,0.0292,anger,True
+GoEmotions,anger,Wtf is a weeb,0.0633,-0.0272,-0.0788,-0.0078,0.0437,0.0498,joy,False
+GoEmotions,anger,Get the fuck out,0.0416,-0.1062,-0.0870,0.0337,0.0768,0.0859,fear,False
+GoEmotions,anger,I'm just here to say fuck [NAME],0.0096,-0.0456,-0.0742,0.0194,0.0754,0.0520,anger,True
+GoEmotions,anger,Why is it arrogant to think LIVING IN A FUCKING BEAR CARCASS is wrong?,-0.1612,0.1548,0.0616,0.0724,-0.0527,-0.1053,admiration,False
+GoEmotions,anger,How is this the epitome of slavery? Nobody is forcing you to do this. Stop being dramatic.,-0.1077,0.0259,0.0472,0.0534,-0.0311,-0.0168,sadness,False
+GoEmotions,anger,I will kill you all,0.0288,-0.0049,-0.0793,0.0170,0.0470,0.0353,anger,True
+GoEmotions,anger,"[NAME] fucked up with this line up. Why do you change it, if everything was going good? Idiot!",-0.0019,-0.0359,0.0199,-0.0540,0.0802,-0.0253,anger,True
+GoEmotions,anger,"Yeah I know what you meant. Fuck the police, most of them are vile pieces of shit, they deserve every kick in the back they get.",-0.0556,-0.0382,0.0548,0.0496,0.0124,-0.0493,optimism,False
+GoEmotions,anger,I AM LITERALLY FREAKING THE FUCK OUT,0.0450,-0.0181,-0.1483,-0.0053,0.0856,0.1132,fear,False
+GoEmotions,anger,What the fuck is wrong with this?!?!?!??? FUCKKKKKKKK!!!!!,0.0523,-0.1248,-0.1433,-0.0524,0.1738,0.1523,anger,True
+GoEmotions,anger,what the fuck do you learn in first grade that’s so important anyway?,-0.0772,0.0119,0.0059,0.0610,0.0576,-0.0594,sadness,False
+GoEmotions,anger,"yes, i fucking hate that.",0.0250,-0.0928,-0.1038,0.0266,0.1547,0.0441,anger,True
+GoEmotions,anger,"Yes but iy also makes complete sense that morty woild want it gone too, so i hate how he instantly assumes it was rick",0.0307,0.0023,-0.0735,0.0061,0.0228,0.0504,fear,False
+GoEmotions,anger,Fuuuuck. I am so angry that this can even happen.,-0.0553,-0.0435,-0.0760,0.0368,0.0618,0.1037,fear,False
+GoEmotions,anger,But milk is beta food! Who wants that girly ass shit from a boob? My child will drink bone broth and the tears of broken women!!,0.0381,0.0027,0.0007,-0.0863,0.0697,-0.0297,anger,True
+GoEmotions,anger,Almost downvoted you just because that made me so angry.,0.0133,-0.0170,-0.0933,-0.0235,0.1863,-0.0186,anger,True
+GoEmotions,anger,"Fuck people that don't like pbr, only cheap bear I'll drink next to natty boh",0.0445,0.0228,-0.0775,-0.0198,0.0302,0.0404,joy,False
+GoEmotions,anger,I’m tryin to make the community better and bring this to peoples attention he’s a filthy cheater,0.0057,-0.0358,-0.0539,0.0126,0.0835,0.0155,anger,True
+GoEmotions,anger,This genuinely made me angry. He and his sociopath of a wife deserve each other.,-0.0538,0.1145,0.1148,-0.0249,-0.0783,-0.1284,optimism,False
+GoEmotions,anger,How dare you hate [NAME],0.0062,-0.0244,-0.0782,0.0248,0.0656,0.0460,anger,True
+GoEmotions,anger,"I was quoting him. He wanted an ""outsider rich business type"", piss off",-0.0778,0.0119,-0.0193,0.0384,0.0428,0.0084,anger,True
+GoEmotions,anger,Fuck no i wanna kill the living shit out of [NAME],0.0083,-0.0703,-0.1014,0.0199,0.0995,0.0908,anger,True
+GoEmotions,anger,Gawd but [NAME] is a bitch.,-0.0378,-0.0162,-0.0980,-0.0102,0.2147,-0.0087,anger,True
+GoEmotions,anger,I KILL YOU SCUM,-0.0037,-0.0571,-0.0996,0.0482,0.1008,0.0619,anger,True
+GoEmotions,anger,"These stupid fucking cunts don’t even use “shade” correctly, [NAME] would toss them off the pier.",-0.0278,0.0298,-0.1335,-0.0498,0.2446,-0.0042,anger,True
+GoEmotions,anger,How dare you disparage a 3D printed JV riding a goddamn raptor,-0.0157,0.0354,-0.0041,-0.0350,-0.0170,0.0306,admiration,False
+GoEmotions,anger,"People will stop wanting to punch/jail these people when they stop being ignorant, selfish pricks putting newborn babies at risk.",-0.0828,0.1074,0.0600,-0.0269,0.0151,-0.1067,admiration,False
+GoEmotions,anger,"What she is doing is child abuse, plain and simple. Fight with everything you have to protect your kids.",-0.1164,0.0459,0.0492,0.0342,0.0222,-0.0647,optimism,False
+GoEmotions,anger,GET THE FUCK OUTTA HERE RUDY,0.0158,-0.0315,-0.1281,0.0024,0.0815,0.1182,fear,False
+GoEmotions,anger,This is so infuriating.,0.0030,-0.0092,-0.1491,0.0204,0.0819,0.1230,fear,False
+GoEmotions,fear,Honestly scared to see what happens,-0.0576,-0.0263,0.0087,-0.0054,0.0356,0.0292,anger,False
+GoEmotions,fear,[NAME] is scared out there. Didnt want the ball,0.0153,-0.0374,-0.0325,-0.0091,0.0162,0.0594,fear,True
+GoEmotions,fear,I tried doing this for my son but he was afraid of it.,-0.2125,0.1406,0.0135,-0.0051,0.0537,-0.0199,admiration,False
+GoEmotions,fear,I have but I sugar discreetly and I’m genuinely afraid to have that compromised due to the field I’m in,-0.0949,0.0370,-0.0346,0.0692,-0.0503,0.0831,fear,True
+GoEmotions,fear,Please don’t murder me,0.0106,-0.0074,-0.1221,0.0127,0.1072,0.0599,anger,False
+GoEmotions,fear,i have bought this but not played. i'm scared. hold me.,-0.0277,-0.0910,-0.0559,0.0287,0.0974,0.0694,anger,False
+GoEmotions,fear,I've also heard that intriguing but also kinda scary,-0.1291,-0.0031,0.0229,0.0740,-0.0885,0.0977,fear,True
+GoEmotions,fear,I took a picture of a farmer treating his crops with roundup yesterday.. it was horrifying,-0.1101,0.0460,-0.0228,0.0301,-0.0098,0.0645,fear,True
+GoEmotions,fear,"It was a few years ago now, I’m afraid I don’t have it or I would.",-0.1362,-0.0385,0.0058,0.2013,-0.0257,-0.0015,sadness,False
+GoEmotions,fear,we are scared on /r/bengals rn,0.0329,-0.0500,-0.0944,0.0089,0.0501,0.0976,fear,True
+GoEmotions,fear,I'm afraid I'm gonna have to go with what he said about an hour ago. Unicorns. He just ruled out any sort of,-0.0921,0.0716,0.0040,0.0519,-0.0658,0.0238,admiration,False
+GoEmotions,fear,I was afraid of that .,-0.0117,-0.0313,-0.0358,0.0052,0.0531,0.0344,anger,False
+GoEmotions,fear,"That woman gave me nightmares as a child. Also, you probably know this but she also plays [NAME] aunt in the third movie!",0.0539,0.0880,-0.0040,-0.0950,0.0131,-0.0531,admiration,False
+GoEmotions,fear,"This was posted at the exact same time as another guy posted it on here, and that scares me.",-0.0797,-0.0211,-0.1045,0.0563,0.0500,0.1387,fear,True
+GoEmotions,fear,"Well I'm scared as shit let's hope for the best, benz should be back(?)",0.0154,-0.1261,0.0680,0.0567,-0.0284,-0.0136,optimism,False
+GoEmotions,fear,After 8? I'm afraid after 5. It gets dark here early. :(,-0.0140,-0.1713,-0.0148,0.0721,0.0886,0.0461,anger,False
+GoEmotions,fear,"It would probably be horrifying if we tried, when a bug causes an integer overflow and resets our aggression levels.",-0.1728,0.1063,0.1378,-0.0836,0.0036,-0.0861,optimism,False
+GoEmotions,fear,It's practically non existent. Im mostly afraid to initiate a hug because I'm afraid I don't know/forgot how to hug.,-0.1790,0.0923,0.0055,0.1135,-0.0080,-0.0303,sadness,False
+GoEmotions,fear,Cheese Most of my friends love cheese so much that I’m scared to tell them that I can barely even bring myself to eat it,-0.0645,0.0387,-0.0407,0.0233,-0.0007,0.0563,fear,True
+GoEmotions,fear,"Oh, the ""Thomas the nuclear bomb""? That scarred me.",-0.1590,0.1287,-0.0105,0.0507,-0.0122,-0.0022,admiration,False
+GoEmotions,fear,"He may have, I was more worried about the ""running and shooting the AR one handed, off to the side"".",-0.1233,0.0360,0.0357,0.0459,-0.0130,-0.0079,sadness,False
+GoEmotions,fear,It still seems dangerous,-0.1268,-0.0087,0.0810,0.0329,-0.0488,0.0153,optimism,False
+GoEmotions,fear,I watched a really bad horror movie she starred in but I think it predated VPR.,-0.1098,0.0713,-0.0481,0.0442,0.0641,-0.0032,admiration,False
+GoEmotions,fear,Idk how to use any.... the 5th one looks scary,-0.0571,-0.0100,0.0007,0.0084,-0.0240,0.0697,fear,True
+GoEmotions,fear,"Either way, I am afraid his marriage is over. She doesn't respect him anymore...",-0.0264,-0.0812,0.0370,0.0807,0.0282,-0.0488,sadness,False
+GoEmotions,fear,">Some ~~drugs~~ people are just... Scary... Some drugs tend to bring out what's bubbling under the surface, so in that way, yeah.",0.0545,-0.0495,0.0510,0.0291,-0.0789,-0.0211,joy,False
+GoEmotions,fear,"I was so scared, I thought the kid was going to backpedal into a street.",-0.2648,0.0873,0.0095,-0.0739,0.1251,0.0650,anger,False
+GoEmotions,fear,The fact that this being brought up makes it a real scary feeling.,-0.0710,0.0205,-0.0239,0.0099,-0.0029,0.0673,fear,True
+GoEmotions,fear,Damn! You were so close! Scary. Damn damn!,0.0408,-0.0920,-0.0237,-0.0107,0.0054,0.0869,fear,True
+GoEmotions,fear,Maybe so. Should I try to ask her about it? I'm worried that will only scare her more,-0.0891,0.0051,-0.0341,0.0325,0.0274,0.0637,fear,True
+GoEmotions,fear,Sir that is a popular opinion. I'm too afraid of what sort of trade will happen to want one.,-0.0299,-0.0248,0.1069,-0.0062,-0.0095,-0.0900,optimism,False
+GoEmotions,fear,scared for sure... scared of how much money we're gonna have to pay him it's gonna be all the moneys,0.0032,-0.0418,-0.0162,0.0165,0.0010,0.0437,fear,True
+GoEmotions,fear,This looks like don't hug me I'm scared,-0.1088,-0.0680,-0.0463,0.0683,0.0462,0.1164,fear,True
+GoEmotions,fear,I'm afraid you have your terms mixed up -,-0.0488,-0.0603,0.0107,0.0429,0.0227,0.0231,sadness,False
+GoEmotions,fear,I'm afraid I'll pick something else.,-0.0539,-0.1346,0.0522,0.1200,0.0137,-0.0179,sadness,False
+GoEmotions,fear,I got mine a few months ago and honestly apprehensive to wear it out to a game in fear of staining it.,-0.1311,0.1270,0.1339,-0.1138,-0.0620,-0.0476,optimism,False
+GoEmotions,fear,"ah, ok! i'm afraid i do, i just didn't realise that's what it meant (so old i am going stupid....)",0.0553,-0.1247,-0.0466,0.0498,0.0723,0.0259,anger,False
+GoEmotions,fear,"“Guys watch out, the scary looking kid is coming down the hall”",-0.0168,-0.0578,-0.1112,0.0287,0.0888,0.1164,fear,True
+GoEmotions,fear,"In that case, I’m appalled.",-0.1673,0.1668,-0.0172,0.0287,-0.0026,-0.0116,admiration,False
+GoEmotions,fear,"Yeah, I’m at the dh store. so it’s far but not that far. People really are horrible.",-0.0818,-0.0243,-0.0272,0.0868,0.0513,0.0087,sadness,False
+GoEmotions,fear,OH [NAME] THAT'S TERRIFYING SOMEBODY SAVE US ^/s,0.0728,-0.0598,-0.1458,0.0218,0.0758,0.1121,fear,True
+GoEmotions,fear,Poor wee thing is probably terrified somewhere.,-0.1124,-0.0272,-0.0657,0.0439,0.1118,0.0685,anger,False
+GoEmotions,fear,I can’t tell who’s wooshing who but I’m afraid to ask by this point,-0.0210,-0.0321,-0.0848,0.0479,0.0370,0.0923,fear,True
+GoEmotions,fear,"I've have a serious fear of getting winded, this video made my balls fall off",-0.0396,0.0197,-0.0500,0.0240,0.0040,0.0616,fear,True
+GoEmotions,fear,General population are scared of press,-0.0363,0.0092,-0.0161,-0.0102,0.0067,0.0457,fear,True
+GoEmotions,fear,"I have seen this gif like once a week for a year, and I still cringe every time.",-0.0389,0.0945,-0.0789,0.0369,-0.0754,0.0977,fear,True
+GoEmotions,fear,"CREEP FACTOR MIDNIGHT ""virgins gonna be scared""",0.0071,-0.0784,-0.0288,-0.0025,0.1022,0.0124,anger,False
+GoEmotions,fear,"The 5 days got an audible ""[NAME]"" out of me. That's terrifying.",-0.1538,0.0334,0.0456,0.0371,-0.0631,0.0589,fear,True
+GoEmotions,fear,She clearly was too afraid to speak up.,-0.2161,-0.0170,-0.0596,0.1702,0.0858,0.0570,sadness,False
+GoEmotions,fear,"yeah, there's even more registered online. scary.",-0.0844,-0.1321,-0.0330,0.0732,0.0621,0.1171,fear,True
+GoEmotions,fear,"I'm scared that they would turn out like me, even if I tried really hard to make them nice.",-0.2390,0.0884,0.1137,0.1179,-0.0247,-0.1186,sadness,False
+GoEmotions,fear,I'm now scared to post this link]( I guess I should [stop.,-0.0271,-0.1448,-0.0709,0.1286,0.0499,0.1022,sadness,False
+GoEmotions,fear,"Can confirm as my first time commuting by motorcycle in the rain there was hail, then lots of thunder bolts and lightning , found it very very frightening.",-0.1130,0.0861,-0.0520,-0.0276,0.0530,0.0597,admiration,False
+GoEmotions,fear,Yo this [NAME] was literally pulling moves out of the Hitman games jumping over to your balcony. Thats terrifying.,0.0020,-0.0216,-0.0373,-0.0322,0.0879,0.0144,anger,False
+GoEmotions,fear,"First I was afraid, I was petrified...",-0.1030,-0.0182,0.0831,0.0290,-0.0257,-0.0167,optimism,False
+GoEmotions,fear,I'm scared because we don't really have any isolation scorers right now.,-0.1599,0.0685,0.0560,0.0871,-0.0956,0.0075,sadness,False
+GoEmotions,fear,That's the reason I am terrified to wear contacts on duty. I'm afraid it'll get stuck between my contacts and eyes and destroy my pupils.,-0.2213,0.1771,-0.0320,0.0338,0.0255,0.0132,admiration,False
+GoEmotions,fear,I honestly predict a riot on the scale of the 2011 ones if we undergo a no-deal brexit - possibly even worse. It's terrifying.,-0.1695,0.0327,0.0751,0.0372,-0.0538,0.0220,optimism,False
+GoEmotions,fear,Shock collars are horrible. They poor pup. 😫,0.0285,0.0016,-0.0049,-0.0577,0.0368,-0.0053,anger,False
+GoEmotions,fear,"And then you're stuck on that medication for life, sounds like a scary trade-off.",-0.0327,0.0565,0.1796,-0.1090,-0.0944,-0.1015,optimism,False
+GoEmotions,fear,Stumbling out of a closet in full [NAME] outfit... I'm afraid it's not,0.0373,0.0171,-0.0162,-0.0130,-0.0503,0.0345,joy,False
+GoEmotions,fear,Ha me too. I’m afraid we’ve been called out,-0.0469,0.0008,-0.0324,-0.0009,0.0489,0.0381,anger,False
+GoEmotions,fear,That was a fluid motion and it scared me,-0.1655,0.0315,-0.0679,0.0863,-0.0005,0.1318,fear,True
+GoEmotions,fear,"yikes, as someone who dislocates things often ([NAME]), this scares me!",-0.0469,-0.0094,0.0092,-0.0552,0.0260,0.0536,fear,True
+GoEmotions,fear,I’m afraid it will eventually go that way.,-0.1132,-0.0814,0.1404,0.0900,-0.0405,-0.0674,optimism,False
+GoEmotions,fear,I was scared of my room and even when I fell asleep in my bed I would sleep walk into my mom's room,-0.0589,0.0065,-0.1187,0.0673,0.0162,0.1396,fear,True
+GoEmotions,fear,I'm moving to the UK in 2 weeks. This terrifies me.,-0.2482,0.0371,0.0253,0.0861,-0.0449,0.1041,fear,True
+GoEmotions,fear,I'm kinda afraid to ask but did anyone reply?,-0.0545,0.0017,-0.0104,0.1434,-0.0604,-0.0020,sadness,False
+GoEmotions,fear,"Aha! This is my fear, that the gloss over key elements because they want to target a wider audience!",-0.0670,0.0741,0.0887,-0.0548,-0.0327,-0.0629,optimism,False
+GoEmotions,fear,This is scary to know that you went through. People like this are one step away from coming home with a gun or knife.,-0.1874,0.0786,0.0591,-0.0316,0.0173,0.0068,admiration,False
+GoEmotions,fear,i didnt realize i was avoiding a question. i am afraid to talk to cops to be honest. even my own mother doesnt know what i saw,-0.0777,0.0347,-0.0662,0.0216,0.0091,0.0989,fear,True
+GoEmotions,fear,Please elaborate on that story! Ive always been afraid of exactly this happening to me.,-0.1374,0.0479,0.1068,0.0906,-0.1177,-0.0458,optimism,False
+GoEmotions,fear,"We had a clown banging on dorm windows, on campus, with a knife in 2016. Was terrifying.",-0.1562,0.0393,0.0849,0.0229,0.0102,-0.0566,optimism,False
+GoEmotions,fear,"You know when I typed ""legal tender"" I had a horrible feeling I was going down a rabbit hole.",-0.2375,0.1169,0.1178,-0.0150,-0.0886,0.0154,optimism,False
+GoEmotions,fear,"Not the right sub, I'm afraid.",-0.0701,-0.0772,0.0344,0.0144,0.0824,-0.0105,anger,False
+GoEmotions,fear,That movie really scared me when I was a kid.,-0.1244,0.1368,0.0372,0.0091,-0.0878,-0.0008,admiration,False
+GoEmotions,fear,"As a risk analyst, that's a terrible idea, Risk is too high and the benefit to cost ratio is not worth it",-0.1601,-0.0226,0.0020,0.0887,0.0229,0.0542,sadness,False
+GoEmotions,fear,Can't help but feel that going down 3-0 is nerves and fear of playing someone with [NAME] mythology. AO to [NAME] is like RG to [NAME],-0.0433,0.0937,-0.0295,0.0232,-0.0177,-0.0102,admiration,False
+GoEmotions,fear,That’s what I’m terrified of.,-0.1525,0.0339,0.0845,0.0866,-0.0808,-0.0207,sadness,False
+GoEmotions,fear,"That is so creepy and scary. Imagine if he really was a Dr, and the only one available in your hmo.",-0.1017,0.0507,-0.0033,0.0245,-0.0030,0.0242,admiration,False
+GoEmotions,fear,"The constant pressure definitely isn't helping. I'm already on anti-depressants, but I am terrified of PPD.",-0.2906,0.1127,-0.0385,0.1020,0.0114,0.0947,admiration,False
+GoEmotions,fear,"I don’t know who [NAME] is and, at this point, I’m too afraid to ask.",-0.1928,0.0247,0.0172,0.1538,-0.0427,0.0252,sadness,False
+GoEmotions,fear,"This was the one post that truly frightened me about the insane left. They are a cult, and not on our side.",-0.1595,0.0515,0.0968,0.0113,-0.0254,-0.0391,optimism,False
+GoEmotions,fear,"Pretty terrifying. Imagine if you went on a school trip, did nothing, and came home to this.",-0.0448,0.0347,-0.0816,0.0126,0.0112,0.0991,fear,True
+GoEmotions,fear,I’m to scared to tell them :(,-0.0294,-0.1157,-0.0351,0.0434,0.1261,0.0251,anger,False
+GoEmotions,fear,death of fear is certain.,-0.0633,0.0041,0.1123,-0.0323,-0.0114,-0.0739,optimism,False
+GoEmotions,fear,[NAME] was the same in Crestwood. Scary as hell.,-0.1165,-0.0775,0.0158,0.0650,0.0467,0.0459,sadness,False
+GoEmotions,fear,Oh my [NAME] I saw the rocks below the dog and feared the worst!,-0.0589,0.0315,0.0670,-0.1741,0.0353,0.0324,optimism,False
+GoEmotions,fear,It scares me that left to right is also possible for anyone,-0.0310,0.0190,-0.0207,-0.0044,0.0130,0.0285,fear,True
+GoEmotions,fear,That's your justification? You're a terrible person. Correction: You're a terrible child. Get some help.,-0.0572,-0.0827,-0.0193,0.0754,0.0943,-0.0006,anger,False
+GoEmotions,fear,Coming from [NAME] even though it’s a hypothetical question it’s still gotta feel scary,-0.1272,-0.0306,0.0443,0.0929,-0.0900,0.0771,sadness,False
+GoEmotions,fear,We knows mumps immunity wanes; is it possible for measles immunity to do the same thing? I'm kinda scared to try Googling it too.,-0.1563,0.0360,-0.0163,0.0662,0.0458,0.0209,sadness,False
+GoEmotions,fear,that was a horrible fix,0.0033,-0.0605,-0.0262,0.0192,0.0571,0.0201,anger,False
+GoEmotions,fear,Confirmation sounds really scary and sketchy. I can not not think about cults and rituals everytime...,-0.1022,0.0140,0.0816,0.0686,-0.0821,-0.0236,optimism,False
+GoEmotions,fear,I am scared that I would lose potential study time by seeing him. And worse if I end up liking him too much... :(,-0.0369,-0.0615,-0.0141,0.0451,0.0689,0.0048,anger,False
+GoEmotions,fear,My worst fear when I finally get over someone Those damn what ifs,-0.1022,-0.0810,0.0175,0.0795,-0.0079,0.0744,sadness,False
+GoEmotions,fear,Thought i was already there with the terrible title.,-0.0031,-0.1103,-0.0045,0.0351,0.0311,0.0510,fear,True
+GoEmotions,fear,Yeah until the last one has creepily wed and reproduced.,-0.0283,-0.0294,0.0131,0.0418,0.0708,-0.0687,anger,False
+GoEmotions,fear,And that smilie she gave the fiancé when he sat down with the sandwich....I would be scared if I was him.,-0.0455,0.0483,-0.0009,0.0138,0.0914,-0.1017,anger,False
+GoEmotions,fear,"As a democrat, even I am afraid of a super majority.",-0.2544,0.1019,0.1073,0.0200,-0.0153,-0.0391,optimism,False
+GoEmotions,joy,"Man, I would cry tears of joy if my two-year-old cousin could just say my name, let alone say a coherent sentence.",-0.1784,0.2461,0.0178,0.0330,-0.0942,-0.0417,admiration,False
+GoEmotions,joy,I mean you can want a break from something and still enjoy it.,-0.0719,0.1064,0.2553,0.0107,-0.2160,-0.2044,optimism,False
+GoEmotions,joy,We were playing bots for 30 mins... Not fun but i am happy i finally did it,0.0103,-0.0516,0.0237,0.0070,-0.0474,0.0434,fear,False
+GoEmotions,joy,This brings a smile to my face,0.0382,0.0140,0.0078,-0.0171,-0.0838,0.0372,joy,True
+GoEmotions,joy,Doing a happy dance! Yay!,0.2053,-0.0391,0.1645,-0.2108,-0.0991,-0.1001,joy,True
+GoEmotions,joy,"Enjoy a weekend of eating ice cream 100% guilt free. (That's standard practice for wisdom teeth still, right?)",0.0227,0.0548,0.1284,-0.0693,-0.1041,-0.0957,optimism,False
+GoEmotions,joy,"I played for a decade+ on release, I'd be happy to help you or anyone else!",-0.0003,0.0492,0.1018,-0.0157,-0.0830,-0.0975,optimism,False
+GoEmotions,joy,It's honestly the best news I've heard all season.,0.1017,0.0095,0.1323,-0.0845,-0.1701,-0.0506,optimism,False
+GoEmotions,joy,We're in it... and now [NAME] is going to the bench? Gotta good feeling!,0.0749,-0.1025,0.1237,-0.1624,0.0546,-0.0622,optimism,False
+GoEmotions,joy,i'm enjoying this so much,0.0903,0.0199,-0.0020,-0.0523,-0.0214,-0.0261,joy,True
+GoEmotions,joy,So those 2am cravings are really just my instincts keeping me alive,-0.0875,-0.0352,0.0451,0.0747,-0.0533,0.0285,sadness,False
+GoEmotions,joy,"Don’t rush it .... it will eventually all fall into place, Enjoy today",0.0709,-0.1107,0.0289,-0.0097,-0.0417,0.0484,joy,True
+GoEmotions,joy,I know a couple of people who are. It's amazing to watch.,0.0027,0.1616,0.1147,-0.0567,-0.1521,-0.1220,admiration,False
+GoEmotions,joy,This is a really lovely ends to a crappy means. I’m glad you enjoyed yourself and got something out of it.,0.1549,0.0398,0.1223,-0.0646,-0.1488,-0.1426,joy,True
+GoEmotions,joy,This hit me with de good ol memories,-0.0081,-0.0210,-0.0188,0.0578,-0.0411,0.0436,sadness,False
+GoEmotions,joy,good to see your story had a happy ending!,0.2074,-0.0299,0.0614,-0.1246,-0.0248,-0.1036,joy,True
+GoEmotions,joy,DJ finding consistency makes me happy,0.0208,0.0232,0.0390,-0.0091,-0.0509,-0.0380,optimism,False
+GoEmotions,joy,"No worries, glad I could help. Just pleased I started learning to read!",0.0739,0.0565,0.0903,-0.0776,-0.0934,-0.0883,optimism,False
+GoEmotions,joy,And I'm happy we all agree it's deathcore.,0.0340,0.0218,0.1315,-0.0492,-0.0608,-0.1360,optimism,False
+GoEmotions,joy,I enjoyed watching the crazy old man being dragged out at the end.,-0.0091,0.2027,-0.1019,-0.0474,-0.0128,0.0178,admiration,False
+GoEmotions,joy,well guys it was fun. [NAME] passed up the open three ffs,0.0585,-0.0992,-0.0271,-0.0132,0.0544,0.0403,joy,True
+GoEmotions,joy,Sooooo happy for you.,0.2299,-0.1023,0.0072,-0.0861,-0.0569,0.0185,joy,True
+GoEmotions,joy,"Nae bother, Happy to bring musical joy in to any household.....",0.1300,-0.0707,0.0701,-0.0862,-0.0167,-0.0550,joy,True
+GoEmotions,joy,Go to Happiest Hour before/after the game. Walking distance b/w AA center. It's a fun spot!,0.0473,-0.0078,0.0681,-0.0269,-0.0407,-0.0674,optimism,False
+GoEmotions,joy,I used to enjoy it and grew out of it.,-0.1373,0.0330,0.1407,0.0534,-0.0016,-0.1583,optimism,False
+GoEmotions,joy,Always happy to help,0.0570,0.0175,0.0043,-0.0427,-0.0405,0.0042,joy,True
+GoEmotions,joy,I enjoyed that Bagel Boss commercial. Suddenly craving some Greiss Coffee.,-0.1225,0.0814,0.1184,-0.0785,-0.0443,-0.0366,optimism,False
+GoEmotions,joy,Happy Together. It feels so natural.,0.0484,0.0563,0.2504,0.0094,-0.2821,-0.1872,optimism,False
+GoEmotions,joy,He remains the only serve bot I enjoy watching.,0.0014,0.1863,0.0569,-0.0695,-0.1104,-0.0905,admiration,False
+GoEmotions,joy,I enjoy that general area. Sections 203-205 are good sections pricewide and view wise,-0.0650,0.0550,0.0151,0.0647,-0.1063,0.0286,sadness,False
+GoEmotions,joy,I'm happy for you and myself.,0.0305,0.0491,0.1660,-0.0355,-0.1384,-0.1450,optimism,False
+GoEmotions,joy,I would enjoy Kreate a Kharacter. But it'll need a lot of help. They shouldn't let you put cubes and stuff everywhere like in SC6.,-0.1472,0.0433,0.0411,0.0417,-0.0145,0.0019,admiration,False
+GoEmotions,joy,I'm a Bioware fanboy so obviously biased. I even enjoyed Andromeda. Haha.,0.0005,-0.0002,0.0989,-0.0276,-0.0855,-0.0375,optimism,False
+GoEmotions,joy,I'm mad at the process and happy with the results for Thrill tonight.,0.0683,0.0309,0.0666,-0.0747,-0.1155,-0.0092,joy,True
+GoEmotions,joy,"Someone made this album, dwights a bit lanky but I enjoyed it.",0.0252,0.0545,-0.0012,0.0045,-0.0341,-0.0397,admiration,False
+GoEmotions,joy,Wow so glad [NAME] is getting it done quicker. Better for later in tourney,-0.0005,-0.0445,0.0092,-0.0152,-0.0041,0.0435,fear,False
+GoEmotions,joy,[NAME]! You made me the happiest girl that could eva be!,0.1881,0.0494,0.0653,-0.1328,-0.0794,-0.1075,joy,True
+GoEmotions,joy,Ha ha ha. That was a good one,0.1124,-0.0447,-0.0508,-0.0270,0.0250,0.0193,joy,True
+GoEmotions,joy,No problem. I'm happy to know it's not what you meant.,0.0766,-0.0428,0.0762,-0.0311,0.0117,-0.1165,joy,True
+GoEmotions,joy,Just what I need; a video of my commute to work so I can enjoy the experience in my free time.,0.0285,0.0655,0.0073,-0.0590,-0.0213,-0.0250,admiration,False
+GoEmotions,joy,I'm always happy to have you in my box.,0.1397,0.0437,0.0730,-0.0813,-0.1400,-0.0593,joy,True
+GoEmotions,joy,"[NAME], [NAME], [NAME], and [NAME] all at top tier make me happy",0.0327,-0.0279,0.0251,-0.0182,-0.0491,0.0238,joy,True
+GoEmotions,joy,I got $10 on Anzac Day as the guy won money and 2 x $5 tips that’s all.,0.0366,0.0721,-0.0431,-0.1531,0.1592,-0.0589,anger,False
+GoEmotions,joy,Correct. I just enjoy debating them.,-0.0310,0.1282,0.1533,-0.0043,-0.1146,-0.1961,optimism,False
+GoEmotions,joy,"Ooh, and they make the joke be able to be known by everyone so viewer thinks they are special",0.0591,0.0656,0.0583,-0.0519,-0.1012,-0.0529,admiration,False
+GoEmotions,joy,"That's that frequency dying in your ears. Enjoy it, because you will never hear that exact frequency again",-0.0452,0.0402,0.0608,0.0176,-0.0734,-0.0312,optimism,False
+GoEmotions,joy,You can see his tooth bouncing off the pavement on the right after he falls. Brings a tear of joy to my eye 😅,0.0646,-0.0041,-0.0734,-0.0259,0.0480,0.0310,joy,True
+GoEmotions,joy,A video that makes me happy,0.0468,0.0061,0.0029,-0.0190,-0.0550,0.0191,joy,True
+GoEmotions,joy,"Cheers mate, ill do that!",0.1638,-0.1190,0.0235,-0.1282,0.0923,-0.0409,joy,True
+GoEmotions,joy,I'm also enjoying it I like mixing the colors the most.,0.1084,0.1089,0.0565,-0.0988,-0.1105,-0.0828,admiration,False
+GoEmotions,joy,This makes me so happy!,0.2153,0.0024,0.0404,-0.1513,-0.0948,-0.0229,joy,True
+GoEmotions,joy,"The best feeling ever was when class was over and it never got to your turn, so you didnt have to present until the next day",-0.0359,-0.0457,0.0039,0.0206,-0.0007,0.0488,fear,False
+GoEmotions,joy,"All. I too, am drunk, and will be enjoying half price burgers at Whitlow's once my appetite kicks in.",-0.0606,0.0876,0.0538,-0.0369,-0.0187,-0.0586,admiration,False
+GoEmotions,joy,It's all fun and games until your crush turns into a spaceship.,-0.0395,0.0354,-0.0175,-0.1270,0.1826,-0.0431,anger,False
+GoEmotions,joy,That dog was so happy I thought he was gonna start flying like tails the fox in sonic,0.0375,-0.0033,-0.0487,-0.0540,0.0404,0.0470,fear,False
+GoEmotions,joy,It was received on Jan 25th at 9:22 am .81627 BTC and $3800. for it with a $600. fee. Happy!,0.1639,-0.0740,0.0640,-0.1195,-0.0105,-0.0497,joy,True
+GoEmotions,joy,"Happy to not only have the same birthday as him, but to also have a ball he threw into the stands after the middle of the 9th inning.",0.1335,0.1220,-0.0852,-0.1384,0.0688,-0.0506,joy,True
+GoEmotions,joy,"Ah man, so many memories of those skits",0.0584,-0.0024,-0.0147,-0.0167,-0.0476,0.0334,joy,True
+GoEmotions,joy,"Joseph Vincent is the goat when it comes to highlights, I’m so happy he made a Saquads video",0.0287,0.0150,0.0147,-0.0528,-0.0140,-0.0019,joy,True
+GoEmotions,joy,You're in for a treat- enjoy :),0.1301,-0.0821,0.0768,-0.0636,-0.0809,-0.0126,joy,True
+GoEmotions,joy,I'm happy to go without but if it's readily available then everyday.,0.0145,-0.0633,0.0473,0.0258,0.0139,-0.0549,optimism,False
+GoEmotions,joy,Who is bored? I happily entertain myself.,-0.0628,0.1601,0.1982,-0.0503,-0.1435,-0.1984,optimism,False
+GoEmotions,joy,I'm a guy and it's the same for me! I'm glad I'm not the only one who feels this way. 😊,0.0250,-0.0162,0.0471,-0.0312,-0.0300,-0.0189,optimism,False
+GoEmotions,joy,We could cure child cancer and pictures like this would still make me happier,0.0268,-0.0070,0.0540,0.0103,-0.0832,-0.0222,optimism,False
+GoEmotions,joy,No kidding. Pretty sure my husband enjoys it as much as I do.,0.1117,0.0570,0.1019,-0.1017,-0.1169,-0.0944,joy,True
+GoEmotions,joy,Hello! Happy new years my friend!,0.1307,-0.0238,0.0450,-0.0547,-0.1378,0.0250,joy,True
+GoEmotions,joy,Glad she was a good sport about it.,0.1227,-0.0660,-0.0769,-0.0229,0.1233,-0.0279,anger,False
+GoEmotions,joy,Yeah lets celebrate that only one guy (well maybe put dirk and [NAME] up with him) has come to play.,0.1432,-0.0625,0.0611,-0.0676,-0.0272,-0.0656,joy,True
+GoEmotions,joy,Ayee it made it ! Enjoy,0.0926,-0.0366,0.0396,-0.0161,-0.0671,-0.0221,joy,True
+GoEmotions,joy,"Hard to describe, but I get a more relaxed sleep with cbd.",0.0370,0.0094,0.0064,0.0085,-0.0312,-0.0252,joy,True
+GoEmotions,joy,"[NAME] damn, that is the kind of biting commentary I enjoy.",0.1639,0.0810,-0.0673,-0.0726,0.0085,-0.0603,joy,True
+GoEmotions,joy,Hell yeah. Enjoy your new bachelor life son!,0.2265,-0.0290,0.1468,-0.1930,-0.0471,-0.1642,joy,True
+GoEmotions,joy,It always makes me super happy when I see stuff like this. Go live your best life girl!,0.1777,0.0248,0.1539,-0.1495,-0.0861,-0.1819,joy,True
+GoEmotions,joy,">Have a good time debating the people in your head, looks like you're having fun.",0.1367,-0.0494,0.0761,-0.0995,0.0172,-0.1088,joy,True
+GoEmotions,joy,"Dude, you made my day.",0.1885,-0.0103,0.0289,-0.1252,-0.0469,-0.0392,joy,True
+GoEmotions,joy,"Oh my goodness it's like a happy little cloud! What breed is it? Either way, omg enjoy petting that super soft puppy coat for me!",0.1406,0.0639,-0.0292,-0.0669,-0.0535,-0.0265,joy,True
+GoEmotions,joy,I'm glad you liked it :D,0.1488,-0.0505,0.0172,-0.0411,-0.0608,-0.0093,joy,True
+GoEmotions,joy,"I am happy to receive constructive advice. If someone is short, or not constructive, I will react to it.",-0.0676,0.1055,0.0456,-0.0264,-0.0249,-0.0603,admiration,False
+GoEmotions,joy,Stotts raising Nurk's usage rate is making me a happy fan,0.0386,0.0349,-0.0539,-0.0160,0.0058,0.0206,joy,True
+GoEmotions,joy,Oh the joys of Marine Corps boot camp!!,0.1202,0.0048,0.0952,-0.1731,-0.1079,0.0044,joy,True
+GoEmotions,joy,Good to know everything is about average there. Leave it to H-Town to hold it down.,0.0456,0.0030,0.0159,-0.0621,0.0830,-0.0891,anger,False
+GoEmotions,joy,"The happiest of birthdays to you, [NAME]!",0.1541,-0.0050,0.0820,-0.0910,-0.1192,-0.0511,joy,True
+GoEmotions,joy,This helped me when I was in my worst mental state. I'm glad,0.0376,0.0356,0.0759,-0.0539,-0.0895,-0.0425,optimism,False
+GoEmotions,joy,I love how the dog is just happy the cat is giving him attention.,0.0632,0.2627,-0.0128,-0.1606,-0.0072,-0.1339,admiration,False
+GoEmotions,joy,This. Making my animals happy is one of the only things that makes me happy.,-0.0429,0.1033,0.1855,-0.0171,-0.1453,-0.1703,optimism,False
+GoEmotions,joy,[NAME] was only OP when it came out. [NAME] was OP for so long. I'm still happy they finally did something to her.,0.0150,0.0922,0.1264,-0.0257,-0.0877,-0.1709,optimism,False
+GoEmotions,joy,Well I am happy you believe that.,0.1348,-0.0394,0.0906,-0.0534,-0.0970,-0.0677,joy,True
+GoEmotions,joy,I was so happy for cowboy,0.0271,-0.0397,-0.0449,-0.0138,0.0455,0.0457,fear,False
+GoEmotions,joy,"Man I am so happy for [NAME], they are selling out. Personally there is no way I would be able to afford them for 38$",-0.0263,0.0169,-0.0218,0.0058,-0.0061,0.0377,fear,False
+GoEmotions,joy,I bet you’re really fun at parties.,0.0672,0.0996,0.1685,-0.1230,-0.1086,-0.1811,optimism,False
+GoEmotions,joy,I’m fine with that. I’m happy to be banned from subs like that.,-0.0597,0.0933,0.1226,-0.0131,-0.0452,-0.1557,optimism,False
+GoEmotions,joy,My blood pressure Edit: I'm just happy to be here.,0.0682,-0.0651,0.0934,0.0783,-0.1791,-0.0240,optimism,False
+GoEmotions,joy,"That sound you are hearing is me, a middle aged woman, applauding you wildly. How fun this is to read on my morning break.",0.0693,0.0933,0.0752,-0.0286,-0.2017,-0.0352,admiration,False
+GoEmotions,joy,That's why I'm glad they got [NAME].,0.0838,0.0214,-0.0226,-0.0152,-0.0251,-0.0196,joy,True
+GoEmotions,joy,I was AF enlisted too hahaha,0.1026,-0.0688,-0.0777,-0.0121,0.0506,0.0511,joy,True
+GoEmotions,joy,You sound fun at parties,0.0571,-0.0059,-0.0086,-0.0208,-0.0215,0.0080,joy,True
+GoEmotions,joy,"The double fist bump made me smile, her happiness was contagious",-0.0102,0.0607,0.0314,0.0058,-0.0752,-0.0253,admiration,False
+GoEmotions,joy,Let us celebrate with a glass of kerbango.,0.0332,0.0926,-0.0264,-0.0647,0.0351,-0.0537,admiration,False
+GoEmotions,joy,"Me too! So pumped! Enjoy the game, bud!",0.1101,0.0370,0.0715,-0.0588,-0.0731,-0.1075,joy,True
+GoEmotions,joy,Saw thundamentals live. happy that this song got in top 30,0.0000,-0.0026,-0.0365,0.0174,-0.0135,0.0523,fear,False
+GoEmotions,optimism,"I hope you find him, but WHY didn't you exchange numbers???",-0.1074,0.0099,-0.0350,0.0928,0.0320,0.0226,sadness,False
+GoEmotions,optimism,I hope your gaydar has leveled up enough to filter these out now,0.0196,-0.0341,-0.0142,0.0279,-0.0424,0.0519,fear,False
+GoEmotions,optimism,we will see I hope your right. all we can do is play our best.,0.0362,-0.0734,0.0734,0.0237,-0.0166,-0.0699,optimism,True
+GoEmotions,optimism,Cool. I wish I could come to anarchopulco this year. Have fun.,0.0579,-0.0815,0.0993,0.0396,-0.0439,-0.1041,optimism,True
+GoEmotions,optimism,Either you meant family doc or there's an interesting story here you're not sharing. I'm hoping for the latter.,-0.0318,-0.0577,0.0760,0.0103,0.0091,-0.0459,optimism,True
+GoEmotions,optimism,Let's hope you've got the self control to not binge :) I know I didn't,-0.0560,0.0551,0.0148,-0.0208,-0.0368,0.0258,admiration,False
+GoEmotions,optimism,"That is a valid question, I hope it can change, but admittedly that hope is pretty small.",-0.1236,-0.0039,0.0446,0.1251,-0.0707,0.0057,sadness,False
+GoEmotions,optimism,I hope these young women change the church and not the other way around.,-0.1652,0.1670,0.0933,0.0225,-0.0422,-0.1273,admiration,False
+GoEmotions,optimism,Hope the best for him,0.0688,-0.0607,-0.0157,0.0004,-0.0069,0.0273,joy,False
+GoEmotions,optimism,Yeah that happened to me twice a month for years with an ex. Maybe someday we’ll do it 😅,0.0269,-0.0265,-0.0178,-0.0105,0.0173,0.0195,joy,False
+GoEmotions,optimism,yes. to the above number i provided :) hope it’s helpful!,0.0813,-0.0177,-0.0060,-0.0185,0.0269,-0.0515,joy,False
+GoEmotions,optimism,I just hope a GM believes in [NAME] as much as this Raptors fan. Maybe [NAME] could give us something valuable to get this future MVP back.,-0.1138,0.0992,0.1448,-0.0648,-0.0125,-0.1375,optimism,True
+GoEmotions,optimism,"Aw, man, with that title, I was hoping for good old-fashioned corporal punishment, like back in the 1700s.",-0.1023,0.0876,0.1716,-0.0856,-0.0669,-0.1065,optimism,True
+GoEmotions,optimism,[NAME] is a pretry big role to fill. I hope you do well!,0.0745,0.0369,0.0651,-0.0809,-0.0541,-0.0696,joy,False
+GoEmotions,optimism,I hope they remain long time friends and can look back on this as adults and have a nice giggle together,0.0954,0.0094,0.0233,0.0315,-0.1280,-0.0245,joy,False
+GoEmotions,optimism,"Hope he's ok, the game needs more people with names like [NAME]",0.0561,-0.0122,-0.0368,-0.0267,0.0207,0.0195,joy,False
+GoEmotions,optimism,"I mean, they did just that in Djibouti I believe, and Sri Lanka before. Hopefully Kenya can avoid the debt trap",-0.0835,-0.0020,0.0246,0.0479,-0.0386,0.0321,sadness,False
+GoEmotions,optimism,I'm hoping it turns out and theres something of value but these type of things spark up from time to time so time will tell.,-0.0507,-0.1024,0.0489,0.1076,-0.0325,0.0083,sadness,False
+GoEmotions,optimism,Okay just thought it would be a good idea.,0.0413,-0.0584,-0.0486,0.0023,0.0098,0.0768,fear,False
+GoEmotions,optimism,"Damn, I hope that lady unloaded the rest of the bread and cleared out like a fart in the wind before homeslice came back.",0.0150,0.0238,-0.1258,-0.0295,0.1526,0.0252,anger,False
+GoEmotions,optimism,"Literally shaking, I hope you're getting the support you need with the ptsd this has obviously caused.",0.0470,-0.0704,-0.0538,0.0253,0.0569,0.0278,anger,False
+GoEmotions,optimism,I hope you are getting your levels tested! You can do some damage to yourself if they're too high.,-0.0352,0.0032,0.0490,-0.0487,0.0201,-0.0229,optimism,True
+GoEmotions,optimism,"When asked about my hopes for the Wild, i always (half) jokingly say, “i hope my grandkids can see them raise their first Cup”",-0.0464,0.0501,0.0273,0.0297,-0.0470,-0.0262,admiration,False
+GoEmotions,optimism,"Well, I hope everything is going well in your retirement. Do your best to enjoy it :).",0.1035,-0.0619,0.0997,0.0149,-0.1158,-0.0723,joy,False
+GoEmotions,optimism,Just woke up from one. Glad to know it's not just me. Hope you have a good return!,0.0971,-0.0305,0.0690,-0.0767,-0.0145,-0.0729,joy,False
+GoEmotions,optimism,I hope we actually dont need to wait like 1 year for this. :(,0.0155,-0.1310,0.0156,0.0257,0.0686,-0.0009,anger,False
+GoEmotions,optimism,Please make this happen. It works fine for Arizona. It will work fine here. Do it.,0.0354,-0.0657,0.0601,0.0300,-0.0657,-0.0170,optimism,True
+GoEmotions,optimism,I hope xe had a nice talk with the premier,0.0211,0.0343,-0.0473,-0.0099,0.0114,0.0159,admiration,False
+GoEmotions,optimism,Sorry to hear that. Hope you feel better soon!,0.1395,-0.1038,0.0804,-0.0082,-0.0565,-0.0730,joy,False
+GoEmotions,optimism,I honestly hope you do that,0.0533,-0.0224,0.0136,-0.0414,-0.0452,0.0334,joy,False
+GoEmotions,optimism,right and hope you don't realize until too late that you're way better than me,0.0293,0.0112,-0.0518,0.0071,0.0398,-0.0037,anger,False
+GoEmotions,optimism,"I hope he runs so he can lose decisively and we can get rid of this ""should have been him"" crap",-0.0349,-0.0411,-0.0307,0.0850,0.0290,0.0130,sadness,False
+GoEmotions,optimism,Well then just ice it (if you haven’t already) and hope for the best,0.0097,-0.0353,0.1126,-0.0152,-0.0948,-0.0341,optimism,True
+GoEmotions,optimism,Same. She seems to get aggravated more easily now too. Hope it's just the political climate and not the tail end of her prime.,-0.0150,-0.0480,0.0029,0.1025,-0.0138,-0.0184,sadness,False
+GoEmotions,optimism,I hope she makes enough for therapy for her kid.,-0.0681,0.0730,0.0716,0.0141,0.0916,-0.2082,anger,False
+GoEmotions,optimism,Probably fake. In most situations Siri will tend to avoid words like penis and hope you're saying pianist,-0.0164,0.0469,-0.0118,-0.0295,-0.0237,0.0334,admiration,False
+GoEmotions,optimism,"Hope you're not [RELIGION], 'cause that ain't kosher...",0.0046,-0.0916,0.0309,0.0395,0.0513,-0.0441,anger,False
+GoEmotions,optimism,I was hoping it wouldn’t come to that tbh...,0.0132,-0.1350,0.0298,0.0569,0.0155,0.0089,sadness,False
+GoEmotions,optimism,"I sincerely hope they'll take good elements from DMC 2 (outfits, [NAME]) and maybe make fun of DmC",-0.0361,0.0385,-0.0415,0.0040,-0.0039,0.0533,fear,False
+GoEmotions,optimism,If [NAME] goes back to the Nationals their lineup and rotation are going to be nasty! I'm still hoping he lands outside of the division.,-0.1200,0.0067,0.0820,0.0101,0.0025,-0.0349,optimism,True
+GoEmotions,optimism,I hope it doesn’t get worse,-0.1342,-0.0564,0.0280,0.0750,0.0074,0.0525,sadness,False
+GoEmotions,optimism,Full schedules have been The end for us before but This time I have hope,-0.0516,-0.0758,0.1158,0.0068,-0.0502,-0.0116,optimism,True
+GoEmotions,optimism,whoops I still hope they press that legislation though,-0.0550,-0.0188,-0.0349,0.0406,0.0223,0.0571,fear,False
+GoEmotions,optimism,If your team has no healer I really hope u get the heal talent,0.0266,0.0372,-0.0045,-0.0351,-0.0489,0.0251,admiration,False
+GoEmotions,optimism,"Stranger things have happened, but still, good luck.",-0.1028,-0.0811,0.0923,0.0687,-0.0407,0.0089,optimism,True
+GoEmotions,optimism,Yeah that’s what I heard on Univision deportes earlier. I hope he chooses Ajax rather than real Betis,-0.0035,0.0021,-0.0021,0.0078,-0.0319,0.0273,fear,False
+GoEmotions,optimism,"My husband’s mental health issues caused our divorce. If you need a friend or a listening ear, pm me. I hope things improve!",0.0426,0.0060,0.0445,0.0189,-0.0060,-0.1121,optimism,True
+GoEmotions,optimism,The impact of his head hitting the court looked so bad. I hope he'll recover from this.,-0.0100,0.0116,0.0283,-0.0467,0.0773,-0.0766,anger,False
+GoEmotions,optimism,Hoping Heavy Machinery get the win. Would like to see them as champs.,-0.0170,-0.0239,0.0166,-0.0172,0.0308,-0.0028,anger,False
+GoEmotions,optimism,"You're right, it's relatable. Hope everything's OK for you",0.0485,-0.0654,0.0434,0.0378,-0.0666,-0.0096,joy,False
+GoEmotions,optimism,The 1st 5 minutes of this game will be key. Hope they come out with some passion. Go Oil,0.0031,-0.0004,-0.0190,-0.0001,-0.0051,0.0294,fear,False
+GoEmotions,optimism,Hope his bare hands are as clean as the griddles. Ready to eat foods need to be handled with gloves . Very cool machine though .,0.1176,-0.0376,-0.0290,-0.0473,-0.0130,0.0299,joy,False
+GoEmotions,optimism,i hope kawhi doesnt step foot outside its cold af today,-0.0159,-0.1052,-0.0063,0.0279,0.0481,0.0493,fear,False
+GoEmotions,optimism,Something like Chariot will occur again but all electric and highly autonomous. Something I wish [NAME] could do right now.,-0.0956,0.0574,0.1549,0.0063,-0.1048,-0.1001,optimism,True
+GoEmotions,optimism,Hope you're havin a good trip my dude! Good vibes ✌🌈,0.0627,-0.0713,0.0067,-0.0253,-0.0022,0.0267,joy,False
+GoEmotions,optimism,[NAME] is POG indeed. I was kinda hoping to see him join Paris Academy team though.,-0.0738,0.0950,0.0616,-0.0062,-0.0606,-0.0512,admiration,False
+GoEmotions,optimism,"Precisely that. I hope you’re able to find strategies to deal with it easier, it’s really tough",-0.1005,0.0250,0.0031,0.0426,-0.0164,0.0353,sadness,False
+GoEmotions,optimism,I really hope this is what happens.,0.0239,-0.1048,0.0908,0.0186,-0.0522,-0.0190,optimism,True
+GoEmotions,optimism,My heart is broken for this woman... I really hope she finds the strength to leave him,0.0208,-0.0331,-0.0291,0.0653,-0.0229,0.0228,sadness,False
+GoEmotions,optimism,Hope for the best but still work as hard as we can.,0.0275,-0.1704,0.0090,0.1009,0.0223,0.0168,sadness,False
+GoEmotions,optimism,[NAME] is insane! Better knuckle skills than any rider ever. I sure hope he has a speedy recovery from his crushed kneecap!,0.0161,0.0789,0.0057,-0.1317,0.0489,-0.0317,admiration,False
+GoEmotions,optimism,I like it! I think the ideas of [NAME] can go a long way. I wish you the best of luck :),0.1137,-0.0380,0.0661,-0.0510,-0.0353,-0.0768,joy,False
+GoEmotions,optimism,I hope google does this so that everyone would leave them already.,0.0242,-0.0982,-0.0601,0.0729,0.0511,0.0473,sadness,False
+GoEmotions,optimism,Had to have my knee drained after a meniscus injury. It remains the most pain I've ever felt. Hopefully hers wasn't that bad,-0.0811,-0.0198,0.0578,0.0205,-0.0061,-0.0088,optimism,True
+GoEmotions,optimism,I was hoping [NAME] would get into commentating.,-0.0893,0.0877,0.1430,-0.0681,-0.0754,-0.0830,optimism,True
+GoEmotions,optimism,"I was really hoping it was the gasping pikachu when I clicked the link, I wasn’t disappointed.",0.0833,-0.0340,0.0353,-0.0899,-0.0804,0.0609,joy,False
+GoEmotions,optimism,Apparently he has returned to the bench so hopefully he's ok.,0.0043,-0.1558,0.0035,0.0726,0.0630,0.0150,sadness,False
+GoEmotions,optimism,[NAME]: I'm sorry that happened. I hope you weren't totally friendless on your 30th!,0.0433,-0.0419,0.0789,-0.0309,-0.0049,-0.0787,optimism,True
+GoEmotions,optimism,Hopefully that's patched soon.,-0.0080,-0.1677,0.0798,0.0782,0.0015,-0.0189,optimism,True
+GoEmotions,optimism,I was really hoping this was real like,-0.0736,0.0128,0.0830,0.0385,-0.1097,0.0023,optimism,True
+GoEmotions,optimism,Just turned on the game. I hope I brought the boys some good luck,0.0544,-0.0368,0.1173,-0.0645,-0.0837,-0.0461,optimism,True
+GoEmotions,optimism,I'm feeling hope for the first time in a long time.,-0.0834,0.0385,0.2150,0.0279,-0.2419,-0.0671,optimism,True
+GoEmotions,optimism,I'll have to start paying attention to the Diamondbacks now. Hope he does well out there!,-0.0058,0.0023,0.1184,-0.0394,-0.0438,-0.0915,optimism,True
+GoEmotions,optimism,Make sure you get that on video for the lawsuit. Hope she’s ok...,0.0656,-0.0749,0.0185,0.0391,-0.0100,-0.0337,joy,False
+GoEmotions,optimism,[NAME] I hope that isn’t the release date. I’m holding out for 12am EST 🤞,0.0257,-0.0569,0.0108,-0.0132,0.0053,0.0210,joy,False
+GoEmotions,optimism,Here Hope that helps!,0.0817,-0.0927,-0.0024,0.0220,-0.0044,0.0074,joy,False
+GoEmotions,optimism,I hope [NAME] at least showers before his funeral.,-0.0820,0.0397,-0.0019,0.0539,0.0764,-0.0814,anger,False
+GoEmotions,optimism,"Sounds like you know the answer, and at first she will resent you. But hopefully over time will realize what your doing.",0.0179,0.0533,0.0775,0.0027,-0.0851,-0.0945,optimism,True
+GoEmotions,optimism,Hope that helped. :P,0.1339,-0.1519,0.0094,0.0295,0.0014,-0.0096,joy,False
+GoEmotions,optimism,"Let's hope that they don't miss, huh?",0.0136,-0.0108,0.1606,-0.0246,-0.0998,-0.1146,optimism,True
+GoEmotions,optimism,I really hope your marriage is healed and can become stronger than ever.,-0.0334,0.0995,0.1889,0.0285,-0.2015,-0.1639,optimism,True
+GoEmotions,optimism,At this point one can only hope.,-0.1229,-0.0545,0.1178,0.0836,-0.1221,0.0291,optimism,True
+GoEmotions,optimism,Yes i hope things go well for them,0.0802,-0.0678,-0.0085,-0.0145,-0.0014,0.0213,joy,False
+GoEmotions,optimism,Let's hope January treats us a little better than December.,-0.0822,-0.0360,0.1407,0.0337,-0.1081,-0.0255,optimism,True
+GoEmotions,optimism,Let's hope he doesn't change his mind.,-0.0574,-0.0474,0.0896,0.0120,0.0229,-0.0679,optimism,True
+GoEmotions,optimism,"Good luck! If you do need to get her, you just gotta fuse together a Bicorn and a Jack Frost.",0.0327,0.0748,0.0081,-0.0607,0.0035,-0.0597,admiration,False
+GoEmotions,optimism,It gives me hope as well!,0.1158,0.0155,0.1604,-0.0778,-0.1959,-0.0882,optimism,True
+GoEmotions,optimism,"My husband and I are expecting a little boy. We will refuse to do the whole ""man up"" thing. No toxic masculinity here hopefully lol",0.0309,-0.0255,0.0215,0.0017,-0.0037,-0.0303,joy,False
+GoEmotions,optimism,I really hope [NAME] gets a great helm. A crown would be cool but I want a properly armored sword and board knight.,-0.0727,0.1416,0.0501,-0.0290,-0.0498,-0.0697,admiration,False
+GoEmotions,optimism,"Hi, [NAME]! I hope you have a wonderful day! -HappyFriendlyBot",0.0317,-0.0091,-0.0566,0.0157,-0.0005,0.0500,fear,False
+GoEmotions,optimism,I just hope [NAME] gets hired,0.0024,-0.0451,0.0220,-0.0169,-0.0088,0.0296,fear,False
+GoEmotions,optimism,[NAME] I hope we don’t have to as long as the Cubbies did to win a WS,0.0267,-0.0493,-0.0537,-0.0075,0.0408,0.0664,fear,False
+GoEmotions,optimism,I secretly hoped we would lose by like 70.. 35 is not enough,-0.0365,-0.0434,-0.0164,0.0599,0.0124,0.0320,sadness,False
+GoEmotions,optimism,I hope you both enjoy it!,0.1525,-0.0454,0.0543,-0.0307,-0.1066,-0.0348,joy,False
+GoEmotions,optimism,"I hope so, she could bring an interesting dynamic between [NAME] and [NAME].",0.0628,0.0956,0.0685,-0.0791,-0.0444,-0.1284,admiration,False
+GoEmotions,optimism,"Oh for sure. Hopefully all 4 make the play offs. Pretty sure Leinster are nearly there already, the absolute madlads.",0.0246,-0.0417,0.0531,0.0178,-0.0564,-0.0188,optimism,True
+GoEmotions,optimism,I would think that I hope the Wilpons die.,-0.2130,-0.0030,0.2069,0.0678,-0.0249,-0.1476,optimism,True
+GoEmotions,optimism,Hope you're doing okay!,0.1129,-0.0936,0.0583,-0.0205,-0.0793,0.0015,joy,False
+GoEmotions,optimism,I hope for your sake you don't include Frazzles in your ostracising.,-0.1777,0.0662,0.0848,0.0890,-0.0062,-0.1013,sadness,False
+GoEmotions,optimism,I’m hoping I can find a stream of [NAME] doing the play by play!,-0.0321,0.0869,0.0790,-0.0228,-0.0960,-0.0558,admiration,False
+GoEmotions,sadness,"dude,,, same i cried today because i couldn’t go to the gym bc my foot was too swollen to wear shoes lol",-0.0105,-0.0143,-0.0954,0.0236,0.1236,0.0216,anger,False
+GoEmotions,sadness,Oh man I feel bad now. If you find it funny than it's funny 💖 sorry,0.0807,-0.0966,-0.0297,0.0298,0.0210,0.0202,joy,False
+GoEmotions,sadness,Couldn't have happened to a nicer person.,0.1630,-0.0290,0.0409,-0.1071,0.0440,-0.1177,joy,False
+GoEmotions,sadness,"That is so sad, just goes to show we have a lot more to learn about the other beings we share this rock with : /",0.0708,-0.0054,-0.0423,-0.0074,0.0136,0.0005,joy,False
+GoEmotions,sadness,Sadly I had to scroll through the story to read this,-0.0704,0.0289,-0.0369,0.0781,-0.0383,0.0554,sadness,True
+GoEmotions,sadness,"It was a painful cringe, too. Are we masochists?",-0.1112,0.0615,0.0806,0.0483,-0.0723,-0.0506,optimism,False
+GoEmotions,sadness,I still miss the north hills bottom dollar :(,-0.0490,-0.0607,-0.0110,0.0701,0.0646,-0.0067,sadness,True
+GoEmotions,sadness,I’m so sorry to hear that! 😂😂😂,0.0649,-0.0013,-0.1256,0.0136,0.0350,0.0819,fear,False
+GoEmotions,sadness,Is the Queen movie bad? That makes me sad. I'm still watch it anyway.,-0.0737,0.0770,0.1895,0.0104,-0.1238,-0.1695,optimism,False
+GoEmotions,sadness,Me thinks this crosses the line of dignity. Makes me sad. It’s one thing to expose things but another to mock it.,-0.1704,0.1018,0.0341,0.1368,-0.0514,-0.0642,sadness,True
+GoEmotions,sadness,"Friend of the younger sister of girl who was killed. She told me it was a bad acid trip. Very sad, family is holding a vigil tomorrow night.",-0.0061,-0.0387,-0.0579,0.0869,0.0475,0.0071,sadness,True
+GoEmotions,sadness,"I’ll miss you, [NAME] Today is a sad day for our high sock loving brethren [NAME]",0.0082,0.0011,-0.0552,0.0295,0.0002,0.0460,fear,False
+GoEmotions,sadness,I'm sad that I gave that shit article a page view.,-0.1110,0.1022,-0.0112,0.0650,0.0289,-0.0659,admiration,False
+GoEmotions,sadness,What a beautiful memory for you to have found. So sorry for your loss ❤️,0.0821,-0.0205,0.0277,0.0128,-0.0779,-0.0245,joy,False
+GoEmotions,sadness,You are unfortunately far and few between.,-0.1307,0.0084,0.0219,0.0883,-0.0600,0.0521,sadness,True
+GoEmotions,sadness,I just get sad when I see people commenting on articles and videos about him that they think he's on drugs.,-0.1890,0.2227,-0.0065,0.0618,-0.0445,-0.0472,admiration,False
+GoEmotions,sadness,Sadly you are correct.,0.0536,-0.0603,-0.0199,0.0029,-0.0259,0.0609,fear,False
+GoEmotions,sadness,Same here. It’s very hard. I really feel for you.,0.0284,0.0538,0.0826,0.0570,-0.1486,-0.0952,optimism,False
+GoEmotions,sadness,Uh . . . Uh . . . I'm not feeling so well.,-0.0408,-0.1487,-0.1022,0.1435,0.0487,0.1500,fear,False
+GoEmotions,sadness,"As a computer science student but also a lifelong [NAME], the issues surrounding Amazon in Queens have left me substantially torn.",-0.2817,0.2482,-0.0102,0.0901,-0.0992,0.0380,admiration,False
+GoEmotions,sadness,I have no friends.,-0.1751,-0.0447,0.0458,0.1357,0.0456,-0.0344,sadness,True
+GoEmotions,sadness,I should have known what awaits behind the oilymama hashtag and yet I searched. Now I’m sad.,-0.2128,0.0504,0.0405,0.1830,-0.0413,-0.0394,sadness,True
+GoEmotions,sadness,"Even if you think me and him aren't soulmates, youve gotta be pretty sad to think soulmates don't exist.",-0.0259,0.0133,0.0698,0.1075,-0.0686,-0.1121,sadness,True
+GoEmotions,sadness,"I'm sad, but I just want a new Metroid game, and if this is what it takes to make it great then I understand",-0.0056,0.0540,-0.0044,0.0164,-0.0463,-0.0081,admiration,False
+GoEmotions,sadness,sad that the Euphoric tipbot is no more,-0.0327,-0.0161,0.0214,0.0223,-0.0100,0.0021,sadness,True
+GoEmotions,sadness,this video makes me sad,-0.0248,-0.0645,-0.0636,0.0968,0.0536,0.0398,sadness,True
+GoEmotions,sadness,That was painful to read.,-0.0530,0.0272,-0.0180,0.0939,-0.0471,0.0119,sadness,True
+GoEmotions,sadness,Ik I’m crying rn,0.0466,-0.0537,-0.0707,0.0027,0.0212,0.0884,fear,False
+GoEmotions,sadness,I'm sorry man sounds bad,-0.0182,-0.0441,-0.0477,0.0284,0.0642,0.0389,anger,False
+GoEmotions,sadness,What a sad story.,0.0191,-0.0424,-0.0507,0.0480,0.0204,0.0366,sadness,True
+GoEmotions,sadness,Sadly this is how you get shit fixed,-0.0229,-0.0798,-0.0069,0.0525,0.0612,0.0009,anger,False
+GoEmotions,sadness,Sad and very true though. Case in point.,0.0065,-0.0267,-0.0635,0.0372,0.0067,0.0720,fear,False
+GoEmotions,sadness,"This is so sad. [NAME], play 'bitch lasagna'",-0.0116,0.0083,-0.0025,-0.0332,0.0597,-0.0234,anger,False
+GoEmotions,sadness,"This sub no longer has much in the way of standards, sadly.",-0.1286,-0.0142,0.0404,0.0665,0.0178,-0.0102,sadness,True
+GoEmotions,sadness,This is so sad. #playdespacito,0.0065,-0.0440,-0.0116,-0.0099,0.0499,0.0122,anger,False
+GoEmotions,sadness,Sorry for your loss 😣,0.1290,-0.0848,-0.0151,-0.0573,0.0291,0.0125,joy,False
+GoEmotions,sadness,Sad thing is it would probably forcibly ground the plane.,-0.1146,-0.0026,0.0015,-0.0387,0.1410,-0.0073,anger,False
+GoEmotions,sadness,Kinda sad but... Okay then,0.0503,-0.0802,-0.0208,0.0066,0.0125,0.0441,joy,False
+GoEmotions,sadness,Beautiful yet sad that his relationship ended in ‘45 the same way most of mine do...with cheating,0.0025,-0.0592,-0.0031,0.0002,0.0440,0.0147,anger,False
+GoEmotions,sadness,Must be a tough life when all you can think about is sad stories to keep you from enjoying anything.,-0.0771,0.0289,0.0286,0.0222,0.0572,-0.0751,anger,False
+GoEmotions,sadness,sadly it is ;-;,0.0174,-0.0735,-0.0788,0.0767,0.0711,0.0352,sadness,True
+GoEmotions,sadness,i miss this show so much,0.0186,0.0226,-0.0272,0.0456,-0.0264,-0.0093,sadness,True
+GoEmotions,sadness,I feel shot in the heart.,-0.1698,0.0196,-0.0018,0.0823,0.0408,0.0180,sadness,True
+GoEmotions,sadness,My inevitable famine is when I run out of pop tarts and get sad,-0.0280,-0.0350,-0.0066,0.0701,0.0102,-0.0024,sadness,True
+GoEmotions,sadness,I'm so broke that I'd take if you're still looking. I'm a guy though.,-0.0885,0.0550,0.0612,0.0441,-0.0433,-0.0595,optimism,False
+GoEmotions,sadness,stop hurting my feelings,0.0074,-0.0821,-0.0881,0.0395,0.1396,0.0302,anger,False
+GoEmotions,sadness,I miss rock fest 😔,0.0759,-0.0439,0.0230,-0.0346,-0.0066,-0.0202,joy,False
+GoEmotions,sadness,I’ve been hurt too many times for it all to have been for nothing,-0.0740,0.0015,0.0121,0.0322,0.0055,0.0103,sadness,True
+GoEmotions,sadness,That guy with the orange jacket looks so distraught. Feels bad man.,-0.0193,-0.1106,-0.0570,0.0530,0.1008,0.0590,anger,False
+GoEmotions,sadness,I miss you [NAME] 😢😭,0.0525,-0.0301,-0.0655,-0.0036,0.0106,0.0698,fear,False
+GoEmotions,sadness,It’s really sad to see,-0.0117,-0.0077,-0.0374,0.0709,-0.0405,0.0496,sadness,True
+GoEmotions,sadness,I'm painfully aware of that having bought a FreeSync monitor with my Nvidia graphics card.,-0.2081,0.2120,-0.0036,0.0225,-0.0676,0.0269,admiration,False
+GoEmotions,sadness,"""Why everyone hurts me?""",-0.0672,-0.0401,-0.1156,0.0655,0.1143,0.0940,anger,False
+GoEmotions,sadness,That's really sad. I used to live not far from there and spent a lot of time in that park. Fished in those ponds many times.,-0.1069,0.1476,0.0523,0.0850,-0.1564,-0.0431,admiration,False
+GoEmotions,sadness,"that’s actually sad, feel bad for him :/",0.1260,-0.1221,-0.0700,-0.0088,0.1268,-0.0041,anger,False
+GoEmotions,sadness,"I'm so sad for you, I'm so so sorry. 💔",0.0331,-0.0629,-0.0569,0.0175,0.0279,0.0700,fear,False
+GoEmotions,sadness,My entire body aches now,-0.0878,-0.0432,-0.0855,0.0962,0.0115,0.1422,fear,False
+GoEmotions,sadness,"Will see,still better for Chelsea then [NAME] who looked completely lost and devoid of any confidence lately",-0.0765,-0.0045,0.0051,0.0701,0.0008,0.0016,sadness,True
+GoEmotions,sadness,"i ended up crying and breaking down once i got to my friends house, i'm so sorry that happened to you as well :~(",0.1347,-0.1123,-0.0577,0.0048,0.0688,0.0056,joy,False
+GoEmotions,sadness,True Story! That's the sad Part of it...,0.0260,-0.1209,0.0366,0.0518,0.0125,-0.0169,sadness,True
+GoEmotions,sadness,I miss being little 😭😭😭,0.0385,-0.0068,-0.1146,0.0426,0.0029,0.0992,fear,False
+GoEmotions,sadness,Yes no one wants to believe my religion and how to make people happy so it makes me sad,-0.0795,-0.0531,0.0097,0.0932,-0.0015,0.0248,sadness,True
+GoEmotions,sadness,poor little dude! Glad he's okay. He and his brother have a story to tell now.,0.0666,0.0057,0.0349,-0.0496,0.0405,-0.1058,joy,False
+GoEmotions,sadness,I feel this but I also sympathize with mentalcels because I’m mentally ill and it makes me feel even worse.,-0.1402,0.1026,-0.0047,0.1264,-0.0194,-0.0563,sadness,True
+GoEmotions,sadness,"Sadly too easy to gank. Bronze brawl 4-man notices you are split pushing, you are dead.",-0.1215,-0.0975,-0.0951,0.0362,0.1521,0.1493,anger,False
+GoEmotions,sadness,"This can’t be the end of the back, garbage TV! I’ll miss you!",0.0371,-0.0195,0.0991,-0.0318,-0.0182,-0.1092,optimism,False
+GoEmotions,sadness,Yep. Seriously painful to read,-0.0688,0.0220,-0.0568,0.0727,-0.0239,0.0794,fear,False
+GoEmotions,sadness,Man i was so sad when i found out vodka had calories,-0.0515,-0.0209,0.0029,0.0053,0.0238,0.0301,fear,False
+GoEmotions,sadness,My heart is breaking for that little girl.,-0.0913,0.1020,-0.0400,0.0374,0.0078,0.0007,admiration,False
+GoEmotions,sadness,This whole sub makes me sad.,-0.0398,-0.0324,-0.0841,0.1455,0.0230,0.0412,sadness,True
+GoEmotions,sadness,Really sad how often people don't go into the closest lane first and then change lanes when safe to do so.,-0.0985,0.0603,-0.1436,0.0621,0.1082,0.0765,anger,False
+GoEmotions,sadness,Aaaand everybody got diarrhea. Thanks dummy,0.0292,-0.0096,-0.0715,0.0146,0.0273,0.0486,fear,False
+GoEmotions,sadness,Well that was disheartening.,0.0167,-0.1023,-0.0538,0.0636,0.0274,0.0777,fear,False
+GoEmotions,sadness,"sorry this happened to you. id be sad and angry too if i worked hard on something, and someone took that away",-0.0640,0.0052,-0.0100,0.0421,0.0060,0.0217,sadness,True
+GoEmotions,sadness,For Citynews dot ca that is really sad.,-0.0259,-0.0399,-0.0431,0.0838,0.0259,0.0259,sadness,True
+GoEmotions,sadness,"Sad thing is, I wanted to, but I’m stupidly awkward...",-0.0056,-0.0498,-0.0105,0.0857,0.0139,-0.0177,sadness,True
+GoEmotions,sadness,Yet I still feel lonely doing it...,-0.0653,-0.0665,0.0687,0.1597,-0.0627,-0.0541,sadness,True
+GoEmotions,sadness,And unfortunately videos like this act as a constant reminder that most people are complete dumbasses. Sad really.,-0.0435,-0.0362,0.0510,0.0686,-0.0263,-0.0346,sadness,True
+GoEmotions,sadness,I’m so sorry 🤪,0.0465,-0.0348,-0.0616,0.0000,0.0193,0.0624,fear,False
+GoEmotions,sadness,"This happens to me all the time I’m so sorry 😣 it’s always with burgers, too. So painful.",-0.1236,-0.0340,-0.0135,0.0932,0.0411,0.0363,sadness,True
+GoEmotions,sadness,Oh god another injury,-0.0065,-0.0448,-0.0285,0.0437,0.0028,0.0480,fear,False
+GoEmotions,sadness,stop making me cry man,0.0229,-0.0512,-0.1629,0.0685,0.1008,0.1078,fear,False
+GoEmotions,sadness,I'm sorry I imagine that was devastating.,0.0072,-0.0722,0.0502,0.0237,0.0079,-0.0378,optimism,False
+GoEmotions,sadness,>The ABC’s hard-hitting investigation :/ Such a sad article.,0.0591,0.0099,-0.1097,0.0065,0.0732,0.0242,anger,False
+GoEmotions,sadness,I know! Or close the door of the room where the baby is sleeping? It's too sad for the poor thing to be locked inside.,-0.0885,-0.0064,0.0247,0.0046,0.0527,-0.0102,anger,False
+GoEmotions,sadness,Still saddened by the fact that we never got to see prime [NAME] vs prime [NAME].,-0.0468,0.0283,-0.0513,0.0147,0.0950,-0.0158,anger,False
+GoEmotions,sadness,This hurts to watch,-0.1175,0.0327,-0.0574,0.0871,-0.0041,0.0799,sadness,True
+GoEmotions,sadness,"Eh, loser. It’s sad how some people don’t care about their relatives.",-0.0790,0.1367,0.0403,0.0772,-0.0243,-0.1556,admiration,False
+GoEmotions,sadness,That's sad. You can be acquaintances with women. Not like you are driving them to the nail salon or something .,-0.0028,-0.0423,-0.0260,0.0278,0.0608,-0.0020,anger,False
+GoEmotions,sadness,Honestly it makes me sad but [NAME] does need less time:/,0.0515,-0.0129,-0.0147,-0.0155,0.0267,-0.0217,joy,False
+GoEmotions,sadness,Sadly there's a good chance that you still need a car anyway because that affordable neighborhood will involve a one hour commute.,-0.1844,0.1086,0.1016,-0.0041,-0.0561,-0.0363,admiration,False
+GoEmotions,sadness,The only part of church I'm sad my kids will miss.,-0.0583,-0.0294,0.0549,0.1162,-0.0109,-0.0871,sadness,True
+GoEmotions,sadness,Sounds pretty typical from Toyota really. Been hearing the same story from too many people. Sad really because they were always the best.,0.0034,-0.0220,0.1341,0.0253,-0.0901,-0.1081,optimism,False
+GoEmotions,sadness,"correct me if i’m wrong but when [NAME] eliminates [NAME], she technically has a better track record than [NAME]?? i’ll fucking cry",0.0069,-0.0222,-0.1235,0.0546,0.0769,0.0725,anger,False
+GoEmotions,sadness,Sadly this is not a new issue for Ukraine. Please take a moment to remember Babi Yar :(,-0.0325,-0.0603,0.0042,0.0655,0.0459,-0.0207,sadness,True
+GoEmotions,sadness,That hurt too much to watch twice.,-0.0827,-0.0721,0.0002,0.0755,0.1008,-0.0231,anger,False
+GoEmotions,sadness,I see you utilized it. 3.5? Sad.,-0.0327,-0.1398,0.0013,0.0780,0.0587,0.0331,sadness,True
+GoEmotions,sadness,It's kinda sad knowing that ibises are only scavenging our bins & rubbish due to their natural habitats drying out.,-0.1681,0.1091,-0.0228,0.0262,0.0556,-0.0033,admiration,False
+GoEmotions,sadness,Poor crack baby 😥,0.0849,-0.0636,-0.0778,-0.0472,0.0687,0.0723,joy,False
+GoEmotions,sadness,I feel sorry for him. He gotta be an awkward guy who has no friends.,-0.1668,0.0523,0.1201,0.0675,-0.0166,-0.1202,optimism,False

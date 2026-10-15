@@ -60,6 +60,7 @@ emotion_vectors_final.pt and config.json in emotion_extraction/results/raw/
 encodes the held-out sentences and GoEmotions comments.
 """
 import json
+import math
 import os
 import warnings
 from collections import Counter
@@ -69,6 +70,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
+import numpy as np
 import pandas as pd
 import torch
 from transformer_lens import HookedTransformer
@@ -82,6 +84,8 @@ RAW_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors.pt"
 FINAL_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors_final.pt"
 GOEMOTIONS_PATH = "emotion_extraction/goemotions_validation/goemotions_100_per_emotion.csv"
 ACCURACY_PATH = f"{RAW_DIR}/reading_accuracy.csv"
+PREDICTIONS_PATH = f"{RAW_DIR}/reading_predictions.csv"
+GOEMOTIONS_HEATMAP_PATH = f"{PLOTS_DIR}/goemotions_validation_last_token_heatmap.png"
 CONFUSION_PATH = f"{PLOTS_DIR}/reading_confusion.png"
 VECTOR_SIMILARITY_PATH = f"{PLOTS_DIR}/vector_similarity_heatmap.png"
 # Sequential blue ramp (light = near 0%, dark = near 100%) for the confusion matrices.
@@ -383,6 +387,87 @@ def report_vector_similarities(emotion_vectors, chosen_layer):
     plot_vector_similarities(similarities, chosen_layer, VECTOR_SIMILARITY_PATH)
 
 
+def save_predictions(scores, path):
+    """One row per sentence for all datasets: dataset, label, text, the 6
+    cosines, predicted emotion and whether it is correct."""
+    predictions = pd.concat(
+        [dataset_scores.assign(dataset=dataset) for dataset, dataset_scores in scores.items()],
+        ignore_index=True,
+    )
+    columns = ["dataset", "label", "text"] + [c for c in predictions if c.startswith("cos_")]
+    predictions = predictions[columns + ["predicted", "correct"]]
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    predictions.to_csv(path, index=False, float_format="%.4f")
+    print(f"\nSaved {path}")
+
+
+def point_biserial(is_label, cosines):
+    """Pearson r between a 0/1 label and the cosines, with a Fisher-z 95% CI
+    and a two-sided p-value (normal approximation)."""
+    is_label, cosines = np.asarray(is_label, float), np.asarray(cosines, float)
+    n = len(is_label)
+    r = float(np.corrcoef(is_label, cosines)[0, 1])
+    z, standard_error = math.atanh(r), 1 / math.sqrt(n - 3)
+    t = r * math.sqrt((n - 2) / (1 - r ** 2))
+    return {
+        "r": r,
+        "ci_low": math.tanh(z - 1.96 * standard_error),
+        "ci_high": math.tanh(z + 1.96 * standard_error),
+        "p": math.erfc(abs(t) / math.sqrt(2)),
+    }
+
+
+def print_test2(dataset_scores, emotions):
+    """Test 2 (GoEmotions): across all comments, does cos_e rise when the
+    label is e? Point-biserial r between (label == e) and cos_e, per vector."""
+    print("\nTest 2 (GoEmotions): point-biserial r between (label == e) and cos_e "
+          "across all comments")
+    print(f"{'vector':10s} {'match':>8s} {'other':>8s} {'r':>7s}  {'95% CI':>17s}  {'p':>9s}")
+    for e in emotions:
+        is_label = dataset_scores["label"] == e
+        stats = point_biserial(is_label, dataset_scores[f"cos_{e}"])
+        mean_match = dataset_scores.loc[is_label, f"cos_{e}"].mean()
+        mean_other = dataset_scores.loc[~is_label, f"cos_{e}"].mean()
+        print(f"{e:10s} {mean_match:+8.4f} {mean_other:+8.4f} {stats['r']:+7.3f}  "
+              f"[{stats['ci_low']:+.3f}, {stats['ci_high']:+.3f}]  {stats['p']:9.2g}")
+
+
+def plot_label_vector_heatmap(dataset_scores, emotions, chosen_layer, path):
+    """Mean cosine per true label (rows) x vector (columns); boxes = expected match."""
+    table = dataset_scores.groupby("label")[[f"cos_{e}" for e in emotions]].mean()
+    values = table.loc[emotions].to_numpy()
+    counts = dataset_scores["label"].value_counts()
+    limit = float(np.abs(values).max())
+    fig, ax = plt.subplots(figsize=(7, 5.5), constrained_layout=True)
+    image = ax.imshow(values, cmap=VECTOR_SIMILARITY_CMAP, vmin=-limit, vmax=limit)
+    for i in range(len(emotions)):
+        for j in range(len(emotions)):
+            ax.text(j, i, f"{values[i, j]:+.3f}", ha="center", va="center", fontsize=8,
+                    color="white" if abs(values[i, j]) > 0.6 * limit else "#1f1f1f")
+        ax.add_patch(plt.Rectangle((i - 0.5, i - 0.5), 1, 1, fill=False,
+                                   edgecolor="#1f1f1f", linewidth=1.5))
+    ax.set_xticks(range(len(emotions)))
+    ax.set_xticklabels(emotions, rotation=45, ha="right")
+    ax.set_yticks(range(len(emotions)))
+    ax.set_yticklabels([f"{e} (n={counts[e]})" for e in emotions])
+    ax.set_xlabel("emotion vector")
+    ax.set_ylabel("GoEmotions label")
+    ax.set_title(f"GoEmotions: mean cosine (centered comment vs vector)\n"
+                 f"layer {chosen_layer}, last token; boxes = expected match")
+    fig.colorbar(image, ax=ax, label="mean cosine similarity")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+    print(f"\nSaved {path}")
+
+
+def report_goemotions_extras(goemotions_scores, emotions, chosen_layer):
+    """Kept from the earlier GoEmotions script: Test 2 and the label x vector heatmap."""
+    print_test2(goemotions_scores, emotions)
+    plot_label_vector_heatmap(goemotions_scores, emotions, chosen_layer,
+                              GOEMOTIONS_HEATMAP_PATH)
+
+
 def main():
     model = load_model()
 
@@ -409,6 +494,8 @@ def main():
     report_accuracy(scores, emotions)
     report_confusion(scores, emotions, chosen_layer)
     report_vector_similarities(emotion_vectors, chosen_layer)
+    report_goemotions_extras(scores["GoEmotions"], emotions, chosen_layer)
+    save_predictions(scores, PREDICTIONS_PATH)
 
 
 if __name__ == "__main__":

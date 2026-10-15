@@ -65,6 +65,10 @@ import warnings
 from collections import Counter
 warnings.filterwarnings("ignore")
 
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 import pandas as pd
 import torch
 from transformer_lens import HookedTransformer
@@ -72,11 +76,17 @@ from transformer_lens import HookedTransformer
 MODEL_NAME = "gpt2-medium"
 STIMULI_PATH = "stimuli.json"
 RAW_DIR = "emotion_extraction/results/raw"
+PLOTS_DIR = "emotion_extraction/results/plots"
 CONFIG_PATH = f"{RAW_DIR}/config.json"
 RAW_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors.pt"
 FINAL_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors_final.pt"
 GOEMOTIONS_PATH = "emotion_extraction/goemotions_validation/goemotions_100_per_emotion.csv"
 ACCURACY_PATH = f"{RAW_DIR}/reading_accuracy.csv"
+CONFUSION_PATH = f"{PLOTS_DIR}/reading_confusion.png"
+# Sequential blue ramp (light = near 0%, dark = near 100%) for the confusion matrices.
+CONFUSION_CMAP = LinearSegmentedColormap.from_list(
+    "blues", ["#f7fafe", "#cde2fb", "#86b6ef", "#3987e5", "#1c5cab", "#0d366b"]
+)
 # Training sentences re-encoded to check encoding matches 02: one per emotion.
 # A mismatch (model, layer, tokenization) would show on every sentence, so a few suffice.
 N_ENCODING_CHECK_SENTENCES = 6
@@ -259,6 +269,70 @@ def report_accuracy(scores, emotions):
     return accuracy
 
 
+def confusion_matrix(dataset_scores, emotions):
+    """Rows: true emotion, columns: predicted emotion; each row sums to 1."""
+    counts = pd.crosstab(dataset_scores["label"], dataset_scores["predicted"])
+    counts = counts.reindex(index=emotions, columns=emotions, fill_value=0)
+    return counts.div(counts.sum(axis=1), axis=0)
+
+
+def prediction_shares(scores, emotions):
+    """Share of all sentences predicted as each emotion, per dataset (columns).
+    Balanced datasets make 1 / number of emotions the expected share."""
+    return pd.DataFrame({
+        dataset: dataset_scores["predicted"].value_counts(normalize=True)
+                                            .reindex(emotions, fill_value=0)
+        for dataset, dataset_scores in scores.items()
+    })
+
+
+def print_confusion(scores, emotions):
+    for dataset, dataset_scores in scores.items():
+        matrix = confusion_matrix(dataset_scores, emotions)
+        print(f"\nConfusion matrix, {dataset} (rows: true, columns: predicted, % of row)")
+        print((matrix * 100).round().astype(int).to_string())
+    shares = prediction_shares(scores, emotions)
+    print(f"\nShare of all predictions per emotion (expected {1 / len(emotions):.0%} each)")
+    print(shares.apply(lambda col: col.map("{:.0%}".format)).to_string())
+
+
+def plot_confusion_matrices(scores, emotions, chosen_layer, path):
+    """One panel per dataset, same 0-100% color scale; diagonal = correct."""
+    fig, axes = plt.subplots(1, len(scores), figsize=(5.2 * len(scores), 5.2),
+                             constrained_layout=True)
+    for ax, (dataset, dataset_scores) in zip(axes, scores.items()):
+        matrix = confusion_matrix(dataset_scores, emotions).to_numpy()
+        image = ax.imshow(matrix, cmap=CONFUSION_CMAP, vmin=0, vmax=1)
+        for i in range(len(emotions)):
+            for j in range(len(emotions)):
+                ax.text(j, i, f"{matrix[i, j]:.0%}", ha="center", va="center", fontsize=9,
+                        color="white" if matrix[i, j] > 0.55 else "#1f1f1f")
+            ax.add_patch(plt.Rectangle((i - 0.5, i - 0.5), 1, 1, fill=False,
+                                       edgecolor="#1f1f1f", linewidth=1.5))
+        ax.set_xticks(range(len(emotions)))
+        ax.set_xticklabels(emotions, rotation=45, ha="right")
+        ax.set_yticks(range(len(emotions)))
+        ax.set_yticklabels(emotions)
+        ax.set_xlabel("predicted (highest-cosine vector)")
+        ax.set_ylabel("true emotion")
+        n = len(dataset_scores)
+        ax.set_title(f"{dataset} (n={n}): {dataset_scores['correct'].mean():.0%} correct")
+    fig.colorbar(image, ax=axes, shrink=0.8, label="% of the row's sentences",
+                 format=lambda x, _: f"{x:.0%}")
+    fig.suptitle(f"Which vector wins, by true emotion (layer {chosen_layer}, "
+                 f"chance = {1 / len(emotions):.0%}; boxes = correct)")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+    print(f"\nSaved {path}")
+
+
+def report_confusion(scores, emotions, chosen_layer):
+    """Print the confusion matrices and prediction shares, and save the figure."""
+    print_confusion(scores, emotions)
+    plot_confusion_matrices(scores, emotions, chosen_layer, CONFUSION_PATH)
+
+
 def main():
     model = load_model()
 
@@ -283,6 +357,7 @@ def main():
               for name, (sentences, activations) in datasets.items()}
 
     report_accuracy(scores, emotions)
+    report_confusion(scores, emotions, chosen_layer)
 
 
 if __name__ == "__main__":

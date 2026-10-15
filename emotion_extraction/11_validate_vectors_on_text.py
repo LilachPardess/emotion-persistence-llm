@@ -83,9 +83,15 @@ FINAL_VECTORS_PATH = f"{RAW_DIR}/emotion_vectors_final.pt"
 GOEMOTIONS_PATH = "emotion_extraction/goemotions_validation/goemotions_100_per_emotion.csv"
 ACCURACY_PATH = f"{RAW_DIR}/reading_accuracy.csv"
 CONFUSION_PATH = f"{PLOTS_DIR}/reading_confusion.png"
+VECTOR_SIMILARITY_PATH = f"{PLOTS_DIR}/vector_similarity_heatmap.png"
 # Sequential blue ramp (light = near 0%, dark = near 100%) for the confusion matrices.
 CONFUSION_CMAP = LinearSegmentedColormap.from_list(
     "blues", ["#f7fafe", "#cde2fb", "#86b6ef", "#3987e5", "#1c5cab", "#0d366b"]
+)
+# Diverging blue (-1) - gray (0) - red (+1) for the vector-to-vector cosines.
+VECTOR_SIMILARITY_CMAP = LinearSegmentedColormap.from_list(
+    "blue_gray_red", ["#104281", "#3987e5", "#9ec5f4", "#f0efec",
+                      "#f2a9a8", "#e34948", "#9e2423"]
 )
 # Training sentences re-encoded to check encoding matches 02: one per emotion.
 # A mismatch (model, layer, tokenization) would show on every sentence, so a few suffice.
@@ -333,6 +339,50 @@ def report_confusion(scores, emotions, chosen_layer):
     plot_confusion_matrices(scores, emotions, chosen_layer, CONFUSION_PATH)
 
 
+def vector_similarities(emotion_vectors):
+    """6x6 cosine similarity between the emotion vectors."""
+    emotions = list(emotion_vectors)
+    stacked_emotion_vectors = torch.stack([emotion_vectors[e] for e in emotions])
+    similarities = torch.nn.functional.cosine_similarity(
+        stacked_emotion_vectors.unsqueeze(1), stacked_emotion_vectors.unsqueeze(0), dim=2
+    )
+    return pd.DataFrame(similarities.numpy(), index=emotions, columns=emotions)
+
+
+def plot_vector_similarities(similarities, chosen_layer, path):
+    """Heatmap from -1 (blue) through 0 (gray) to +1 (red)."""
+    emotions = list(similarities.index)
+    values = similarities.to_numpy()
+    fig, ax = plt.subplots(figsize=(6.4, 5.4), constrained_layout=True)
+    image = ax.imshow(values, cmap=VECTOR_SIMILARITY_CMAP, vmin=-1, vmax=1)
+    for i in range(len(emotions)):
+        for j in range(len(emotions)):
+            ax.text(j, i, f"{values[i, j]:+.2f}", ha="center", va="center", fontsize=9,
+                    color="white" if abs(values[i, j]) > 0.6 else "#1f1f1f")
+    ax.set_xticks(range(len(emotions)))
+    ax.set_xticklabels(emotions, rotation=45, ha="right")
+    ax.set_yticks(range(len(emotions)))
+    ax.set_yticklabels(emotions)
+    ax.set_title(f"Cosine similarity between emotion vectors (layer {chosen_layer})\n"
+                 f"exploratory - no prediction")
+    fig.colorbar(image, ax=ax, shrink=0.8, label="cosine similarity")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+    print(f"\nSaved {path}")
+
+
+def report_vector_similarities(emotion_vectors, chosen_layer):
+    """Print and plot the vector-to-vector cosines (exploratory). The vectors
+    are centered on the average of all emotions, so they sum to zero and their
+    pairwise cosines lean negative by construction."""
+    similarities = vector_similarities(emotion_vectors)
+    print("\nCosine similarity between emotion vectors (exploratory, no prediction; "
+          "centered vectors sum to zero, so pairs lean negative)")
+    print(similarities.round(2).to_string())
+    plot_vector_similarities(similarities, chosen_layer, VECTOR_SIMILARITY_PATH)
+
+
 def main():
     model = load_model()
 
@@ -358,6 +408,7 @@ def main():
 
     report_accuracy(scores, emotions)
     report_confusion(scores, emotions, chosen_layer)
+    report_vector_similarities(emotion_vectors, chosen_layer)
 
 
 if __name__ == "__main__":
